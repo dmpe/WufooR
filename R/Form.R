@@ -14,6 +14,11 @@
 #' title is changed. Use the Hash parameter when you need a permanent URL link.
 #' @return Email - A list of comma-separated email addresses that are setup 
 #' to accept notification emails when the form collects new entries.
-form <- function() {
+#' 
+#' @import httr
+#' @import jsonlite
+#' 
+#' @export
+form <- function(apiKey, wufoo_name = getOption("Wufoo_Name")) {
   
 }
