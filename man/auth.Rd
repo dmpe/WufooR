@@ -2,12 +2,15 @@
 % Please edit documentation in R/API.R
 \name{auth}
 \alias{auth}
-\title{Authentication}
+\title{Authentication for Wufoo Name}
 \usage{
 auth(x)
 }
+\arguments{
+\item{NULL}{for example}
+}
 \description{
-Authentication
+methods written by Scott Chamberlain \url{https://github.com/sckott}
 }
 \note{
 Wufoo currently restricts your API usage to 5000 requests per day.

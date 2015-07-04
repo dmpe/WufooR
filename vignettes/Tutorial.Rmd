@@ -13,19 +13,36 @@ vignette: >
 
 You need to use store your login name (subdomain) and api key first. 
 
-See <https://github.com/ropensci/rnoaa/blob/master/NEWS>
+The methods used here has been written by [Scott Chamberlain](https://github.com/sckott), who wrote in the NEWS file of his `rnoaa` [package](https://github.com/ropensci/rnoaa/blob/master/NEWS):
 
-> A new helper function `check_key()` looks for one of two stored keys, as an
-environment variable under the name `NOAA_KEY`, or an option variable under the name
-`noaakey`. Environment variables can be set during session like `Sys.setenv(VAR = "...")`,
+> A new helper function `auth()` looks for one of two stored keys, as an
+environment variable under the name `Wufoo_Name`, or an option variable under the name
+`Wufoo_Name`. 
+
+> Environment variables can be set during session like `Sys.setenv(VAR = "...")`,
 or stored long term in your `.Renviron` file. Option variables can be set during session
 like `options(var = "...")`, or stored long term in your `.Rprofile` file.
 
+I kindly apply same code, slightly adapted.
+
 ```{r}
+library(WufooR)
+
 # options(Wufoo_Name = "YOUR_NAME")
 options(Wufoo_Name = "johnmalc")
+
+auth(NULL) # checks that it works
 ```
 
 
+```{r}
+user_info(ApiKey = "F1QH-Q64B-BSBI-JASJ")
+```
+
+
+```{r}
+form_info(ApiKey = "F1QH-Q64B-BSBI-JASJ")
+
+```
 
 

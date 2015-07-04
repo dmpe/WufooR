@@ -1,9 +1,11 @@
-#' @title Authentication
+#' @title Authentication for Wufoo Name
+#'
+#' @param NULL for example
+#' 
+#' @description methods written by Scott Chamberlain \url{https://github.com/sckott}
 #' 
 #' @note Wufoo currently restricts your API usage to 5000 requests per day.
 #' 
-#' 
-#'
 #' @export
 auth <- function(x) {
   tmp <- if(is.null(x)) {
@@ -15,25 +17,10 @@ auth <- function(x) {
   } else tmp
 }
 
-#' @title Users
-#' 
-#' @examples
-#' View(user(apiKey = "F1QH-Q64B-BSBI-JASJ"))
-#' 
-#' @export
-user <- function(apiKey, wufoo_name = getOption("Wufoo_Name"), showRequestURL = "false") {
-  
-  user_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/users.json")
-  
-  executedUserGetRst <- doRequest(user_url, apiKey, showURL = showRequestURL)
-  
-  return(executedUserGetRst)
-}
-
-#' @title Generalized function for executing GET requests by always appending user's Bit.ly API Key.
+#' @title Generalized function for executing GET requests by always appending user's API Key.
 #' 
 #' @param url - which is used for the request
-#' @param authcode - calls the rbitlyApi \code{\link{rbitlyApi}}
+#' @param apiKey - uses the passed api key of the user
 #' @param queryParameters - parameters that are used for building a URL
 #' @param showURL - for debugging purposes only: it shows what URL has been called
 #' 

@@ -1,7 +1,7 @@
 Package: WufooR
 Type: Package
-Title: What the Package Does (Title Case)
-Description: More about what it does (maybe more than one line)
+Title: API Wrapper for Wufoo - the online surways made easy
+Description: Acquire statistics about your respondents. 
 Version: 0.1
 Date: 2015-07-04
 Authors@R: c(
