@@ -1,10 +1,24 @@
 Package: WufooR
 Type: Package
 Title: What the Package Does (Title Case)
+Description: More about what it does (maybe more than one line)
 Version: 0.1
 Date: 2015-07-04
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
-LazyData: TRUE
+Authors@R: c(
+    person("John", "Malc", email = "cincenko@outlook.com", role = c("aut", "cre"),  comment = "@dmpe")
+    )
+Maintainer: John Malc <cincenko@outlook.com>
+Depends:
+  R (>= 3.2.0)
+Imports:
+  httr (>= 1.0.0),
+  jsonlite (>= 0.9.16),
+  stringr (>= 1.0.0)
+Suggests:
+  roxygen2 (>= 4.1.0),
+  knitr (>= 1.10.5),
+  testthat (>= 0.10.0)
+VignetteBuilder: knitr
+License: Apache License 2.0
+URL: https://github.com/dmpe/wufoor
+BugReports: https://github.com/dmpe/wufoor/issues

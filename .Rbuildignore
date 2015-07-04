@@ -1,2 +1,9 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.httr-oauth$
+.travis.yml
+.DS_Store
+LICENSE
+^CONDUCT\.md$
+^revdep$
+^cran-comments\.md$
