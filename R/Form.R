@@ -5,6 +5,11 @@
 #'
 #' @seealso \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Forms-API}
 #'
+#' @param wufoo_name - Default: getOption("Wufoo_Name")
+#' @param formIdentifier - this will give you information about just one form. 
+#' The call without the "formIdentifier" will return all forms.
+#' @param includeTodayCount - Will give you today’s entry count for the form.
+#'
 #' @return Name - The title of the form specified in the Form Settings.
 #' @return Description - The description of the form as specified in the Form Settings.
 #' @return Redirect Message - The confirmation message shown to users after they
@@ -19,6 +24,17 @@
 #' @import jsonlite
 #' 
 #' @export
-form <- function(apiKey, wufoo_name = getOption("Wufoo_Name")) {
+form <- function(apiKey, wufoo_name = getOption("Wufoo_Name"), formIdentifier = NULL, 
+                 includeTodayCount = "false", debug = "false") {
+  
+  form_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms.json")
+  
+  getResponse <- GET(url, query = list(formIdentifier = formIdentifier, 
+                                       includeTodayCount = includeTodayCount), pretty = debug, add_headers("F1QH-Q64B-BSBI-JASJ:johnmalc"))
+  stop_for_status(getResponse)
+  rawTextResponse <- content(getResponse, as = "text")
+  json_response <- fromJSON(rawTextResponse)
+  
+  
   
 }

@@ -4,7 +4,16 @@
 \alias{form}
 \title{Used to gather details about the forms you have permission to access.}
 \usage{
-form(apiKey, wufoo_name = getOption("Wufoo_Name"))
+form(apiKey, wufoo_name = getOption("Wufoo_Name"), formIdentifier = NULL,
+  includeTodayCount = "false", debug = "false")
+}
+\arguments{
+\item{wufoo_name}{- Default: getOption("Wufoo_Name")}
+
+\item{formIdentifier}{- this will give you information about just one form.
+The call without the "formIdentifier" will return all forms.}
+
+\item{includeTodayCount}{- Will give you today’s entry count for the form.}
 }
 \value{
 Name - The title of the form specified in the Form Settings.

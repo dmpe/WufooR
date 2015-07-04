@@ -2,5 +2,6 @@
 
 export(auth)
 export(form)
+export(user)
 import(httr)
 import(jsonlite)
