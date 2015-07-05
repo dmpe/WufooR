@@ -12,10 +12,10 @@ form_entriesCount(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
 
 \item{wufoo_name}{- Default: \code{\link{auth}}}
 
-\item{formIdentifier}{- this will give you information about just one form.
-The call without the "formIdentifier" will return all forms.}
+\item{formIdentifier}{- this will give you information about just one form. The call without
+the "formIdentifier" will return all forms.}
 
-\item{includeTodayCount}{- Will give you today’s entry count for the form.}
+\item{includeTodayCount}{- Will give you today's entry count for the form.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 }
@@ -26,6 +26,7 @@ EntryCount - number of entries
 Entry Count
 }
 \examples{
-form_entriesCount(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
+form_entriesCount(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g",
+showRequestURL = TRUE)
 }
 

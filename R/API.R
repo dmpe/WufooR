@@ -2,7 +2,8 @@
 #' 
 #' @description method for setting your Wufoo Name permanently
 #' 
-#' @author Scott Chamberlain \url{https://github.com/sckott} for his \url{https://github.com/ropensci/rnoaa} package
+#' @author Scott Chamberlain \url{https://github.com/sckott} for his 
+#' \url{https://github.com/ropensci/rnoaa} package
 #' 
 #' @param x - an empty parameter, e.g. NULL
 #' 
@@ -31,12 +32,14 @@ auth <- function(x) {
 #' 
 #' @import httr
 #' @import jsonlite
+#' @importFrom utils globalVariables
 #' 
 #' @noRd
 doRequest <- function(url, queryParameters = NULL, apiKey = NULL, showURL = NULL) {
+  globalVariables("apiKey")
   
   if (is.null(apiKey)) {
-    stop("Please assign your API Key ('Generic Access Token') ", call. = FALSE)
+    stop("Please assign your API Key", call. = FALSE)
   } else {
     
     getResponse <- GET(url, query = queryParameters, config(userpwd = paste0(apiKey,":fakepassword")))

@@ -11,7 +11,6 @@
 #' @examples 
 #' View(user_info(ApiKey = "F1QH-Q64B-BSBI-JASJ"))
 #' 
-#' 
 #' @export
 user_info <- function(ApiKey, wufoo_name = auth(NULL), showRequestURL = FALSE) {
   

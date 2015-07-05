@@ -4,7 +4,7 @@
 \alias{form_entries}
 \title{Used to gather the data that users have submitted to your form.}
 \usage{
-form_entries(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
+form_entries(ApiKey = "", wufoo_name = auth(NULL), formIdentifier = NULL,
   includeTodayCount = NULL, systemFields = "true", sortID = NULL,
   sortDirection = NULL, showRequestURL = FALSE, showsFields = FALSE)
 }
@@ -15,7 +15,7 @@ form_entries(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
 
 \item{formIdentifier}{- must be replaced with your form's URL or hash.}
 
-\item{includeTodayCount}{- Will give you today’s entry count for the form.}
+\item{includeTodayCount}{- Will give you today's entry count for the form.}
 
 \item{systemFields}{- return system fields. Default: true}
 
@@ -25,30 +25,30 @@ form_entries(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 
-\item{showsFieldsOrNames}{- a MUST: How should be column names be called. Either "Field1", "Field2" etc. or
-"First Name", "Last Name". Default to the second option.}
+\item{showsFields}{- a MUST: How should be column names be called. Either "Field1", "Field2"
+etc. or "First Name", "Last Name". Default to the second option.}
 }
 \value{
 EntryId - This value is the unique identifier for your entry.
 
 DateCreated - The date that this entry was submitted.
 
-Created By - The person who created the entry. If submitted through a
-form, the value here will be public. If the submission originated in the Entry
-Manager this value will be the user name of the submitting user.
+Created By - The person who created the entry. If submitted through a form, the value
+here will be public. If the submission originated in the Entry Manager this value will be the
+user name of the submitting user.
 
-DateUpdated - The date that this entry was edited through the Entry
-Manager. If the submission has never been updated, this value will be blank.
+DateUpdated - The date that this entry was edited through the Entry Manager. If the
+submission has never been updated, this value will be blank.
 
-UpdatedBy - The user name of the person who updated the entry in the
-Entry Manager will appear in this element.
+UpdatedBy - The user name of the person who updated the entry in the Entry Manager will
+appear in this element.
 }
 \description{
-If you have 5 submissions to your form, you’ll have 5 elements (rows) in the return.
+If you have 5 submissions to your form, you'll have 5 elements (rows) in the return.
 }
 \examples{
-fet <- form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g")
-form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = TRUE)
-## form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g")
+form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g")
+form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g",
+systemFields = "false", showRequestURL = TRUE)
 }
 

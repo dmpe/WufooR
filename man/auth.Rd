@@ -19,6 +19,7 @@ Wufoo currently restricts your API usage to 5000 requests per day.
 options(Wufoo_Name = "johnmalc")
 }
 \author{
-Scott Chamberlain \url{https://github.com/sckott} for his \url{https://github.com/ropensci/rnoaa} package
+Scott Chamberlain \url{https://github.com/sckott} for his
+\url{https://github.com/ropensci/rnoaa} package
 }
 
