@@ -5,8 +5,8 @@
 \title{Used to gather the data that users have submitted to your form.}
 \usage{
 form_entries(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
-  includeTodayCount = "false", systemFields = "true", sortID = NULL,
-  sortDirection = NULL, showRequestURL = FALSE)
+  includeTodayCount = NULL, systemFields = "true", sortID = NULL,
+  sortDirection = NULL, showRequestURL = FALSE, showsFields = FALSE)
 }
 \arguments{
 \item{ApiKey}{- User's API key. Go to "https://yourName.wufoo.com/api/code/1/}
@@ -24,6 +24,9 @@ form_entries(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
 \item{sortDirection}{- choose to sort your entries ASC (lowest to highest) or DESC (highest to lowest).}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
+
+\item{showsFieldsOrNames}{- a MUST: How should be column names be called. Either "Field1", "Field2" etc. or
+"First Name", "Last Name". Default to the second option.}
 }
 \value{
 EntryId - This value is the unique identifier for your entry.
@@ -44,7 +47,7 @@ Entry Manager will appear in this element.
 If you have 5 submissions to your form, you’ll have 5 elements (rows) in the return.
 }
 \examples{
-form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g")
+fet <- form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g")
 form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = TRUE)
 ## form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g")
 }

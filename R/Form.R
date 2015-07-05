@@ -20,18 +20,17 @@
 #' 
 #' @export
 form_info <- function(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL, 
-                 includeTodayCount = "false", showRequestURL = FALSE) {
+                      includeTodayCount = "false", showRequestURL = FALSE) {
   
   form_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms.json")
   
   query = list(formIdentifier = formIdentifier, includeTodayCount = includeTodayCount)
-
+  
   executedFormGetRst <- doRequest(form_url, apiKey = ApiKey, query, showURL = showRequestURL)
   df_forms <- t(executedFormGetRst$Forms)
   
   return(df_forms)
 }
-
 
 
 #' Used to gather the data that users have submitted to your form.
@@ -43,6 +42,8 @@ form_info <- function(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
 #' @param formIdentifier - must be replaced with your form's URL or hash.
 #' @param sortID - sort on a single ID, as retrieved from the Fields API.
 #' @param sortDirection - choose to sort your entries ASC (lowest to highest) or DESC (highest to lowest).
+#' @param showsFieldsOrNames - a MUST: How should be column names be called. Either "Field1", "Field2" etc. or 
+#' "First Name", "Last Name". Default to the second option. 
 #' 
 #' @description If you have 5 submissions to your form, you’ll have 5 elements (rows) in the return.
 #' 
@@ -63,11 +64,12 @@ form_info <- function(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
 #' 
 #' @import httr
 #' @import jsonlite
-#'
+#' @import dplyr
+#' 
 #' @export
 form_entries <- function(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL, 
-                         includeTodayCount = "false", systemFields = "true", sortID = NULL, 
-                         sortDirection = NULL, showRequestURL = FALSE) {
+                         includeTodayCount = NULL, systemFields = "true", sortID = NULL, 
+                         sortDirection = NULL, showRequestURL = FALSE, showsFields = FALSE) {
   
   entries_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier ,"/entries.json")
   
@@ -76,6 +78,16 @@ form_entries <- function(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
   executedEntriesGetRst <- doRequest(entries_url, apiKey = ApiKey, query, showURL = showRequestURL)
   
   df_entries <- executedEntriesGetRst$Entries
+  
+  if(identical(showsFields, FALSE)) {
+    df_entries2 <- data.frame(t(df_entries))
+    df_entries2$colNames <- rownames(df_entries2)
+    
+    df_fields <- fields_info(ApiKey = apiKey, formIdentifier = formIdentifier) 
+    df_mergedColNames <- left_join(df_entries2, df_fields, by = c( "colNames" = "ID"))
+    
+    colnames(df_entries) <- ifelse( !is.null(df_mergedColNames$Title) , df_mergedColNames$Title, df_mergedColNames$colNames)
+  }
   
   return(df_entries)
 }
@@ -96,7 +108,7 @@ form_entries <- function(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
 #' 
 #' @export
 form_entriesCount <- function(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL, 
-                         includeTodayCount = "true", showRequestURL = FALSE) {
+                              includeTodayCount = "true", showRequestURL = FALSE) {
   
   entriesCount_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier ,"/entries/count.json")
   
