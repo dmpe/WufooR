@@ -23,7 +23,7 @@ form_entries(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
 
 \item{sortDirection}{- choose to sort your entries ASC (lowest to highest) or DESC (highest to lowest).}
 
-\item{showRequestURL}{- for debug purposes}
+\item{showRequestURL}{- use only for DEBUG purposes}
 }
 \value{
 EntryId - This value is the unique identifier for your entry.

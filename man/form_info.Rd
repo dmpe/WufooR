@@ -5,7 +5,7 @@
 \title{Gather details about the forms you have permission to access.}
 \usage{
 form_info(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
-  includeTodayCount = "false", showRequestURL = "false")
+  includeTodayCount = "false", showRequestURL = FALSE)
 }
 \arguments{
 \item{ApiKey}{- User's API key. Go to "https://yourName.wufoo.com/api/code/1/}
@@ -17,7 +17,7 @@ The call without the "formIdentifier" will return all forms.}
 
 \item{includeTodayCount}{- Will give you today’s entry count for the form.}
 
-\item{showRequestURL}{- for debug purposes}
+\item{showRequestURL}{- use only for DEBUG purposes}
 }
 \value{
 \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Forms-API}

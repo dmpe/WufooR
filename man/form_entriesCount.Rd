@@ -17,7 +17,7 @@ The call without the "formIdentifier" will return all forms.}
 
 \item{includeTodayCount}{- Will give you today’s entry count for the form.}
 
-\item{showRequestURL}{- for debug purposes}
+\item{showRequestURL}{- use only for DEBUG purposes}
 }
 \value{
 EntryCount - number of entries

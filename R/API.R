@@ -36,8 +36,6 @@ auth <- function(x) {
 doRequest <- function(url, queryParameters = NULL, apiKey = NULL, showURL = NULL) {
   
   if (is.null(apiKey)) {
-    # actually unnecessary; flawn logic because queryParameters will always contain API Key. 
-    # Yet for making sure that the user has set it, I'll let it go
     stop("Please assign your API Key ('Generic Access Token') ", call. = FALSE)
   } else {
     

@@ -57,7 +57,7 @@ form_info <- function(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
 #' Entry Manager will appear in this element.
 #' 
 #' @examples
-#' form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g")
+#' fet <- form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g")
 #' form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = TRUE)
 #' ## form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g")
 #' 
