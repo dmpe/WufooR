@@ -1,10 +1,15 @@
 #' @title Authentication for Wufoo Name
-#'
-#' @param NULL for example
 #' 
-#' @description methods written by Scott Chamberlain \url{https://github.com/sckott}
+#' @description method for setting your Wufoo Name permanently
+#' 
+#' @author Scott Chamberlain \url{https://github.com/sckott} for his \url{https://github.com/ropensci/rnoaa} package
+#' 
+#' @param x - an empty parameter, e.g. NULL
 #' 
 #' @note Wufoo currently restricts your API usage to 5000 requests per day.
+#' 
+#' @examples 
+#' options(Wufoo_Name = "johnmalc")
 #' 
 #' @export
 auth <- function(x) {
@@ -44,7 +49,7 @@ doRequest <- function(url, queryParameters = NULL, apiKey = NULL, showURL = NULL
 
     if (identical(showURL, TRUE)) {
       # was return_request$request$opts$url
-      cat("The requested URL has been this: ", return_request$request$url, "\n") 
+      cat("The requested URL has been this: ", getResponse$url, "\n") 
     }
     return(json_response)
   }

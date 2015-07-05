@@ -2,6 +2,7 @@
 
 export(auth)
 export(form_entries)
+export(form_entriesCount)
 export(form_info)
 export(user_info)
 import(httr)

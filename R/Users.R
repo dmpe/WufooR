@@ -4,7 +4,7 @@
 #' 
 #' @param ApiKey - User's API key. Go to "https://yourName.wufoo.com/api/code/1/
 #' @param wufoo_name - Default: \code{\link{auth}}
-#' @param showRequestURL - for debug purposes
+#' @param showRequestURL - use only for DEBUG purposes
 #' 
 #' @return \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Users-API}
 #' 
@@ -13,7 +13,7 @@
 #' 
 #' 
 #' @export
-user_info <- function(ApiKey, wufoo_name = auth(NULL), showRequestURL = "false") {
+user_info <- function(ApiKey, wufoo_name = auth(NULL), showRequestURL = FALSE) {
   
   user_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/users.json")
   

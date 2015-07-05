@@ -2,22 +2,28 @@
 % Please edit documentation in R/Form.R
 \name{form_entries}
 \alias{form_entries}
-\title{Return Statistics}
+\title{Used to gather the data that users have submitted to your form.}
 \usage{
 form_entries(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
-  includeTodayCount = "false", showRequestURL = "false",
-  systemFields = "true")
+  includeTodayCount = "false", systemFields = "true", sortID = NULL,
+  sortDirection = NULL, showRequestURL = FALSE)
 }
 \arguments{
+\item{ApiKey}{- User's API key. Go to "https://yourName.wufoo.com/api/code/1/}
+
 \item{wufoo_name}{- Default: \code{\link{auth}}}
 
-\item{formIdentifier}{- This placeholder must be replaced with your URL or hash.}
+\item{formIdentifier}{- must be replaced with your form's URL or hash.}
 
-\item{includeTodayCount}{}
+\item{includeTodayCount}{- Will give you today’s entry count for the form.}
 
-\item{showRequestURL}{}
+\item{systemFields}{- return system fields. Default: true}
 
-\item{systemFields}{}
+\item{sortID}{- sort on a single ID, as retrieved from the Fields API.}
+
+\item{sortDirection}{- choose to sort your entries ASC (lowest to highest) or DESC (highest to lowest).}
+
+\item{showRequestURL}{- for debug purposes}
 }
 \value{
 EntryId - This value is the unique identifier for your entry.
@@ -35,9 +41,11 @@ UpdatedBy - The user name of the person who updated the entry in the
 Entry Manager will appear in this element.
 }
 \description{
-If you have 5 submission to your form, you’ll have 5 elements (rows) in the return value from your API call.
+If you have 5 submissions to your form, you’ll have 5 elements (rows) in the return.
 }
 \examples{
-form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ")
+form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g")
+form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = TRUE)
+## form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g")
 }
 

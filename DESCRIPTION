@@ -2,7 +2,7 @@ Package: WufooR
 Type: Package
 Title: API Wrapper for Wufoo - the online surways made easy
 Description: Acquire statistics about your respondents. 
-Version: 0.1
+Version: 0.2
 Date: 2015-07-04
 Authors@R: c(
     person("John", "Malc", email = "cincenko@outlook.com", role = c("aut", "cre"),  comment = "@dmpe")
