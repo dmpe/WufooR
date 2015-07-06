@@ -47,7 +47,7 @@ auth_key <- function(x) {
 #' @import jsonlite
 #' 
 #' @noRd
-doRequest <- function(url, queryParameters = NULL, apiKey = NULL, showURL = NULL) {
+doRequest <- function(url, queryParameters = NULL, apiKey = auth_key(NULL), showURL = NULL) {
 
   if (is.null(apiKey)) {
     stop("Please assign your API Key", call. = FALSE)

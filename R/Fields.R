@@ -22,13 +22,13 @@
 #' fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 #' 
 #' @export
-fields_info <- function(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL), formIdentifier = NULL, showRequestURL = FALSE) {
+fields_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, showRequestURL = FALSE) {
   
   fields_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier ,"/fields.json")
   
   query = list(formIdentifier = formIdentifier)
   
-  executedFieldsGetRst <- doRequest(fields_url, apiKey = wufoo_api, query, showURL = showRequestURL)
+  executedFieldsGetRst <- doRequest(fields_url, query, showURL = showRequestURL)
   
   df_fields <- executedFieldsGetRst$Fields
   return(df_fields)
