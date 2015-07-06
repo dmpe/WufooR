@@ -4,12 +4,10 @@
 \alias{form_entriesCount}
 \title{Return number of responses to your form}
 \usage{
-form_entriesCount(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL),
-  formIdentifier = NULL, showRequestURL = FALSE)
+form_entriesCount(wufoo_name = auth_name(NULL), formIdentifier = NULL,
+  showRequestURL = FALSE)
 }
 \arguments{
-\item{wufoo_api}{- User's API Key. Default: \code{\link{auth_api}}.}
-
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_key}}}
 
 \item{formIdentifier}{- this will give you information about just one form. The call without

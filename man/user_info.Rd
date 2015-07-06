@@ -4,15 +4,14 @@
 \alias{user_info}
 \title{Shows User's Information}
 \usage{
-user_info(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL),
-  showRequestURL = FALSE)
+user_info(wufoo_name = auth_name(NULL), showRequestURL = FALSE)
 }
 \arguments{
-\item{wufoo_api}{- User's API Key. Default: \code{\link{auth_api}}.}
-
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_key}}}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
+
+\item{wufoo_api}{- User's API Key. Default: \code{\link{auth_api}}.}
 }
 \value{
 \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Users-API}

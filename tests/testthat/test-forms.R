@@ -7,18 +7,15 @@ context("Forms")
 
 test_that("Form request returns 17 rows, always", {
   userDB <- form_info()
-  expect_equal(dim(userDB)[1], 17)
+  expect_equal(dim(userDB)[2], 17)
 })
-
 
 test_that("Form returns entries, with the requested URL", {
-  userDB <- form_entries(formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = TRUE)
+  userDB <- form_entries(formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = FALSE)
   
   expect_more_than(length(userDB), 1)
-  expect_output(form_entries(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE), 
-                 "The requested URL has been this:")
+  expect_output(form_entries(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE), "The requested URL has been this:")
 })
-
 
 
 

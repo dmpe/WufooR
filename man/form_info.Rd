@@ -4,13 +4,10 @@
 \alias{form_info}
 \title{Gather details about the forms you have permission to access.}
 \usage{
-form_info(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL),
-  formIdentifier = NULL, includeTodayCount = "false",
-  showRequestURL = FALSE)
+form_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
+  includeTodayCount = "false", showRequestURL = FALSE)
 }
 \arguments{
-\item{wufoo_api}{- User's API Key. Default: \code{\link{auth_api}}.}
-
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_key}}}
 
 \item{formIdentifier}{- this will give you information about just one form. The call without

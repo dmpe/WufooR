@@ -12,12 +12,12 @@
 #' user_info()
 #' 
 #' @export
-user_info <- function(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL), showRequestURL = FALSE) {
+user_info <- function(wufoo_name = auth_name(NULL), showRequestURL = FALSE) {
   
   user_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/users.json")
   
-  executedUserGetRst <- doRequest(user_url, apiKey = wufoo_api, showURL = showRequestURL)
-  df_user <- t(executedUserGetRst$Users)
+  executedUserGetRst <- doRequest(user_url, showURL = showRequestURL)
+  df_user <- executedUserGetRst$Users
   
   return(df_user)
 }

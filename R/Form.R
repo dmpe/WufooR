@@ -15,15 +15,15 @@
 #' form_info()
 #' 
 #' @export
-form_info <- function(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL), formIdentifier = NULL,
-                      includeTodayCount = "false", showRequestURL = FALSE) {
+form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, includeTodayCount = "false", 
+                      showRequestURL = FALSE) {
   
   form_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms.json")
   
   query = list(formIdentifier = formIdentifier, includeTodayCount = includeTodayCount)
   
-  executedFormGetRst <- doRequest(form_url, apiKey = wufoo_api, query, showURL = showRequestURL)
-  df_forms <- t(executedFormGetRst$Forms)
+  executedFormGetRst <- doRequest(form_url, query, showURL = showRequestURL)
+  df_forms <- executedFormGetRst$Forms
   
   return(df_forms)
 }
@@ -103,12 +103,11 @@ form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, sy
 #' form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 #' 
 #' @export
-form_entriesCount <- function(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL), 
-                              formIdentifier = NULL, showRequestURL = FALSE) {
+form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, showRequestURL = FALSE) {
   
-  entriesCount_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier ,"/entries/count.json")
+  entriesCount_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier, "/entries/count.json")
   
-  executedEntriesCountGetRst <- doRequest(entriesCount_url, apiKey = wufoo_api, query, showURL = showRequestURL)
+  executedEntriesCountGetRst <- doRequest(entriesCount_url, query, showURL = showRequestURL)
   
   return(executedEntriesCountGetRst$EntryCount)
 }
