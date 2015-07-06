@@ -53,7 +53,7 @@ doRequest <- function(url, queryParameters = NULL, apiKey = auth_key(NULL), show
     stop("Please assign your API Key", call. = FALSE)
   } else {
     
-    getResponse <- GET(url, query = queryParameters, config(userpwd = paste0(apiKey,":fakepassword")))
+    getResponse <- GET(url = url, query = queryParameters, config(userpwd = paste0(apiKey,":fakepassword")))
   
     stop_for_status(getResponse)
     rawTextResponse <- content(getResponse, as = "text")

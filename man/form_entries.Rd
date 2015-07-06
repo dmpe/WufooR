@@ -4,13 +4,11 @@
 \alias{form_entries}
 \title{Gather the data that users have submitted to your form.}
 \usage{
-form_entries(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL),
-  formIdentifier = NULL, systemFields = "true", sortID = NULL,
-  sortDirection = NULL, columnNames = FALSE, showRequestURL = FALSE)
+form_entries(wufoo_name = auth_name(NULL), formIdentifier = NULL,
+  systemFields = "true", sortID = NULL, sortDirection = NULL,
+  columnNames = FALSE, showRequestURL = FALSE)
 }
 \arguments{
-\item{wufoo_api}{- User's API Key. Default: \code{\link{auth_api}}.}
-
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_key}}}
 
 \item{formIdentifier}{- must be replaced with your form's URL or hash.}

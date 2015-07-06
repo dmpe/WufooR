@@ -4,12 +4,10 @@
 \alias{fields_info}
 \title{Shows Form's Fields}
 \usage{
-fields_info(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL),
-  formIdentifier = NULL, showRequestURL = FALSE)
+fields_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
+  showRequestURL = FALSE)
 }
 \arguments{
-\item{wufoo_api}{- User's API Key. Default: \code{\link{auth_api}}.}
-
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_key}}}
 
 \item{formIdentifier}{- this will give you information about just one form. The call without
@@ -40,5 +38,6 @@ listing of FieldId values. Each FieldId corresponds to a value in the Entries AP
 }
 \examples{
 fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
+fields_info(formIdentifier = "z5kqx7h1gtvg4g")
 }
 

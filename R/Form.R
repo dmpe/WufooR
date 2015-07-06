@@ -64,15 +64,14 @@ form_info <- function(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL), 
 #' @import dplyr
 #' 
 #' @export
-form_entries <- function(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL), formIdentifier = NULL, 
-                         systemFields = "true", sortID = NULL, sortDirection = NULL, 
-                         columnNames = FALSE, showRequestURL = FALSE) {
+form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, systemFields = "true", 
+                         sortID = NULL, sortDirection = NULL, columnNames = FALSE, showRequestURL = FALSE) {
 
   entries_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier ,"/entries.json")
   
   query = list(systemFields = systemFields, sort = sortID, sortDirection = sortDirection)
   
-  executedEntriesGetRst <- doRequest(entries_url, apiKey = wufoo_api, query, showURL = showRequestURL)
+  executedEntriesGetRst <- doRequest(entries_url, query, showURL = showRequestURL)
   
   df_entries <- executedEntriesGetRst$Entries
   
@@ -80,10 +79,10 @@ form_entries <- function(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL
     df_entries2 <- data.frame(t(df_entries))
     df_entries2$colNames <- rownames(df_entries2)
     
-    df_fields <- fields_info(apiKey, formIdentifier) 
-    df_mergedColNames <- left_join(df_entries2, df_fields, by = c( "colNames" = "ID"))
+    df_fields <- fields_info(formIdentifier = formIdentifier) 
+    df_mergedColNames <- left_join(df_entries2, df_fields, by = c("colNames" = "ID"))
     
-    colnames(df_entries) <- ifelse( !is.null(df_mergedColNames$Title), df_mergedColNames$Title, 
+    colnames(df_entries) <- ifelse(!is.na(df_mergedColNames$Title), df_mergedColNames$Title, 
                                     df_mergedColNames$colNames)
   }
   
