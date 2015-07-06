@@ -3,7 +3,7 @@
 \name{auth_name}
 \alias{auth_key}
 \alias{auth_name}
-\title{Authentication for Wufoo Name}
+\title{Authentication}
 \usage{
 auth_name(x)
 

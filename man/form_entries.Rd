@@ -9,7 +9,7 @@ form_entries(wufoo_name = auth_name(NULL), formIdentifier = NULL,
   columnNames = FALSE, showRequestURL = FALSE)
 }
 \arguments{
-\item{wufoo_name}{- User's Name. Default: \code{\link{auth_key}}}
+\item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
 \item{formIdentifier}{- must be replaced with your form's URL or hash.}
 

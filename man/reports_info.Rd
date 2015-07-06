@@ -4,13 +4,10 @@
 \alias{reports_info}
 \title{Gather details about the reports you have permission to view.}
 \usage{
-reports_info(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL),
-  showRequestURL = FALSE)
+reports_info(wufoo_name = auth_name(NULL), showRequestURL = FALSE)
 }
 \arguments{
-\item{wufoo_api}{- User's API Key. Default: \code{\link{auth_api}}.}
-
-\item{wufoo_name}{- User's Name. Default: \code{\link{auth_key}}}
+\item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 }

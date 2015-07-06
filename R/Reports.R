@@ -20,11 +20,11 @@
 #' @import jsonlite
 #' 
 #' @export
-reports_info <- function(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL), showRequestURL = FALSE) {
+reports_info <- function(wufoo_name = auth_name(NULL), showRequestURL = FALSE) {
   
   reports_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/reports.json")
   
-  executedReportsGetRst <- doRequest(reports_url, apiKey = wufoo_api, showURL = showRequestURL)
+  executedReportsGetRst <- doRequest(reports_url, showURL = showRequestURL)
   
   return(executedReportsGetRst$Reports)
 }

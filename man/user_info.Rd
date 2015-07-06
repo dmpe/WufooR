@@ -7,11 +7,9 @@
 user_info(wufoo_name = auth_name(NULL), showRequestURL = FALSE)
 }
 \arguments{
-\item{wufoo_name}{- User's Name. Default: \code{\link{auth_key}}}
+\item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
-
-\item{wufoo_api}{- User's API Key. Default: \code{\link{auth_api}}.}
 }
 \value{
 \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Users-API}
@@ -21,5 +19,8 @@ Shows information about the user.
 }
 \examples{
 user_info()
+}
+\references{
+wufoo_api - User's API Key. Default: \code{\link{auth_key}}.
 }
 

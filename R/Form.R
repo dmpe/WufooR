@@ -107,7 +107,7 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
   
   entriesCount_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier, "/entries/count.json")
   
-  executedEntriesCountGetRst <- doRequest(entriesCount_url, query, showURL = showRequestURL)
+  executedEntriesCountGetRst <- doRequest(entriesCount_url, showURL = showRequestURL)
   
   return(executedEntriesCountGetRst$EntryCount)
 }

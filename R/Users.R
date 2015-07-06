@@ -2,8 +2,8 @@
 #' 
 #' @description Shows information about the user. 
 #' 
-#' @param wufoo_api - User's API Key. Default: \code{\link{auth_api}}.
-#' @param wufoo_name - User's Name. Default: \code{\link{auth_key}}
+#' @references wufoo_api - User's API Key. Default: \code{\link{auth_key}}.
+#' @param wufoo_name - User's Name. Default: \code{\link{auth_name}}
 #' @param showRequestURL - use only for DEBUG purposes
 #' 
 #' @return \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Users-API}

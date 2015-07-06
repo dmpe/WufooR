@@ -8,7 +8,7 @@ fields_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
   showRequestURL = FALSE)
 }
 \arguments{
-\item{wufoo_name}{- User's Name. Default: \code{\link{auth_key}}}
+\item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
 \item{formIdentifier}{- this will give you information about just one form. The call without
 the "formIdentifier" will return all forms.}

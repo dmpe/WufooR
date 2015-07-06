@@ -1,4 +1,4 @@
-#' @title Authentication for Wufoo Name
+#' @title Authentication
 #' 
 #' @description Methods for setting your Wufoo Name & API Key, permanently. For both of them visit your
 #' profile. For API Key go to \code{https://yourName.wufoo.com/api/code/1/}
