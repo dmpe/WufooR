@@ -1,25 +1,38 @@
 #' @title Authentication for Wufoo Name
 #' 
-#' @description method for setting your Wufoo Name permanently
+#' @description Methods for setting your Wufoo Name & API Key, permanently. For both of them visit your
+#' profile. For API Key go to \code{https://yourName.wufoo.com/api/code/1/}
 #' 
-#' @author Scott Chamberlain \url{https://github.com/sckott} for his 
-#' \url{https://github.com/ropensci/rnoaa} package
+#' @author The code for these methods has been developed by Scott Chamberlain \url{https://github.com/sckott} for his 
+#' \url{https://github.com/ropensci/rnoaa} package. His copyright!
 #' 
 #' @param x - an empty parameter, e.g. NULL
 #' 
 #' @note Wufoo currently restricts your API usage to 5000 requests per day.
 #' 
 #' @examples 
-#' options(Wufoo_Name = "johnmalc")
+#' options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")
 #' 
 #' @export
-auth <- function(x) {
+auth_name <- function(x) {
   tmp <- if(is.null(x)) {
-    Sys.getenv("Wufoo_Name", "") 
+    Sys.getenv("Wufoo_Name", "")
   } else x
   
   if(tmp == "") {
     getOption("Wufoo_Name", stop("you need to set up your wofoo name"))
+  } else tmp
+}
+
+#' @rdname auth_name
+#' @export
+auth_key <- function(x) {
+  tmp <- if(is.null(x)) {
+    Sys.getenv("Wufoo_API", "")
+  } else x
+  
+  if(tmp == "") {
+    getOption("Wufoo_API",  stop("you need to set up your wofoo api key"))
   } else tmp
 }
 
@@ -32,12 +45,10 @@ auth <- function(x) {
 #' 
 #' @import httr
 #' @import jsonlite
-#' @importFrom utils globalVariables
 #' 
 #' @noRd
 doRequest <- function(url, queryParameters = NULL, apiKey = NULL, showURL = NULL) {
-  globalVariables("apiKey")
-  
+
   if (is.null(apiKey)) {
     stop("Please assign your API Key", call. = FALSE)
   } else {

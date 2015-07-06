@@ -1,4 +1,4 @@
-#' Used to gather details about the reports you have permission to view.
+#' Gather details about the reports you have permission to view.
 #' 
 #' @inheritParams form_info
 #' @inheritParams user_info
@@ -14,17 +14,17 @@
 #' @return Hash - An unchanging hashed value unique to this report on this user's account.
 #' 
 #' @examples
-#' reports_info(ApiKey = "F1QH-Q64B-BSBI-JASJ", showRequestURL = TRUE)
+#' reports_info(showRequestURL = TRUE)
 #' 
 #' @import httr
 #' @import jsonlite
 #' 
 #' @export
-reports_info <- function(ApiKey, wufoo_name = auth(NULL), showRequestURL = FALSE) {
+reports_info <- function(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL), showRequestURL = FALSE) {
   
   reports_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/reports.json")
   
-  executedReportsGetRst <- doRequest(reports_url, apiKey = ApiKey, showURL = showRequestURL)
+  executedReportsGetRst <- doRequest(reports_url, apiKey = wufoo_api, showURL = showRequestURL)
   
   return(executedReportsGetRst$Reports)
 }

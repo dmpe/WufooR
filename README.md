@@ -1,9 +1,11 @@
-[![Build Status](https://travis-ci.org/dmpe/wufoor.svg?branch=master)](https://travis-ci.org/dmpe/wufoor)
+<!--[![Build Status](https://travis-ci.org/dmpe/wufoor.svg?branch=master)](https://travis-ci.org/dmpe/wufoor)
 [![Coverage Status](https://coveralls.io/repos/dmpe/wufoor/badge.svg)](https://coveralls.io/r/dmpe/wufoor)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/wufoor)](http://cran.r-project.org/web/packages/wufoor)
-
+-->
 R package for Wufoo API
 =======
+
+This package doesn't support creating new forms. It can be only used to retrieve information about your respondents. 
 
 ### Installing (not yet on CRAN)
 
@@ -11,8 +13,9 @@ Use `devtools` to install the latest version from Github:
 
 ```
 library(devtools)
-devtools::install_github("dmpe/wufoor", build_vignettes = TRUE)
+devtools::install_github("dmpe/wufoor")
 ```
+
 Tested on Ubuntu 15.04 and Windows 10 (64 bit using [Revolution R Open](http://mran.revolutionanalytics.com/download/))
 
 ### Looking for examples and current implementation status ?

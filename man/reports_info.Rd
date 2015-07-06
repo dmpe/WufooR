@@ -2,14 +2,15 @@
 % Please edit documentation in R/Reports.R
 \name{reports_info}
 \alias{reports_info}
-\title{Used to gather details about the reports you have permission to view.}
+\title{Gather details about the reports you have permission to view.}
 \usage{
-reports_info(ApiKey, wufoo_name = auth(NULL), showRequestURL = FALSE)
+reports_info(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL),
+  showRequestURL = FALSE)
 }
 \arguments{
-\item{ApiKey}{- User's API key. Go to "https://yourName.wufoo.com/api/code/1/}
+\item{wufoo_api}{- User's API Key. Default: \code{\link{auth_api}}.}
 
-\item{wufoo_name}{- Default: \code{\link{auth}}}
+\item{wufoo_name}{- User's Name. Default: \code{\link{auth_key}}}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 }
@@ -31,9 +32,9 @@ DateUpdated - A timestamp of when the report was lasted edited in the Wufoo Repo
 Hash - An unchanging hashed value unique to this report on this user's account.
 }
 \description{
-Used to gather details about the reports you have permission to view.
+Gather details about the reports you have permission to view.
 }
 \examples{
-reports_info(ApiKey = "F1QH-Q64B-BSBI-JASJ", showRequestURL = TRUE)
+reports_info(showRequestURL = TRUE)
 }
 

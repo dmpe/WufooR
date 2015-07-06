@@ -2,20 +2,18 @@
 % Please edit documentation in R/Form.R
 \name{form_entriesCount}
 \alias{form_entriesCount}
-\title{Entry Count}
+\title{Return number of responses to your form}
 \usage{
-form_entriesCount(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
-  includeTodayCount = "true", showRequestURL = FALSE)
+form_entriesCount(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL),
+  formIdentifier = NULL, showRequestURL = FALSE)
 }
 \arguments{
-\item{ApiKey}{- User's API key. Go to "https://yourName.wufoo.com/api/code/1/}
+\item{wufoo_api}{- User's API Key. Default: \code{\link{auth_api}}.}
 
-\item{wufoo_name}{- Default: \code{\link{auth}}}
+\item{wufoo_name}{- User's Name. Default: \code{\link{auth_key}}}
 
 \item{formIdentifier}{- this will give you information about just one form. The call without
 the "formIdentifier" will return all forms.}
-
-\item{includeTodayCount}{- Will give you today's entry count for the form.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 }
@@ -23,10 +21,12 @@ the "formIdentifier" will return all forms.}
 EntryCount - number of entries
 }
 \description{
-Entry Count
+Return number of responses to your form
 }
 \examples{
-form_entriesCount(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g",
-showRequestURL = TRUE)
+form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
+}
+\seealso{
+\url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Entries-GET-API#entrycount}
 }
 

@@ -11,37 +11,43 @@ vignette: >
 
 ## Authentication
 
-You need to use store your login name (subdomain) and api key first. 
+To access data from your surways, you firstly need to store your login name (subdomain) and API Key. This can be done in two ways as described below. 
 
-The methods used here has been written by [Scott Chamberlain](https://github.com/sckott), who wrote in the NEWS file of his `rnoaa` [package](https://github.com/ropensci/rnoaa/blob/master/NEWS):
+Initially, this has been written by [Scott Chamberlain](https://github.com/sckott), who wrote it in the NEWS file of his `rnoaa` [package](https://github.com/ropensci/rnoaa/blob/master/NEWS). I have addapted the names of my functions accordingly.
 
-> A new helper function `auth()` looks for one of two stored keys, as an
-environment variable under the name `Wufoo_Name`, or an option variable under the name
-`Wufoo_Name`. 
+> A new helper function `auth_name()/auth_api()` looks for one of two stored keys, as an
+environment variable under the name `Wufoo_Name`/`Wufoo_API`, or an option variable under the name
+`Wufoo_Name`/`Wufoo_API`. 
 
 > Environment variables can be set during session like `Sys.setenv(VAR = "...")`,
 or stored long term in your `.Renviron` file. Option variables can be set during session
 like `options(var = "...")`, or stored long term in your `.Rprofile` file.
 
-I kindly apply same code, slightly adapted.
-
 ```{r}
 library(WufooR)
 
-# options(Wufoo_Name = "YOUR_NAME")
-options(Wufoo_Name = "johnmalc")
-
-auth(NULL) # checks that it works
+options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")
 ```
 
+Print information about my name & api key.
 
 ```{r}
-user_info(ApiKey = "F1QH-Q64B-BSBI-JASJ")
+auth_name(NULL)
+auth_key(NULL)
 ```
 
+## Use Cases 
+ 
+Let's print some information about the user.
 
 ```{r}
-form_info(ApiKey = "F1QH-Q64B-BSBI-JASJ")
+user_info()
+```
+
+And now about the forms you have access to.
+
+```{r}
+form_info()
 
 ```
 

@@ -1,15 +1,16 @@
 ## ------------------------------------------------------------------------
 library(WufooR)
 
-# options(Wufoo_Name = "YOUR_NAME")
-options(Wufoo_Name = "johnmalc")
-
-auth(NULL) # checks that it works
+options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")
 
 ## ------------------------------------------------------------------------
-user_info(ApiKey = "F1QH-Q64B-BSBI-JASJ")
+auth_name(NULL)
+auth_key(NULL)
 
 ## ------------------------------------------------------------------------
-form_info(ApiKey = "F1QH-Q64B-BSBI-JASJ")
+user_info()
+
+## ------------------------------------------------------------------------
+form_info()
 
 

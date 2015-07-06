@@ -12,34 +12,38 @@
 #' @return \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Forms-API}
 #' 
 #' @examples 
-#' View(form_info(ApiKey = "F1QH-Q64B-BSBI-JASJ"))
+#' form_info()
 #' 
 #' @export
-form_info <- function(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
+form_info <- function(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL), formIdentifier = NULL,
                       includeTodayCount = "false", showRequestURL = FALSE) {
   
   form_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms.json")
   
   query = list(formIdentifier = formIdentifier, includeTodayCount = includeTodayCount)
   
-  executedFormGetRst <- doRequest(form_url, apiKey = ApiKey, query, showURL = showRequestURL)
+  executedFormGetRst <- doRequest(form_url, apiKey = wufoo_api, query, showURL = showRequestURL)
   df_forms <- t(executedFormGetRst$Forms)
   
   return(df_forms)
 }
 
 
-#' Used to gather the data that users have submitted to your form.
+#' Gather the data that users have submitted to your form.
+#' 
+#' @seealso \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Entries-GET-API}
 #' 
 #' @inheritParams form_info
 #' @inheritParams user_info
 #' 
+#' @section TODO: or more URLs  
+#' 
 #' @param systemFields - return system fields. Default: true
 #' @param formIdentifier - must be replaced with your form's URL or hash.
-#' @param sortID - sort on a single ID, as retrieved from the Fields API.
+#' @param columnNames - a MUST: How should be column names be called. Either "Field1", "Field2" 
+#' etc. or "First Name", "Last Name" (tries to make best guess). Default to the second option. 
+#' @param sortID - sort on a single ID, as retrieved from the \code{\link{fields_info}}.
 #' @param sortDirection - choose to sort your entries ASC (lowest to highest) or DESC (highest to lowest).
-#' @param showsFields - a MUST: How should be column names be called. Either "Field1", "Field2" 
-#' etc. or "First Name", "Last Name". Default to the second option. 
 #' 
 #' @description If you have 5 submissions to your form, you'll have 5 elements (rows) in the return.
 #' 
@@ -54,39 +58,41 @@ form_info <- function(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
 #' appear in this element.
 #' 
 #' @examples
-#' form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g")
-#' form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g", 
-#' systemFields = "false", showRequestURL = TRUE)
+#' form_entries(formIdentifier = "z5kqx7h1gtvg4g")
+#' form_entries(formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = TRUE)
 #' 
 #' @import dplyr
 #' 
 #' @export
-form_entries <- function(ApiKey = "", wufoo_name = auth(NULL), formIdentifier = NULL, 
-                         includeTodayCount = NULL, systemFields = "true", sortID = NULL, 
-                         sortDirection = NULL, showRequestURL = FALSE, showsFields = FALSE) {
+form_entries <- function(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL), formIdentifier = NULL, 
+                         systemFields = "true", sortID = NULL, sortDirection = NULL, 
+                         columnNames = FALSE, showRequestURL = FALSE) {
 
   entries_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier ,"/entries.json")
   
-  query = list(includeTodayCount = includeTodayCount, systemFields = systemFields, sort = sortID, sortDirection = sortDirection)
+  query = list(systemFields = systemFields, sort = sortID, sortDirection = sortDirection)
   
-  executedEntriesGetRst <- doRequest(entries_url, apiKey = ApiKey, query, showURL = showRequestURL)
+  executedEntriesGetRst <- doRequest(entries_url, apiKey = wufoo_api, query, showURL = showRequestURL)
   
   df_entries <- executedEntriesGetRst$Entries
   
-  if(identical(showsFields, FALSE)) {
+  if(identical(columnNames, FALSE)) {
     df_entries2 <- data.frame(t(df_entries))
     df_entries2$colNames <- rownames(df_entries2)
     
-    df_fields <- fields_info(ApiKey = apiKey, formIdentifier = formIdentifier) 
+    df_fields <- fields_info(apiKey = wufoo_api, formIdentifier = formIdentifier) 
     df_mergedColNames <- left_join(df_entries2, df_fields, by = c( "colNames" = "ID"))
     
-    colnames(df_entries) <- ifelse( !is.null(df_mergedColNames$Title) , df_mergedColNames$Title, df_mergedColNames$colNames)
+    colnames(df_entries) <- ifelse( !is.null(df_mergedColNames$Title), df_mergedColNames$Title, 
+                                    df_mergedColNames$colNames)
   }
   
   return(df_entries)
 }
 
-#' Entry Count
+#' Return number of responses to your form
+#' 
+#' @seealso \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Entries-GET-API#entrycount}
 #' 
 #' @inheritParams form_info
 #' @inheritParams user_info
@@ -95,18 +101,15 @@ form_entries <- function(ApiKey = "", wufoo_name = auth(NULL), formIdentifier = 
 #' @return EntryCount - number of entries
 #' 
 #' @examples
-#' form_entriesCount(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g", 
-#' showRequestURL = TRUE)
+#' form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 #' 
 #' @export
-form_entriesCount <- function(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL, 
-                              includeTodayCount = "true", showRequestURL = FALSE) {
+form_entriesCount <- function(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL), 
+                              formIdentifier = NULL, showRequestURL = FALSE) {
   
   entriesCount_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier ,"/entries/count.json")
   
-  query = list(includeTodayCount = includeTodayCount)
-  
-  executedEntriesCountGetRst <- doRequest(entriesCount_url, apiKey = ApiKey, query, showURL = showRequestURL)
+  executedEntriesCountGetRst <- doRequest(entriesCount_url, apiKey = wufoo_api, query, showURL = showRequestURL)
   
   return(executedEntriesCountGetRst$EntryCount)
 }

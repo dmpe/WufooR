@@ -1,4 +1,4 @@
-#' @title Fields
+#' @title Shows Form's Fields
 #' 
 #' @description The Fields API describes the hierarchy of your data. At the heart of this API is the
 #' listing of FieldId values. Each FieldId corresponds to a value in the Entries API.
@@ -19,16 +19,16 @@
 #' @inheritParams form_info
 #' 
 #' @examples 
-#' fields_info(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
+#' fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 #' 
 #' @export
-fields_info <- function(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL, showRequestURL = FALSE) {
+fields_info <- function(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL), formIdentifier = NULL, showRequestURL = FALSE) {
   
   fields_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier ,"/fields.json")
   
   query = list(formIdentifier = formIdentifier)
   
-  executedFieldsGetRst <- doRequest(fields_url, apiKey = ApiKey, query, showURL = showRequestURL)
+  executedFieldsGetRst <- doRequest(fields_url, apiKey = wufoo_api, query, showURL = showRequestURL)
   
   df_fields <- executedFieldsGetRst$Fields
   return(df_fields)

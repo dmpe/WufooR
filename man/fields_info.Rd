@@ -2,15 +2,15 @@
 % Please edit documentation in R/Fields.R
 \name{fields_info}
 \alias{fields_info}
-\title{Fields}
+\title{Shows Form's Fields}
 \usage{
-fields_info(ApiKey, wufoo_name = auth(NULL), formIdentifier = NULL,
-  showRequestURL = FALSE)
+fields_info(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL),
+  formIdentifier = NULL, showRequestURL = FALSE)
 }
 \arguments{
-\item{ApiKey}{- User's API key. Go to "https://yourName.wufoo.com/api/code/1/}
+\item{wufoo_api}{- User's API Key. Default: \code{\link{auth_api}}.}
 
-\item{wufoo_name}{- Default: \code{\link{auth}}}
+\item{wufoo_name}{- User's Name. Default: \code{\link{auth_key}}}
 
 \item{formIdentifier}{- this will give you information about just one form. The call without
 the "formIdentifier" will return all forms.}
@@ -39,6 +39,6 @@ The Fields API describes the hierarchy of your data. At the heart of this API is
 listing of FieldId values. Each FieldId corresponds to a value in the Entries API.
 }
 \examples{
-fields_info(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
+fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 }
 

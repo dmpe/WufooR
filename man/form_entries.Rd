@@ -2,31 +2,29 @@
 % Please edit documentation in R/Form.R
 \name{form_entries}
 \alias{form_entries}
-\title{Used to gather the data that users have submitted to your form.}
+\title{Gather the data that users have submitted to your form.}
 \usage{
-form_entries(ApiKey = "", wufoo_name = auth(NULL), formIdentifier = NULL,
-  includeTodayCount = NULL, systemFields = "true", sortID = NULL,
-  sortDirection = NULL, showRequestURL = FALSE, showsFields = FALSE)
+form_entries(wufoo_api = auth_key(NULL), wufoo_name = auth_name(NULL),
+  formIdentifier = NULL, systemFields = "true", sortID = NULL,
+  sortDirection = NULL, columnNames = FALSE, showRequestURL = FALSE)
 }
 \arguments{
-\item{ApiKey}{- User's API key. Go to "https://yourName.wufoo.com/api/code/1/}
+\item{wufoo_api}{- User's API Key. Default: \code{\link{auth_api}}.}
 
-\item{wufoo_name}{- Default: \code{\link{auth}}}
+\item{wufoo_name}{- User's Name. Default: \code{\link{auth_key}}}
 
 \item{formIdentifier}{- must be replaced with your form's URL or hash.}
 
-\item{includeTodayCount}{- Will give you today's entry count for the form.}
-
 \item{systemFields}{- return system fields. Default: true}
 
-\item{sortID}{- sort on a single ID, as retrieved from the Fields API.}
+\item{sortID}{- sort on a single ID, as retrieved from the \code{\link{fields_info}}.}
 
 \item{sortDirection}{- choose to sort your entries ASC (lowest to highest) or DESC (highest to lowest).}
 
-\item{showRequestURL}{- use only for DEBUG purposes}
+\item{columnNames}{- a MUST: How should be column names be called. Either "Field1", "Field2"
+etc. or "First Name", "Last Name" (tries to make best guess). Default to the second option.}
 
-\item{showsFields}{- a MUST: How should be column names be called. Either "Field1", "Field2"
-etc. or "First Name", "Last Name". Default to the second option.}
+\item{showRequestURL}{- use only for DEBUG purposes}
 }
 \value{
 EntryId - This value is the unique identifier for your entry.
@@ -46,9 +44,14 @@ appear in this element.
 \description{
 If you have 5 submissions to your form, you'll have 5 elements (rows) in the return.
 }
+\section{TODO}{
+ or more URLs
+}
 \examples{
-form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g")
-form_entries(ApiKey = "F1QH-Q64B-BSBI-JASJ", formIdentifier = "z5kqx7h1gtvg4g",
-systemFields = "false", showRequestURL = TRUE)
+form_entries(formIdentifier = "z5kqx7h1gtvg4g")
+form_entries(formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = TRUE)
+}
+\seealso{
+\url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Entries-GET-API}
 }
 

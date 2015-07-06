@@ -1,8 +1,8 @@
 Package: WufooR
 Type: Package
-Title: API Wrapper for Wufoo - The Online Surways Made Easy
+Title: API Wrapper for Wufoo.com - The Online Surways Made Easy
 Description: Acquire statistics about your respondents. 
-Version: 0.2
+Version: 0.3
 Date: 2015-07-04
 Authors@R: c(
     person("John", "Malc", email = "cincenko@outlook.com", role = c("aut", "cre"), comment = "@dmpe")
@@ -13,8 +13,7 @@ Depends:
 Imports:
   httr (>= 1.0.0),
   jsonlite (>= 0.9.16),
-  dplyr (>= 0.4.2), 
-  utils
+  dplyr (>= 0.4.2)
 Suggests:
   roxygen2 (>= 4.1.0),
   knitr (>= 1.10.5),
