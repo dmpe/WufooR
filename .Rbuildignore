@@ -5,6 +5,7 @@
 .DS_Store
 LICENSE
 test.r
+.mailmap
 ^CONDUCT\.md$
 ^revdep$
 ^cran-comments\.md$

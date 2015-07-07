@@ -36,8 +36,6 @@ form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, inclu
 #' @inheritParams form_info
 #' @inheritParams user_info
 #' 
-#' @section TODO: or more URLs  
-#' 
 #' @param systemFields - return system fields. Default: true
 #' @param formIdentifier - must be replaced with your form's URL or hash.
 #' @param columnNames - a MUST: How should be column names be called. Either "Field1", "Field2" 
@@ -75,17 +73,22 @@ form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, sy
   
   df_entries <- executedEntriesGetRst$Entries
   
+  # Make column names more understandable; use names of fields and apply them to the data frame
   if(identical(columnNames, FALSE)) {
     df_entries2 <- data.frame(t(df_entries))
     df_entries2$colNames <- rownames(df_entries2)
     
     df_fields <- fields_info(formIdentifier = formIdentifier) 
+    
+    # Merge two datasets and later replace names of `df_entries` with those in `df_mergedColNames`
     df_mergedColNames <- left_join(df_entries2, df_fields, by = c("colNames" = "ID"))
     
     colnames(df_entries) <- ifelse(!is.na(df_mergedColNames$Title), df_mergedColNames$Title, 
                                     df_mergedColNames$colNames)
   }
   
+  df_entries[df_entries == ""] <- NA 
+
   return(df_entries)
 }
 
@@ -113,6 +116,32 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 }
 
 
+#' Return number of responses to your form, from CSV format
+#' 
+#' @description This function downloads csv file from the url below. the 
+#' 
+#' @seealso \url{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv}
+#' 
+#' @inheritParams form_info
+#' @inheritParams user_info
+#' @inheritParams form_entries
+#' 
+#' @examples
+#' form_entriesCount(reportName = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
+#' 
+#' @export
+form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL, showRequestURL = FALSE) {
+  
+  entriesFromCSV_url <- paste0("https://", wufoo_name, ".wufoo.com/export/reports/manager/", reportName, ".csv")
+  
+  executedEntriesCSVGetRst <- doRequest(entriesFromCSV_url, showURL = showRequestURL)
+  
+  df_entriesFromCSV <- executedEntriesCSVGetRst$Entries
+  
+  df_entries[df_entries == ""] <- NA 
+  
+  return(df_entries)
+}
 
 
 

@@ -42,9 +42,6 @@ appear in this element.
 \description{
 If you have 5 submissions to your form, you'll have 5 elements (rows) in the return.
 }
-\section{TODO}{
- or more URLs
-}
 \examples{
 form_entries(formIdentifier = "z5kqx7h1gtvg4g")
 form_entries(formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = TRUE)
