@@ -3,6 +3,8 @@
 #' @inheritParams form_info
 #' @inheritParams user_info
 #' 
+#' @param reportName - the name (not the hash!) of the specific report
+#' 
 #' @return Name - This is the friendly name you chose when creating this form.
 #' @return IsPublic - Indicates whether or not the report is accessible through 
 #' the Url by the general public. This value is binary (1 = true, 0 = false).
@@ -15,16 +17,19 @@
 #' 
 #' @examples
 #' reports_info(showRequestURL = TRUE)
+#' reports_info(reportName = "untitled-report")
 #' 
 #' @import httr
 #' @import jsonlite
 #' 
 #' @export
-reports_info <- function(wufoo_name = auth_name(NULL), showRequestURL = FALSE) {
+reports_info <- function(wufoo_name = auth_name(NULL), reportName = NULL, showRequestURL = FALSE) {
   
   reports_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/reports.json")
   
-  executedReportsGetRst <- doRequest(reports_url, showURL = showRequestURL)
+  query <- list(reportName = reportName)
+  
+  executedReportsGetRst <- doRequest(reports_url, query, showURL = showRequestURL)
   
   return(executedReportsGetRst$Reports)
 }

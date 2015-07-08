@@ -5,21 +5,25 @@
 \title{Return number of responses to your form, from CSV format}
 \usage{
 form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
-  showRequestURL = FALSE)
+  showRequestURL = FALSE, ...)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
+\item{reportName}{- the name (not the hash!) of the specific report}
+
 \item{showRequestURL}{- use only for DEBUG purposes}
+
+\item{...}{- additional arguments for \code{\link{download.file}} function}
 }
 \description{
 This function downloads csv file from the url below.
 }
-\section{NOTE}{
+\section{TODO}{
  make it usesable
 }
 \examples{
-form_entriesCount(reportName = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
+form_entriesCount(reportName = "untitled-report", showRequestURL = TRUE)
 }
 \seealso{
 \url{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv}

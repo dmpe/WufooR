@@ -122,7 +122,9 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 #' 
 #' @seealso \url{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv}
 #' 
-#' @inheritParams form_info
+#' @param ... - additional arguments for \code{\link{download.file}} function
+#' 
+#' @inheritParams reports_info
 #' @inheritParams user_info
 #' @inheritParams form_entries
 #' 
@@ -132,15 +134,11 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 #' form_entriesCount(reportName = "untitled-report", showRequestURL = TRUE)
 #' 
 #' @export
-form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL, showRequestURL = FALSE) {
+form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL, showRequestURL = FALSE, ...) {
   
   entriesFromCSV_url <- paste0("https://", wufoo_name, ".wufoo.com/export/report/manager/", reportName, ".csv")
   
-  executedEntriesCSVGetRst <- doRequest(entriesFromCSV_url, showURL = showRequestURL)
-  
-  df_entriesFromCSV <- executedEntriesCSVGetRst$Entries
-  
-  df_entries[df_entries == ""] <- NA 
+  download.file(entriesFromCSV_url, , ...)
   
   return(df_entries)
 }
