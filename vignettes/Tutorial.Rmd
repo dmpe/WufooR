@@ -43,16 +43,17 @@ auth_key(NULL)
 Let's print some information about the user.
 
 ```{r}
-user_info()
+t(user_info())
 ```
 
 And now about the forms you have access to.
 
 ```{r}
-form_info()
+t(form_info())
 
 # Show responses to the form
 fe_1 <- form_entries(formIdentifier = "z5kqx7h1gtvg4g")
+
 sapply(fe_1, class)
 ```
 
@@ -70,6 +71,6 @@ fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 Do you have some reports ? If yes, then show me information abou them.
 
 ```{r}
-reports_info()
+t(reports_info())
 ```
 

@@ -18,6 +18,8 @@
 #' @inheritParams user_info
 #' @inheritParams form_info
 #' 
+#' @import plyr
+#' 
 #' @examples 
 #' fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 #' fields_info(formIdentifier = "z5kqx7h1gtvg4g")
@@ -29,7 +31,15 @@ fields_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, sho
   
   executedFieldsGetRst <- doRequest(fields_url, showURL = showRequestURL)
   
+  # Subfields go into a different data frame
   df_fields <- executedFieldsGetRst$Fields
+  df_fields$SubFields <- NULL
+  df_fields[df_fields == ""] <- NA
+  
+  df_subfields <- executedFieldsGetRst$Fields$SubFields
+  df_subfields <- rbind.fill(df_subfields, rbind)
+  df_subfields[df_subfields == ""] <- NA
+  
   return(df_fields)
 }
 
