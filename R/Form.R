@@ -78,10 +78,10 @@ form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, sy
     df_entries2 <- data.frame(t(df_entries))
     df_entries2$colNames <- rownames(df_entries2)
     
-    df_fields <- fields_info(formIdentifier = formIdentifier) 
+    fjoined <- fields_info(formIdentifier = formIdentifier) 
     
     # Merge two datasets and later replace names of `df_entries` with those in `df_mergedColNames`
-    df_mergedColNames <- left_join(df_entries2, df_fields, by = c("colNames" = "ID"))
+    df_mergedColNames <- left_join(df_entries2, fjoined, by = c("colNames" = "ID"))
     
     colnames(df_entries) <- ifelse(!is.na(df_mergedColNames$Title), df_mergedColNames$Title, 
                                     df_mergedColNames$colNames)

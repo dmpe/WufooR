@@ -53,6 +53,7 @@ t(form_info())
 
 # Show responses to the form
 fe_1 <- form_entries(formIdentifier = "z5kqx7h1gtvg4g")
+t(fe_1)
 
 sapply(fe_1, class)
 ```
@@ -68,7 +69,7 @@ Show its fields, with the requested URL (for debug purposes).
 fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 ```
 
-Do you have some reports ? If yes, then show me information abou them.
+Do you have some reports ? If yes, then show me information about them.
 
 ```{r}
 t(reports_info())

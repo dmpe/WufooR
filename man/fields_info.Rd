@@ -3,6 +3,9 @@
 \name{fields_info}
 \alias{fields_info}
 \title{Shows Form's Fields}
+\source{
+\url{http://www.exegetic.biz/blog/2014/06/concatenating-a-list-of-data-frames}
+}
 \usage{
 fields_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
   showRequestURL = FALSE)
@@ -35,6 +38,11 @@ as HasOtherField, the last choice is the Other field.
 \description{
 The Fields API describes the hierarchy of your data. At the heart of this API is the
 listing of FieldId values. Each FieldId corresponds to a value in the Entries API.
+}
+\note{
+This function returns 2 data frames. One containing only default fields, another one containing
+subfields as described \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Fields-API#Fancypants}.
+"These include name, shortname, checkbox, address, and likert."
 }
 \examples{
 fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)

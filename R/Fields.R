@@ -14,15 +14,21 @@
 #' @return OtherField - This value is true or false and is only set if the field has choices. Only 
 #' Multiple-Choice fields have the option of an Other field. When a Multiple-Choice field is marked
 #' as HasOtherField, the last choice is the Other field.
-#'
+#' 
+#' @note This function returns 2 data frames. One containing only default fields, another one containing 
+#' subfields as described \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Fields-API#Fancypants}. 
+#' "These include name, shortname, checkbox, address, and likert."
+#' 
 #' @inheritParams user_info
 #' @inheritParams form_info
 #' 
-#' @import plyr
+#' @import dplyr
 #' 
 #' @examples 
 #' fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 #' fields_info(formIdentifier = "z5kqx7h1gtvg4g")
+#' 
+#' @source \url{http://www.exegetic.biz/blog/2014/06/concatenating-a-list-of-data-frames}
 #' 
 #' @export
 fields_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, showRequestURL = FALSE) {
@@ -37,10 +43,17 @@ fields_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, sho
   df_fields[df_fields == ""] <- NA
   
   df_subfields <- executedFieldsGetRst$Fields$SubFields
-  df_subfields <- rbind.fill(df_subfields, rbind)
+  df_subfields <- bind_rows(df_subfields)
   df_subfields[df_subfields == ""] <- NA
   
-  return(df_fields)
+  fjoined <- arrange(full_join(df_fields, df_subfields, by = c("ID", "DefaultVal")), ID)
+  
+  fjoined$Title <- ifelse(!is.na(fjoined$Title), fjoined$Title, fjoined$Label)
+  
+  fjoined[fjoined$Title == "Name", ]$Title <- "First Name"
+  fjoined[fjoined$Title == "Last", ]$Title <- "Last Name"
+  
+  return(fjoined)
 }
 
 

@@ -15,6 +15,7 @@ t(form_info())
 
 # Show responses to the form
 fe_1 <- form_entries(formIdentifier = "z5kqx7h1gtvg4g")
+t(fe_1)
 
 sapply(fe_1, class)
 
