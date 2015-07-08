@@ -13,7 +13,10 @@ form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
 \item{showRequestURL}{- use only for DEBUG purposes}
 }
 \description{
-This function downloads csv file from the url below. the
+This function downloads csv file from the url below.
+}
+\section{NOTE}{
+ make it usesable
 }
 \examples{
 form_entriesCount(reportName = "z5kqx7h1gtvg4g", showRequestURL = TRUE)

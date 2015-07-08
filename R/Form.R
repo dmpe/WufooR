@@ -118,7 +118,7 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 
 #' Return number of responses to your form, from CSV format
 #' 
-#' @description This function downloads csv file from the url below. the 
+#' @description This function downloads csv file from the url below.
 #' 
 #' @seealso \url{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv}
 #' 
@@ -126,13 +126,15 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 #' @inheritParams user_info
 #' @inheritParams form_entries
 #' 
+#' @section TODO: make it usesable
+#' 
 #' @examples
-#' form_entriesCount(reportName = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
+#' form_entriesCount(reportName = "untitled-report", showRequestURL = TRUE)
 #' 
 #' @export
 form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL, showRequestURL = FALSE) {
   
-  entriesFromCSV_url <- paste0("https://", wufoo_name, ".wufoo.com/export/reports/manager/", reportName, ".csv")
+  entriesFromCSV_url <- paste0("https://", wufoo_name, ".wufoo.com/export/report/manager/", reportName, ".csv")
   
   executedEntriesCSVGetRst <- doRequest(entriesFromCSV_url, showURL = showRequestURL)
   
