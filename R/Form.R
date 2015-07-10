@@ -118,29 +118,31 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 
 #' Return number of responses to your form, from CSV format
 #' 
-#' @description This function downloads csv file from the url below.
+#' @description This function downloads csv file from the url below. 
+#' The report must be public, without being protected.
 #' 
 #' @seealso \url{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv}
-#' 
-#' @param ... - additional arguments for \code{\link{download.file}} function
-#' 
+#'  
 #' @inheritParams reports_info
 #' @inheritParams user_info
 #' @inheritParams form_entries
-#' 
-#' @section TODO: make it usesable
-#' 
+#'  
 #' @examples
-#' form_entriesCount(reportName = "untitled-report", showRequestURL = TRUE)
+#' form_entriesFromCSV(reportName = "untitled-report", showRequestURL = TRUE)
+#' 
+#' @import readr
 #' 
 #' @export
 form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL, showRequestURL = FALSE, ...) {
   
   entriesFromCSV_url <- paste0("https://", wufoo_name, ".wufoo.com/export/report/manager/", reportName, ".csv")
   
-  download.file(entriesFromCSV_url, , ...)
+  df_csv <- read_csv(entriesFromCSV_url, col_types = list(
+    `Date Created` = col_datetime(format = "%Y-%m-%d %H:%M:%S", tz = "UTC"), 
+    `Last Updated` = col_datetime(format = "%Y-%m-%d %H:%M:%S", tz = "UTC")
+  ))
   
-  return(df_entries)
+  return(df_csv)
 }
 
 

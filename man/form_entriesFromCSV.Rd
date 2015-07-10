@@ -13,17 +13,13 @@ form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
 \item{reportName}{- the name (not the hash!) of the specific report}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
-
-\item{...}{- additional arguments for \code{\link{download.file}} function}
 }
 \description{
 This function downloads csv file from the url below.
-}
-\section{TODO}{
- make it usesable
+The report must be public, without being protected.
 }
 \examples{
-form_entriesCount(reportName = "untitled-report", showRequestURL = TRUE)
+form_entriesFromCSV(reportName = "untitled-report", showRequestURL = TRUE)
 }
 \seealso{
 \url{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv}
