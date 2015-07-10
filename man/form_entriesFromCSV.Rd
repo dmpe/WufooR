@@ -5,7 +5,7 @@
 \title{Return number of responses to your form, from CSV format}
 \usage{
 form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
-  showRequestURL = FALSE, ...)
+  showRequestURL = FALSE)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}

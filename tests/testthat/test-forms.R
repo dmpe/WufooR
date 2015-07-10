@@ -17,5 +17,9 @@ test_that("Form returns entries, with the requested URL", {
   expect_output(form_entries(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE), "The requested URL has been this:")
 })
 
+test_that("CSV df is returned", {
+  df_csv <- form_entriesFromCSV(reportName = "untitled-report", showRequestURL = TRUE)
+  expect_equal(dim(df_csv)[2], 19)
+})
 
 
