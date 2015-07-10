@@ -6,7 +6,6 @@ r_github_packages:
   - hadley/testthat
   - hadley/httr
   - klutometis/roxygen
-  - hadley/stringr
   - jimhester/covr
   - yihui/knitr
 
