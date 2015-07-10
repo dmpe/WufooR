@@ -142,6 +142,7 @@ form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL,
     `Last Updated` = col_datetime(format = "%Y-%m-%d %H:%M:%S", tz = "UTC")
   ))
   
+  colnames(df_csv) <- make.names(colnames(df_csv))
   return(df_csv)
 }
 
