@@ -47,13 +47,18 @@ auth_key <- function(x) {
 #' @import jsonlite
 #' 
 #' @noRd
-doRequest <- function(url, queryParameters = NULL, apiKey = auth_key(NULL), showURL = NULL) {
+doRequest <- function(url, queryParameters = NULL, apiKey = auth_key(NULL), showURL = NULL, debugConnection = 0L) {
 
   if (is.null(apiKey)) {
     stop("Please assign your API Key", call. = FALSE)
   } else {
     
-    getResponse <- GET(url = url, query = queryParameters, config(userpwd = paste0(apiKey,":fakepassword")))
+    # https://github.com/wufoo/Wufoo-PHP-API-Wrapper/blob/master/WufooApiWrapperBase.php#L102
+    # http://curl.haxx.se/libcurl/c/CURLOPT_SSL_VERIFYHOST.html
+    # https://stackoverflow.com/questions/28622558/how-to-solve-error-ssl23-get-server-hellosslv3-alert-handshake-failure
+    getResponse <- GET(url = url, query = queryParameters, 
+                       config(userpwd = paste0(apiKey,":fakepassword"), ssl_cipher_list = "TLSv1", 
+                              ssl_verifypeer=0L, ssl_verifyhost=0L, followlocation=1L, verbose=debugConnection))
   
     stop_for_status(getResponse)
     rawTextResponse <- content(getResponse, as = "text")
