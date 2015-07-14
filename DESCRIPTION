@@ -2,8 +2,8 @@ Package: WufooR
 Type: Package
 Title: API Wrapper for 'Wufoo.com'
 Description: Acquire statistics about your respondents, easily. Building forms is not supported.  
-Version: 0.4
-Date: 2015-07-12
+Version: 0.5
+Date: 2015-07-15
 Authors@R: c(
     person("John", "Malc", email = "cincenko@outlook.com", role = c("aut", "cre"), comment = "@dmpe")
     )
