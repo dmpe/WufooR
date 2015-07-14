@@ -19,9 +19,6 @@
 #' reports_info(showRequestURL = TRUE)
 #' reports_info(reportName = "untitled-report")
 #' 
-#' @import httr
-#' @import jsonlite
-#' 
 #' @export
 reports_info <- function(wufoo_name = auth_name(NULL), reportName = NULL, showRequestURL = FALSE) {
   
