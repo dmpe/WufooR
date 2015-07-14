@@ -120,9 +120,8 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 #' 
 #' @description This function downloads csv file from the url below. 
 #' The report must be public, without being protected.
+#' E.g. https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv
 #' 
-#' @seealso \url{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv}
-#'  
 #' @inheritParams reports_info
 #' @inheritParams user_info
 #' @inheritParams form_entries
