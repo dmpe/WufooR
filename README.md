@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/dmpe/WufooR.svg?branch=master)](https://travis-ci.org/dmpe/WufooR)
-[![Coverage Status](https://coveralls.io/repos/dmpe/WufooR/badge.svg)](https://coveralls.io/dmpe/WufooR)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/wufoor)](http://cran.r-project.org/package=WufooR)
+[![Coverage Status](https://coveralls.io/repos/dmpe/WufooR/badge.svg)](https://coveralls.io/r/dmpe/WufooR)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/WufooR)](http://cran.r-project.org/package=WufooR)
 
 R package for Wufoo API
 =======

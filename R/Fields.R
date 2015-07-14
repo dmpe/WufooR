@@ -47,7 +47,8 @@ fields_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, sho
   df_subfields[df_subfields == ""] <- NA
   
   # join both data frames, and sort them by ID
-  fjoined <- sort(full_join(df_fields, df_subfields, by = c("ID", "DefaultVal"))$ID)
+  fjoined <- full_join(df_fields, df_subfields, by = c("ID", "DefaultVal"))
+  fjoined <- fjoined[order(fjoined$ID), ] 
   
   fjoined$Title <- ifelse(!is.na(fjoined$Title), fjoined$Title, fjoined$Label)
   
