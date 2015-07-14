@@ -137,12 +137,17 @@ form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL,
   
   entriesFromCSV_url <- paste0("https://", wufoo_name, ".wufoo.com/export/report/manager/", reportName, ".csv")
   
-  df_csv <- read_csv(entriesFromCSV_url, col_types = list(
+  executedEntriesFromCSVGetRst <- doRequest(entriesFromCSV_url, showURL = showRequestURL)
+  
+  df_csv <- read_csv(executedEntriesFromCSVGetRst, na = "NA", col_types = list(
+    `Address` = col_character(),
     `Date Created` = col_datetime(format = "%Y-%m-%d %H:%M:%S", tz = "UTC"), 
-    `Last Updated` = col_datetime(format = "%Y-%m-%d %H:%M:%S", tz = "UTC")
+    `Last Updated` = col_datetime(format = "%Y-%m-%d %H:%M:%S", tz = "UTC"), 
+    `Updated By` = col_character()
   ))
   
   colnames(df_csv) <- make.names(colnames(df_csv))
+
   return(df_csv)
 }
 

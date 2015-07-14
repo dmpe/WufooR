@@ -61,14 +61,20 @@ doRequest <- function(url, queryParameters = NULL, apiKey = auth_key(NULL), show
                               ssl_verifypeer=0L, ssl_verifyhost=0L, followlocation=1L, verbose=debugConnection))
   
     stop_for_status(getResponse)
+    
     rawTextResponse <- content(getResponse, as = "text")
-    json_response <- fromJSON(rawTextResponse)
+    
+    if (grepl("application/json", getResponse$headers$`content-type`)) {
+      response <- fromJSON(rawTextResponse)
+    } else {
+      response <- rawTextResponse
+    }
 
     if (identical(showURL, TRUE)) {
-      # was return_request$request$opts$url
       cat("The requested URL has been this: ", getResponse$url, "\n") 
     }
-    return(json_response)
+    
+    return(response)
   }
   
 }
