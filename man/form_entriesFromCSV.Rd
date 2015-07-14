@@ -17,11 +17,9 @@ form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
 \description{
 This function downloads csv file from the url below.
 The report must be public, without being protected.
+E.g. https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv
 }
 \examples{
 form_entriesFromCSV(reportName = "untitled-report", showRequestURL = TRUE)
-}
-\seealso{
-\url{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv}
 }
 
