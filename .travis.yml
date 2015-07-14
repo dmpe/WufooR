@@ -11,13 +11,6 @@ r_github_packages:
   - jimhester/covr
   - yihui/knitr
 
-# https://github.com/travis-ci/travis-ci/issues/4125  
-env:
-  global:
-    - NOT_CRAN=true
-    
-before_install: echo "options(repos = c(CRAN='http://cran.rstudio.com'))" > ~/.Rprofile
-   
 notifications:
   email:
     on_success: never
