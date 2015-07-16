@@ -5,7 +5,7 @@
 ## R CMD check results
 Dear CRAN Admins, 
 
-This is my first release of WufooR - another API package wrapper for the form/surway building service.
+This is my first release of [WufooR](https://github.com/dmpe/WufooR) - another API package wrapper for the form/surway building service.
 
 There were no ERRORs or WARNINGs. 
 

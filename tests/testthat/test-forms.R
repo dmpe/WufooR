@@ -14,11 +14,11 @@ test_that("Form returns entries, with the requested URL", {
   userDB <- form_entries(formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = FALSE)
   
   expect_more_than(length(userDB), 1)
-  expect_output(form_entries(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE), "The requested URL has been this:")
+  expect_output(form_entries(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = F), "The requested URL has been this:")
 })
 
 test_that("CSV df is returned", {
-  df_csv <- form_entriesFromCSV(reportName = "untitled-report", showRequestURL = TRUE)
+  df_csv <- form_entriesFromCSV(reportName = "untitled-report", showRequestURL = F)
   expect_equal(dim(df_csv)[2], 19)
 })
 
