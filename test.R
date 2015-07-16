@@ -1,6 +1,11 @@
 
 
-
+readr::read_csv(executedEntriesFromCSVGetRst, na = "NA", col_types = list(
+  `Address` = col_character(),
+  `Date Created` = col_datetime(format = "%Y-%m-%d %H:%M:%S", tz = "UTC"), 
+  `Last Updated` = col_datetime(format = "%Y-%m-%d %H:%M:%S", tz = "UTC"), 
+  `Updated By` = col_character()
+))
 
 
 

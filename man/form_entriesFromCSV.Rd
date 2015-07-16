@@ -20,6 +20,10 @@ The report must be public, without being protected.
 E.g. https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv
 }
 \examples{
-form_entriesFromCSV(reportName = "untitled-report", showRequestURL = TRUE)
+\dontrun{
+options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")
+df_csv <- form_entriesFromCSV(reportName = "untitled-report", showRequestURL = F)
+View(df_csv)
+}
 }
 

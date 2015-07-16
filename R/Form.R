@@ -127,10 +127,12 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 #' @inheritParams form_entries
 #'  
 #' @examples
-#' form_entriesFromCSV(reportName = "untitled-report", showRequestURL = TRUE)
-#' 
-#' @import readr
-#' 
+#' \dontrun{
+#' options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")
+#' df_csv <- form_entriesFromCSV(reportName = "untitled-report", showRequestURL = F)
+#' View(df_csv)
+#' }
+#'  
 #' @export
 form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL, showRequestURL = FALSE) {
   
@@ -138,15 +140,8 @@ form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL,
   
   executedEntriesFromCSVGetRst <- doRequest(entriesFromCSV_url, showURL = showRequestURL)
   
-  df_csv <- read_csv(executedEntriesFromCSVGetRst, na = "NA", col_types = list(
-    `Address` = col_character(),
-    `Date Created` = col_datetime(format = "%Y-%m-%d %H:%M:%S", tz = "UTC"), 
-    `Last Updated` = col_datetime(format = "%Y-%m-%d %H:%M:%S", tz = "UTC"), 
-    `Updated By` = col_character()
-  ))
+  df_csv <- read.csv(text = executedEntriesFromCSVGetRst, stringsAsFactors = F, header = T,  na.strings = c("NA", ""))
   
-  colnames(df_csv) <- make.names(colnames(df_csv))
-
   return(df_csv)
 }
 
