@@ -2,7 +2,7 @@
 % Please edit documentation in R/Users.R
 \name{user_info}
 \alias{user_info}
-\title{Shows User's Information}
+\title{Return information about the user}
 \usage{
 user_info(wufoo_name = auth_name(NULL), showRequestURL = FALSE)
 }

@@ -1,4 +1,4 @@
-#' @title Gather details about the forms you have permission to access.
+#' @title Return details about the forms you have permission to access.
 #'
 #' @description This API can be used to create a list of all forms belonging to a user and 
 #' dynamically generate a form embed snippet to use in your application.
@@ -29,7 +29,7 @@ form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, inclu
 }
 
 
-#' Gather the data that users have submitted to your form.
+#' Return responses of your form
 #' 
 #' @seealso \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Entries-GET-API}
 #' 
@@ -116,7 +116,7 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 }
 
 
-#' Return number of responses to your form, from CSV format
+#' Return responses of your form, from CSV format
 #' 
 #' @description This function downloads csv file from the url below. 
 #' The report must be public, without being protected.
@@ -133,7 +133,7 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 #' View(df_csv)
 #' }
 #' 
-#' @import utils
+#' @importFrom utils read.csv
 #'  
 #' @export
 form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL, showRequestURL = FALSE) {
@@ -142,7 +142,7 @@ form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL,
   
   executedEntriesFromCSVGetRst <- doRequest(entriesFromCSV_url, showURL = showRequestURL)
   
-  df_csv <- read.csv(text = executedEntriesFromCSVGetRst, stringsAsFactors = F, header = T,  na.strings = c("NA", ""))
+  df_csv <- read.csv(text = executedEntriesFromCSVGetRst, stringsAsFactors = F, header = T, na.strings = c("NA", ""))
   
   return(df_csv)
 }

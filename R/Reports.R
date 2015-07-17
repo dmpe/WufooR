@@ -1,4 +1,4 @@
-#' Gather details about the reports you have permission to view.
+#' Return details about the reports you have permission to view.
 #' 
 #' @inheritParams form_info
 #' @inheritParams user_info

@@ -2,7 +2,7 @@
 % Please edit documentation in R/Form.R
 \name{form_info}
 \alias{form_info}
-\title{Gather details about the forms you have permission to access.}
+\title{Return details about the forms you have permission to access.}
 \usage{
 form_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
   includeTodayCount = "false", showRequestURL = FALSE)

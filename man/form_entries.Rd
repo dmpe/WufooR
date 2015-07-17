@@ -2,7 +2,7 @@
 % Please edit documentation in R/Form.R
 \name{form_entries}
 \alias{form_entries}
-\title{Gather the data that users have submitted to your form.}
+\title{Return responses of your form}
 \usage{
 form_entries(wufoo_name = auth_name(NULL), formIdentifier = NULL,
   systemFields = "true", sortID = NULL, sortDirection = NULL,

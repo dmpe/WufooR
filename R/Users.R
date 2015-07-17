@@ -1,4 +1,4 @@
-#' @title Shows User's Information
+#' @title Return information about the user
 #' 
 #' @description Shows information about the user. 
 #' 

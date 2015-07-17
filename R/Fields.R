@@ -1,4 +1,4 @@
-#' @title Shows Form's Fields
+#' @title Return details about form's fields
 #' 
 #' @description The Fields API describes the hierarchy of your data. At the heart of this API is the
 #' listing of FieldId values. Each FieldId corresponds to a value in the Entries API.
@@ -28,7 +28,7 @@
 #' fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 #' fields_info(formIdentifier = "z5kqx7h1gtvg4g")
 #' 
-#' @source \url{http://www.exegetic.biz/blog/2014/06/concatenating-a-list-of-data-frames}
+#' @source Idea borrowed from \url{http://www.exegetic.biz/blog/2014/06/concatenating-a-list-of-data-frames}
 #' 
 #' @export
 fields_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, showRequestURL = FALSE) {

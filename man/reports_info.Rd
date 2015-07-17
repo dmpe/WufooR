@@ -2,7 +2,7 @@
 % Please edit documentation in R/Reports.R
 \name{reports_info}
 \alias{reports_info}
-\title{Gather details about the reports you have permission to view.}
+\title{Return details about the reports you have permission to view.}
 \usage{
 reports_info(wufoo_name = auth_name(NULL), reportName = NULL,
   showRequestURL = FALSE)
@@ -32,7 +32,7 @@ DateUpdated - A timestamp of when the report was lasted edited in the Wufoo Repo
 Hash - An unchanging hashed value unique to this report on this user's account.
 }
 \description{
-Gather details about the reports you have permission to view.
+Return details about the reports you have permission to view.
 }
 \examples{
 reports_info(showRequestURL = TRUE)

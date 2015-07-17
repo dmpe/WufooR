@@ -2,9 +2,9 @@
 % Please edit documentation in R/Fields.R
 \name{fields_info}
 \alias{fields_info}
-\title{Shows Form's Fields}
+\title{Return details about form's fields}
 \source{
-\url{http://www.exegetic.biz/blog/2014/06/concatenating-a-list-of-data-frames}
+Idea borrowed from \url{http://www.exegetic.biz/blog/2014/06/concatenating-a-list-of-data-frames}
 }
 \usage{
 fields_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,

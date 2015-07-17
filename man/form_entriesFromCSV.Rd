@@ -2,7 +2,7 @@
 % Please edit documentation in R/Form.R
 \name{form_entriesFromCSV}
 \alias{form_entriesFromCSV}
-\title{Return number of responses to your form, from CSV format}
+\title{Return responses of your form, from CSV format}
 \usage{
 form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
   showRequestURL = FALSE)
