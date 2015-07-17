@@ -132,6 +132,8 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 #' df_csv <- form_entriesFromCSV(reportName = "untitled-report", showRequestURL = F)
 #' View(df_csv)
 #' }
+#' 
+#' @import utils
 #'  
 #' @export
 form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL, showRequestURL = FALSE) {
