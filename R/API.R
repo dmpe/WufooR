@@ -48,7 +48,7 @@ auth_key <- function(x) {
 #' 
 #' @noRd
 doRequest <- function(url, queryParameters = NULL, apiKey = auth_key(NULL), showURL = NULL, debugConnection = 0L) {
-
+  
   if (is.null(apiKey)) {
     stop("Please assign your API Key", call. = FALSE)
   } else {
@@ -59,7 +59,7 @@ doRequest <- function(url, queryParameters = NULL, apiKey = auth_key(NULL), show
     getResponse <- GET(url = url, query = queryParameters, 
                        config(userpwd = paste0(apiKey,":fakepassword"), ssl_cipher_list = "TLSv1", 
                               ssl_verifypeer=0L, ssl_verifyhost=0L, followlocation=1L, verbose=debugConnection))
-  
+    
     stop_for_status(getResponse)
     
     rawTextResponse <- content(getResponse, as = "text")
@@ -69,7 +69,7 @@ doRequest <- function(url, queryParameters = NULL, apiKey = auth_key(NULL), show
     } else {
       response <- rawTextResponse
     }
-
+    
     if (identical(showURL, TRUE)) {
       cat("The requested URL has been this: ", getResponse$url, "\n") 
     }

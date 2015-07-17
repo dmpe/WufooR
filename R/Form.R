@@ -64,7 +64,7 @@ form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, inclu
 #' @export
 form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, systemFields = "true", 
                          sortID = NULL, sortDirection = NULL, columnNames = FALSE, showRequestURL = FALSE) {
-
+  
   entries_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier ,"/entries.json")
   
   query = list(systemFields = systemFields, sort = sortID, sortDirection = sortDirection)
@@ -84,11 +84,11 @@ form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, sy
     df_mergedColNames <- left_join(df_entries2, fjoined, by = c("colNames" = "ID"))
     
     colnames(df_entries) <- ifelse(!is.na(df_mergedColNames$Title), df_mergedColNames$Title, 
-                                    df_mergedColNames$colNames)
+                                   df_mergedColNames$colNames)
   }
   
   df_entries[df_entries == ""] <- NA 
-
+  
   return(df_entries)
 }
 
