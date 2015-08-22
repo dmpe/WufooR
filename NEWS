@@ -2,6 +2,9 @@ For the current development, the user can
 see: https://github.com/dmpe/WufooR
 
 ###
+Next CRAN Release:
+- bring up to date with R releases
+
 July 2015 - Initial CRAN Release.
           - Fully working release.
           

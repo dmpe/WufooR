@@ -2,8 +2,8 @@ Package: WufooR
 Type: Package
 Title: R Wrapper for the 'Wufoo.com' - The Form Building Service
 Description: Allows form managers to download entries from their respondents using Wufoo JSON API. Additionally, the Wufoo reports - when public - can be also acquired programmatically. Note that building new forms within this package is not supported.  
-Version: 0.5.5
-Date: 2015-07-17
+Version: 0.5.6
+Date: 2015-08-21
 Authors@R: c(
     person("John", "Malc", email = "cincenko@outlook.com", role = c("aut", "cre"), comment = "@dmpe")
     )
