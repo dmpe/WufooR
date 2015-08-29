@@ -2,8 +2,8 @@ For the current development, the user can
 see: https://github.com/dmpe/WufooR
 
 ###
-Next CRAN Release:
-- bring up to date with R releases
+September 2015 - bring up to date with R releases
+               - attempt to fix Fedoras issue with security certs (NSS non existent; see CRAN mail)
 
 July 2015 - Initial CRAN Release.
           - Fully working release.

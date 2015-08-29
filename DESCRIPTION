@@ -2,7 +2,7 @@ Package: WufooR
 Type: Package
 Title: R Wrapper for the 'Wufoo.com' - The Form Building Service
 Description: Allows form managers to download entries from their respondents using Wufoo JSON API. Additionally, the Wufoo reports - when public - can be also acquired programmatically. Note that building new forms within this package is not supported.  
-Version: 0.5.6
+Version: 0.5.7
 Date: 2015-08-21
 Authors@R: c(
     person("John", "Malc", email = "cincenko@outlook.com", role = c("aut", "cre"), comment = "@dmpe")
@@ -15,7 +15,7 @@ Imports:
   dplyr (>= 0.4.2)
 Suggests:
   roxygen2 (>= 4.1.0),
-  knitr (>= 1.10.5),
+  knitr (>= 1.11),
   testthat (>= 0.10.0)
 VignetteBuilder: knitr
 License: Apache License 2.0
