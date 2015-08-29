@@ -4,7 +4,7 @@
 \alias{fields_info}
 \title{Return details about form's fields}
 \source{
-Idea borrowed from \url{http://www.exegetic.biz/blog/2014/06/concatenating-a-list-of-data-frames}
+Idea borrowed from http://www.exegetic.biz/blog/2014/06/concatenating-a-list-of-data-frames (defunct)
 }
 \usage{
 fields_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
