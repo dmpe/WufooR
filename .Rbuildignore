@@ -9,3 +9,4 @@ test.r
 ^CONDUCT\.md$
 ^revdep$
 ^cran-comments\.md$
+^.*\.o$
