@@ -9,6 +9,7 @@ r_github_packages:
   - hadley/dplyr
   - klutometis/roxygen
   - jimhester/covr
+  - rstudio/rmarkdown
   - yihui/knitr
 
 notifications:
