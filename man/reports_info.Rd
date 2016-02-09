@@ -5,7 +5,7 @@
 \title{Return details about the reports you have permission to view.}
 \usage{
 reports_info(wufoo_name = auth_name(NULL), reportName = NULL,
-  showRequestURL = FALSE)
+  showRequestURL = FALSE, debugConnection = 0L)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -13,6 +13,8 @@ reports_info(wufoo_name = auth_name(NULL), reportName = NULL,
 \item{reportName}{- the name (not the hash!) of the specific report}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
+
+\item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 }
 \value{
 Name - This is the friendly name you chose when creating this form.

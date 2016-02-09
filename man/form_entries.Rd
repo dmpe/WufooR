@@ -6,7 +6,7 @@
 \usage{
 form_entries(wufoo_name = auth_name(NULL), formIdentifier = NULL,
   systemFields = "true", sortID = NULL, sortDirection = NULL,
-  columnNames = FALSE, showRequestURL = FALSE)
+  columnNames = FALSE, showRequestURL = FALSE, debugConnection = 0L)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -23,6 +23,8 @@ form_entries(wufoo_name = auth_name(NULL), formIdentifier = NULL,
 etc. or "First Name", "Last Name" (tries to make best guess). Default to the second option.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
+
+\item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 }
 \value{
 EntryId - This value is the unique identifier for your entry.

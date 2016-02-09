@@ -5,7 +5,8 @@
 \title{Return details about the forms you have permission to access.}
 \usage{
 form_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
-  includeTodayCount = "false", showRequestURL = FALSE)
+  includeTodayCount = "false", showRequestURL = FALSE,
+  debugConnection = 0L)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -16,6 +17,8 @@ the "formIdentifier" will return all forms.}
 \item{includeTodayCount}{- Will give you today's entry count for the form.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
+
+\item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 }
 \value{
 \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Forms-API}

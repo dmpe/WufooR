@@ -5,7 +5,7 @@
 \title{Return responses of your form, from CSV format}
 \usage{
 form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
-  showRequestURL = FALSE)
+  showRequestURL = FALSE, debugConnection = 0L)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -13,6 +13,8 @@ form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
 \item{reportName}{- the name (not the hash!) of the specific report}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
+
+\item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 }
 \description{
 This function downloads csv file from the url below. 

@@ -8,7 +8,7 @@ Idea borrowed from http://www.exegetic.biz/blog/2014/06/concatenating-a-list-of-
 }
 \usage{
 fields_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
-  showRequestURL = FALSE)
+  showRequestURL = FALSE, debugConnection = 0L)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -17,6 +17,8 @@ fields_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
 the "formIdentifier" will return all forms.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
+
+\item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 }
 \value{
 Title - The title is the friendly name you gave the field when creating your form. For 
@@ -46,7 +48,7 @@ subfields as described \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArt
 }
 \examples{
 fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
-fields_info(formIdentifier = "z5kqx7h1gtvg4g")
+fields_info(formIdentifier = "z5kqx7h1gtvg4g", debugConnection = 1L)
 
 }
 

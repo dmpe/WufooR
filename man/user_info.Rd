@@ -12,7 +12,7 @@ user_info(wufoo_name = auth_name(NULL), showRequestURL = FALSE,
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 
-\item{debugConnection}{- either "0L" (false; default) or "1L"}
+\item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 }
 \value{
 \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Users-API}
@@ -21,7 +21,7 @@ user_info(wufoo_name = auth_name(NULL), showRequestURL = FALSE,
 Shows information about the user.
 }
 \examples{
-user_info()
+user_info(debugConnection = 1L)
 
 }
 \references{

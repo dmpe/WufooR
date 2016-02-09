@@ -5,7 +5,7 @@
 \title{Return number of responses to your form}
 \usage{
 form_entriesCount(wufoo_name = auth_name(NULL), formIdentifier = NULL,
-  showRequestURL = FALSE)
+  showRequestURL = FALSE, debugConnection = 0L)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -14,6 +14,8 @@ form_entriesCount(wufoo_name = auth_name(NULL), formIdentifier = NULL,
 the "formIdentifier" will return all forms.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
+
+\item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 }
 \value{
 EntryCount - number of entries

@@ -26,16 +26,17 @@
 #' 
 #' @examples 
 #' fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
-#' fields_info(formIdentifier = "z5kqx7h1gtvg4g")
+#' fields_info(formIdentifier = "z5kqx7h1gtvg4g", debugConnection = 1L)
 #' 
 #' @source Idea borrowed from http://www.exegetic.biz/blog/2014/06/concatenating-a-list-of-data-frames (defunct)
 #' 
 #' @export
-fields_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, showRequestURL = FALSE) {
+fields_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, showRequestURL = FALSE, 
+                        debugConnection = 0L) {
   
   fields_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier ,"/fields.json")
   
-  executedFieldsGetRst <- doRequest(fields_url, showURL = showRequestURL)
+  executedFieldsGetRst <- doRequest(fields_url, showURL = showRequestURL, debugConnection = debugConnection)
   
   # Subfields go into a different data frame
   df_fields <- executedFieldsGetRst$Fields

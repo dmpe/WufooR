@@ -16,13 +16,13 @@
 #' 
 #' @export
 form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, includeTodayCount = "false", 
-                      showRequestURL = FALSE) {
+                      showRequestURL = FALSE, debugConnection = 0L) {
   
   form_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms.json")
   
   query = list(formIdentifier = formIdentifier, includeTodayCount = includeTodayCount)
   
-  executedFormGetRst <- doRequest(form_url, query, showURL = showRequestURL)
+  executedFormGetRst <- doRequest(form_url, query, showURL = showRequestURL, debugConnection = debugConnection)
   df_forms <- executedFormGetRst$Forms
   
   return(df_forms)
@@ -63,13 +63,14 @@ form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, inclu
 #' 
 #' @export
 form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, systemFields = "true", 
-                         sortID = NULL, sortDirection = NULL, columnNames = FALSE, showRequestURL = FALSE) {
+                         sortID = NULL, sortDirection = NULL, columnNames = FALSE, showRequestURL = FALSE,
+                         debugConnection = 0L) {
   
   entries_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier ,"/entries.json")
   
   query = list(systemFields = systemFields, sort = sortID, sortDirection = sortDirection)
   
-  executedEntriesGetRst <- doRequest(entries_url, query, showURL = showRequestURL)
+  executedEntriesGetRst <- doRequest(entries_url, query, showURL = showRequestURL, debugConnection = debugConnection)
   
   df_entries <- executedEntriesGetRst$Entries
   
@@ -106,11 +107,12 @@ form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, sy
 #' form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 #' 
 #' @export
-form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, showRequestURL = FALSE) {
+form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, showRequestURL = FALSE, 
+                              debugConnection = 0L) {
   
   entriesCount_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier, "/entries/count.json")
   
-  executedEntriesCountGetRst <- doRequest(entriesCount_url, showURL = showRequestURL)
+  executedEntriesCountGetRst <- doRequest(entriesCount_url, showURL = showRequestURL, debugConnection = debugConnection)
   
   return(executedEntriesCountGetRst$EntryCount)
 }
@@ -136,11 +138,12 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 #' @importFrom utils read.csv
 #'  
 #' @export
-form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL, showRequestURL = FALSE) {
+form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL, showRequestURL = FALSE, 
+                                debugConnection = 0L) {
   
   entriesFromCSV_url <- paste0("https://", wufoo_name, ".wufoo.com/export/report/manager/", reportName, ".csv")
   
-  executedEntriesFromCSVGetRst <- doRequest(entriesFromCSV_url, showURL = showRequestURL)
+  executedEntriesFromCSVGetRst <- doRequest(entriesFromCSV_url, showURL = showRequestURL, debugConnection = debugConnection)
   
   df_csv <- read.csv(text = executedEntriesFromCSVGetRst, stringsAsFactors = F, header = T, na.strings = c("NA", ""))
   
