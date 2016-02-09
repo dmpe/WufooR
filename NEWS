@@ -3,6 +3,7 @@ see: https://github.com/dmpe/WufooR
 
 ###
 February 2016  - Update packages
+               - Make documentation more explicit
 
 September 2015 - bring up to date with R releases
                - attempt to fix Fedora's issue with security certs (NSS non existent; see CRAN mail)

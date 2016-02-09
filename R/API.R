@@ -9,6 +9,8 @@
 #' @param x - an empty parameter, e.g. NULL
 #' 
 #' @note Wufoo currently restricts your API usage to 5000 requests per day.
+#' @note It is necessary to use the \code{auth_name} from the *Account Tab* in the settings of WuFoo.
+#' Not from the *Users Tab*. Therefore the name is in a usual format of \code{https://yourName.wufoo.com}
 #' 
 #' @examples 
 #' options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")
@@ -42,6 +44,7 @@ auth_key <- function(x) {
 #' @param apiKey - uses the passed api key of the user
 #' @param queryParameters - parameters that are used for building a URL
 #' @param showURL - for debugging purposes only: it shows what URL has been called
+#' @param debugConnection - same as above 
 #' 
 #' @import httr
 #' @import jsonlite

@@ -18,6 +18,9 @@ profile. For API Key go to \code{https://yourName.wufoo.com/api/code/1/}
 }
 \note{
 Wufoo currently restricts your API usage to 5000 requests per day.
+
+It is necessary to use the \code{auth_name} from the *Account Tab* in the settings of WuFoo.
+Not from the *Users Tab*. Therefore the name is in a usual format of \code{https://yourName.wufoo.com}
 }
 \examples{
 options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")

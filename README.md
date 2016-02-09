@@ -16,7 +16,7 @@ library(devtools)
 devtools::install_github("dmpe/wufoor")
 ```
 
-Tested on Ubuntu 15.04 and Windows 10 (64 bit using R 3.2.1)
+Tested on Ubuntu 15.10 and Windows 10 (64 bit using latest R)
 
 ### Looking for examples and current implementation status ?
 
