@@ -8,7 +8,7 @@ Idea borrowed from http://www.exegetic.biz/blog/2014/06/concatenating-a-list-of-
 }
 \usage{
 fields_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
-  showRequestURL = FALSE, debugConnection = 0L)
+  showRequestURL = FALSE, debugConnection = 0L, domain = "wufoo.com")
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -19,6 +19,9 @@ the "formIdentifier" will return all forms.}
 \item{showRequestURL}{- use only for DEBUG purposes}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
+
+\item{domain}{- for thatever reason domain's ccTLD may change. With this param you can change 
+default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \value{
 Title - The title is the friendly name you gave the field when creating your form. For 

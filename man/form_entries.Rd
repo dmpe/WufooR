@@ -6,7 +6,8 @@
 \usage{
 form_entries(wufoo_name = auth_name(NULL), formIdentifier = NULL,
   systemFields = "true", sortID = NULL, sortDirection = NULL,
-  columnNames = FALSE, showRequestURL = FALSE, debugConnection = 0L)
+  columnNames = FALSE, showRequestURL = FALSE, debugConnection = 0L,
+  domain = "wufoo.com")
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -25,6 +26,9 @@ etc. or "First Name", "Last Name" (tries to make best guess). Default to the sec
 \item{showRequestURL}{- use only for DEBUG purposes}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
+
+\item{domain}{- for thatever reason domain's ccTLD may change. With this param you can change 
+default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \value{
 EntryId - This value is the unique identifier for your entry.

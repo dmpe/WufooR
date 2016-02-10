@@ -60,7 +60,7 @@ sapply(fe_1, class)
 
 ```{r}
 # How many responses did you get ?
-form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g")
+form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g", domain = "wufoo.eu")
 ```
 
 Show its fields, with the requested URL (for debug purposes).
@@ -69,7 +69,7 @@ Show its fields, with the requested URL (for debug purposes).
 fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 ```
 
-Do you have some reports ? If yes, then show me information about them.
+Do I have some reports ? If yes, then show me information about them.
 
 ```{r}
 t(reports_info())

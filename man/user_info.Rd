@@ -4,11 +4,14 @@
 \alias{user_info}
 \title{Return information about the user}
 \usage{
-user_info(wufoo_name = auth_name(NULL), showRequestURL = FALSE,
-  debugConnection = 0L)
+user_info(wufoo_name = auth_name(NULL), domain = "wufoo.com",
+  showRequestURL = FALSE, debugConnection = 0L)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
+
+\item{domain}{- for thatever reason domain's ccTLD may change. With this param you can change 
+default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 
@@ -21,7 +24,7 @@ user_info(wufoo_name = auth_name(NULL), showRequestURL = FALSE,
 Shows information about the user.
 }
 \examples{
-user_info(debugConnection = 1L)
+user_info(debugConnection = 1L, domain = "wufoo.eu")
 
 }
 \references{

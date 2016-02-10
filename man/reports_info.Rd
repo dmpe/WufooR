@@ -4,13 +4,16 @@
 \alias{reports_info}
 \title{Return details about the reports you have permission to view.}
 \usage{
-reports_info(wufoo_name = auth_name(NULL), reportName = NULL,
-  showRequestURL = FALSE, debugConnection = 0L)
+reports_info(wufoo_name = auth_name(NULL), domain = "wufoo.com",
+  reportName = NULL, showRequestURL = FALSE, debugConnection = 0L)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
-\item{reportName}{- the name (not the hash!) of the specific report}
+\item{domain}{- for thatever reason domain's ccTLD may change. With this param you can change 
+default \code{wufoo.com} to another one such as \code{wufoo.eu}}
+
+\item{reportName}{- the name (not the hash!) of the specific report. This should be public.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 

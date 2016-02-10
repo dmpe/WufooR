@@ -20,10 +20,10 @@
 #' reports_info(reportName = "untitled-report")
 #' 
 #' @export
-reports_info <- function(wufoo_name = auth_name(NULL), reportName = NULL, showRequestURL = FALSE, 
-                         debugConnection = 0L) {
+reports_info <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com", 
+                         reportName = NULL, showRequestURL = FALSE, debugConnection = 0L) {
   
-  reports_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/reports.json")
+  reports_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/reports.json")
   
   query <- list(reportName = reportName)
   

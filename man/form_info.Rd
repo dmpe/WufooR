@@ -6,7 +6,7 @@
 \usage{
 form_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
   includeTodayCount = "false", showRequestURL = FALSE,
-  debugConnection = 0L)
+  debugConnection = 0L, domain = "wufoo.com")
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -19,6 +19,9 @@ the "formIdentifier" will return all forms.}
 \item{showRequestURL}{- use only for DEBUG purposes}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
+
+\item{domain}{- for thatever reason domain's ccTLD may change. With this param you can change 
+default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \value{
 \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Forms-API}

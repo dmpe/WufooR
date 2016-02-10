@@ -32,9 +32,9 @@
 #' 
 #' @export
 fields_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, showRequestURL = FALSE, 
-                        debugConnection = 0L) {
+                        debugConnection = 0L,  domain = "wufoo.com") {
   
-  fields_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier ,"/fields.json")
+  fields_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/forms/", formIdentifier ,"/fields.json")
   
   executedFieldsGetRst <- doRequest(fields_url, showURL = showRequestURL, debugConnection = debugConnection)
   
