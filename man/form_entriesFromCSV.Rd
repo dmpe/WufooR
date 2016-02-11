@@ -21,8 +21,10 @@ default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \description{
 This function downloads csv file from the url below. 
-The report must be public, without being protected.
-E.g. https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv
+The report must be public, without being protected. Be also careful with name of 
+your report - it is NOT "My Report" but "my-report"!
+E.g. \code{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv} or
+\code{https://YourName.wufoo.com/reports/NameOfYourReport/}
 }
 \examples{
 \dontrun{
