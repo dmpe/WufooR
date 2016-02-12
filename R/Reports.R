@@ -3,7 +3,9 @@
 #' @inheritParams form_info
 #' @inheritParams user_info
 #' 
-#' @param reportName - the name (not the hash!) of the specific report. This should be public.
+#' @param reportName - the name of your report as displayed in the csv export 
+#' URL (which is in lowercase with hyphens replacing spaces of your report name). Do not use 
+#' the hash value for this argument. The report should be also public.
 #' 
 #' @return Name - This is the friendly name you chose when creating this form.
 #' @return IsPublic - Indicates whether or not the report is accessible through 
@@ -31,6 +33,7 @@ reports_info <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com",
   
   return(executedReportsGetRst$Reports)
 }
+
 
 
 

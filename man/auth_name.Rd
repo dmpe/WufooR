@@ -13,14 +13,15 @@ auth_key(x)
 \item{x}{- an empty parameter, e.g. NULL}
 }
 \description{
-Methods for setting your Wufoo Name & API Key, permanently. For both of them visit your
-profile. For API Key go to \code{https://yourName.wufoo.com/api/code/1/}
+Method for setting your Wufoo Name and API Key. Your Wufoo name is the subdomain 
+of your Wufoo URL displayed in "Account" tab. For example, for http://johnmalc.wufoo.com ->
+the Wufoo_Name = "johnmalc". This can be also actually the company's name, e.g. \code{http://google.wufoo.com}
+
+Your API may be found by selecting "Share" for your Form, then 
+"API Information" (or go to \code{https://yourName.wufoo.com/api/code/1/}.
 }
 \note{
 Wufoo currently restricts your API usage to 5000 requests per day.
-
-It is necessary to use the \code{auth_name} from the *Account Tab* in the settings of WuFoo.
-Not from the *Users Tab*. Therefore the name is in a usual format of \code{https://yourName.wufoo.com}
 }
 \examples{
 options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")

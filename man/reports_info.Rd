@@ -13,7 +13,9 @@ reports_info(wufoo_name = auth_name(NULL), domain = "wufoo.com",
 \item{domain}{- for thatever reason domain's ccTLD may change. With this param you can change 
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 
-\item{reportName}{- the name (not the hash!) of the specific report. This should be public.}
+\item{reportName}{- the name of your report as displayed in the csv export 
+URL (which is in lowercase with hyphens replacing spaces of your report name). Do not use 
+the hash value for this argument. The report should be also public.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 

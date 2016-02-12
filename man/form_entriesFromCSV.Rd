@@ -10,7 +10,9 @@ form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
-\item{reportName}{- the name (not the hash!) of the specific report. This should be public.}
+\item{reportName}{- the name of your report as displayed in the csv export 
+URL (which is in lowercase with hyphens replacing spaces of your report name). Do not use 
+the hash value for this argument. The report should be also public.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 
@@ -20,11 +22,12 @@ form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \description{
-This function downloads csv file from the url below. 
-The report must be public, without being protected. Be also careful with name of 
-your report - it is NOT "My Report" but "my-report"!
-E.g. \code{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv} or
-\code{https://YourName.wufoo.com/reports/NameOfYourReport/}
+This function imports your report csv file as a data frame from the report csv export url (example url below). 
+The report must be publica and not protected. To verify your report csv export url, 
+browse to your report, select "Export" then hover over the "Commas (.csv)" option. 
+Please note that the name of your report will be in lowercase with spaces replaced with hyphens. 
+For example, the report titled "My Example Report" will be "my-example-report" in the URL as shown below.
+E.g. \code{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv}
 }
 \examples{
 \dontrun{
