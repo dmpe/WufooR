@@ -11,6 +11,7 @@ r_github_packages:
   - jimhester/covr
   - rstudio/rmarkdown
   - yihui/knitr
+  - hadley/devtools
 
 notifications:
   email:
