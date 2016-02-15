@@ -1,9 +1,10 @@
 language: r
 sudo: required
 warnings_are_errors: false
-  
+
 r_github_packages:
   - hadley/testthat
+  - hadley/devtools
   - hadley/httr
   - hadley/readr
   - hadley/dplyr
@@ -11,7 +12,6 @@ r_github_packages:
   - jimhester/covr
   - rstudio/rmarkdown
   - yihui/knitr
-  - hadley/devtools
 
 notifications:
   email:

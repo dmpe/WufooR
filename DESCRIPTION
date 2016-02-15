@@ -6,7 +6,7 @@ Description: Allows form managers to download entries from their respondents
     also acquired programmatically. Note that building new forms within this package
     is not supported.
 Version: 0.5.9
-Date: 2016-02-10
+Date: 2016-02-15
 Authors@R: c(
     person("John", "Malc", email = "cincenko@outlook.com", role = c("aut", "cre"), comment = "@dmpe")
     )
