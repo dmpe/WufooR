@@ -64,11 +64,11 @@ form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, inclu
 #' @export
 form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, systemFields = "true", 
                          sortID = NULL, sortDirection = NULL, columnNames = FALSE, showRequestURL = FALSE,
-                         debugConnection = 0L, domain = "wufoo.com") {
+                         debugConnection = 0L, domain = "wufoo.com", pageStart = 0, pageSize = 25) {
   
   entries_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/forms/", formIdentifier ,"/entries.json")
   
-  query = list(systemFields = systemFields, sort = sortID, sortDirection = sortDirection)
+  query = list(systemFields = systemFields, sort = sortID, sortDirection = sortDirection, pageStart = pageStart, pageSize = pageSize)
   
   executedEntriesGetRst <- doRequest(entries_url, query, showURL = showRequestURL, debugConnection = debugConnection)
   
