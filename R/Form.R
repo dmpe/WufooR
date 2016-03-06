@@ -42,6 +42,8 @@ form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, inclu
 #' etc. or "First Name", "Last Name" (tries to make best guess). Default to the second option. 
 #' @param sortID - sort on a single ID, as retrieved from the \code{\link{fields_info}}.
 #' @param sortDirection - choose to sort your entries ASC (lowest to highest) or DESC (highest to lowest).
+#' @param pageStart - the page number you’d like to start from.  Defaults to 0.
+#' @param pageSize - the number of entries returned in your page. Defaults to 25;  Max = 100.
 #' 
 #' @description If you have 5 submissions to your form, you'll have 5 elements (rows) in the return.
 #' 
