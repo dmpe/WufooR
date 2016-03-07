@@ -7,7 +7,7 @@
 form_entries(wufoo_name = auth_name(NULL), formIdentifier = NULL,
   systemFields = "true", sortID = NULL, sortDirection = NULL,
   columnNames = FALSE, showRequestURL = FALSE, debugConnection = 0L,
-  domain = "wufoo.com")
+  domain = "wufoo.com", pageStart = 0, pageSize = 25)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -29,6 +29,10 @@ etc. or "First Name", "Last Name" (tries to make best guess). Default to the sec
 
 \item{domain}{- for thatever reason domain's ccTLD may change. With this param you can change 
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
+
+\item{pageStart}{- the page number you'd like to start from.  Defaults to 0.}
+
+\item{pageSize}{- the number of entries returned in your page. Defaults to 25; Max = 100.}
 }
 \value{
 EntryId - This value is the unique identifier for your entry.
