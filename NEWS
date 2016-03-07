@@ -2,7 +2,7 @@ For the current development, the user can
 see: https://github.com/dmpe/WufooR
 
 ###
-March 2016     - Thanks to Maksim, a new 'pageStart' and 'pageSize' parameters
+March 2016     - Thanks to Maksim, new 'pageStart' and 'pageSize' parameters
                  in 'form_entries' have been added https://github.com/dmpe/WufooR/pull/4
 
 February 2016  - Update packages
