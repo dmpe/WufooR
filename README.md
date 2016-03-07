@@ -40,7 +40,7 @@ Want a direct push access? No problem, just let me know and become a :family:.
 - [@dmpe](https://www.github.com/dmpe) :yum:.
 
 ## Meta
-- Licensed under [Apache License 2.0](https://www.tldrlegal.com/l/apache2).
+- Licensed under [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 - Please report bugs in <https://github.com/dmpe/wufoor/issues>.
 
 
