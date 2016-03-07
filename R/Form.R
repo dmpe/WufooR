@@ -42,6 +42,8 @@ form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, inclu
 #' etc. or "First Name", "Last Name" (tries to make best guess). Default to the second option. 
 #' @param sortID - sort on a single ID, as retrieved from the \code{\link{fields_info}}.
 #' @param sortDirection - choose to sort your entries ASC (lowest to highest) or DESC (highest to lowest).
+#' @param pageStart - the page number you’d like to start from.  Defaults to 0.
+#' @param pageSize - the number of entries returned in your page. Defaults to 25;  Max = 100.
 #' 
 #' @description If you have 5 submissions to your form, you'll have 5 elements (rows) in the return.
 #' 
@@ -64,11 +66,11 @@ form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, inclu
 #' @export
 form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, systemFields = "true", 
                          sortID = NULL, sortDirection = NULL, columnNames = FALSE, showRequestURL = FALSE,
-                         debugConnection = 0L, domain = "wufoo.com") {
+                         debugConnection = 0L, domain = "wufoo.com", pageStart = 0, pageSize = 25) {
   
   entries_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/forms/", formIdentifier ,"/entries.json")
   
-  query = list(systemFields = systemFields, sort = sortID, sortDirection = sortDirection)
+  query = list(systemFields = systemFields, sort = sortID, sortDirection = sortDirection, pageStart = pageStart, pageSize = pageSize)
   
   executedEntriesGetRst <- doRequest(entries_url, query, showURL = showRequestURL, debugConnection = debugConnection)
   
