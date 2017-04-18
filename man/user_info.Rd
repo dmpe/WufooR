@@ -30,4 +30,3 @@ user_info(debugConnection = 1L, domain = "wufoo.eu")
 \references{
 wufoo_api - User's API Key. Default: \code{\link{auth_key}}.
 }
-

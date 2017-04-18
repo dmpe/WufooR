@@ -60,4 +60,3 @@ form_entries(formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequ
 \seealso{
 \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Entries-GET-API}
 }
-

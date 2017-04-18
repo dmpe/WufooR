@@ -33,4 +33,3 @@ form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 \seealso{
 \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Entries-GET-API#entrycount}
 }
-

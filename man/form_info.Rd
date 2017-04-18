@@ -34,4 +34,3 @@ dynamically generate a form embed snippet to use in your application.
 form_info()
 
 }
-
