@@ -7,7 +7,7 @@ context("Fields")
 
 test_that("Fields request returns 17 rows, always", {
   fieldsALL <- fields_info(formIdentifier = "z5kqx7h1gtvg4g")
-  expect_more_than(dim(fieldsALL)[1], 1)
+  expect_gt(dim(fieldsALL)[1], 1)
 })
 
 context("Reports")

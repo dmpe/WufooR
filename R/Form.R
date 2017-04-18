@@ -70,7 +70,8 @@ form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, sy
   
   entries_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/forms/", formIdentifier ,"/entries.json")
   
-  query = list(systemFields = systemFields, sort = sortID, sortDirection = sortDirection, pageStart = pageStart, pageSize = pageSize)
+  query = list(systemFields = systemFields, sort = sortID, 
+               sortDirection = sortDirection, pageStart = pageStart, pageSize = pageSize)
   
   executedEntriesGetRst <- doRequest(entries_url, query, showURL = showRequestURL, debugConnection = debugConnection)
   
