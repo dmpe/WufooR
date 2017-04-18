@@ -15,7 +15,7 @@
 #' Multiple-Choice fields have the option of an Other field. When a Multiple-Choice field is marked
 #' as HasOtherField, the last choice is the Other field.
 #' 
-#' @note This function returns 2 data frames. One containing only default fields, another one containing 
+#' @note For developers: This function returns 2 data frames. One containing only default fields, another one containing 
 #' subfields as described \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Fields-API#Fancypants}. 
 #' "These include name, shortname, checkbox, address, and likert."
 #' 
@@ -46,6 +46,8 @@ fields_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, sho
   df_subfields <- executedFieldsGetRst$Fields$SubFields
   df_subfields <- bind_rows(df_subfields)
   df_subfields[df_subfields == ""] <- NA
+  df_subfields <- df_subfields[-1,]
+  df_subfields <- df_subfields[-2,]
   
   # join both data frames, and sort them by ID
   fjoined <- full_join(df_fields, df_subfields, by = c("ID", "DefaultVal"))
