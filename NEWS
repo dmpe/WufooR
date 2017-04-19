@@ -2,6 +2,12 @@ For the current development, the user can
 see: https://github.com/dmpe/WufooR
 
 ###
+
+April 2017     - New update to reflect dplyr package release.
+               - Libraries have been upgraded and error with names 
+               of fields/titles has been fixed (see Hadley's email)
+
+
 March 2016     - Thanks to Maksim, new 'pageStart' and 'pageSize' parameters
                  in 'form_entries' have been added https://github.com/dmpe/WufooR/pull/4
 

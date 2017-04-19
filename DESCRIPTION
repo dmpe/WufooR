@@ -24,6 +24,6 @@ Suggests:
     testthat (>= 1.0.2)
 VignetteBuilder: knitr
 License: Apache License 2.0
-URL: http://github.com/dmpe/wufoor
-BugReports: http://github.com/dmpe/wufoor/issues
+URL: https://github.com/dmpe/wufoor
+BugReports: https://github.com/dmpe/wufoor/issues
 RoxygenNote: 6.0.1
