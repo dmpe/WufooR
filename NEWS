@@ -3,6 +3,8 @@ see: https://github.com/dmpe/WufooR
 
 ###
 
+September 2017 - attempted to fix user bug
+
 April 2017     - New update to reflect dplyr package release.
                - Libraries have been upgraded and error with names 
                of fields/titles has been fixed (see Hadley's email)

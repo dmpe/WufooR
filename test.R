@@ -12,8 +12,8 @@ readr::read_csv(executedEntriesFromCSVGetRst, na = "NA", col_types = list(
 
 
 
-fields_url <- paste0("https://", wufoo_name, ".wufoo.com/api/v3/forms/", formIdentifier ,"/fields.json")
-query = list(formIdentifier = formIdentifier)
+fields_url <- paste0("https://johnmalc.wufoo.com/api/v3/forms/forms.json")
+query = list(formIdentifier = NULL)
 
 getResponse <- GET(fields_url, query, config(userpwd = paste0(apiKey = "F1QH-Q64B-BSBI-JASJ",":fakepassword")))
 
