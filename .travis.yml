@@ -1,22 +1,18 @@
 language: r
 sudo: false
 warnings_are_errors: false
-
+cache: packages
+r:
+  - release
+  - devel
+  
 env:
   global:
   - _R_CHECK_FORCE_SUGGESTS_=false
   - MAKEFLAGS="-j 2"
 
 r_github_packages:
-  - hadley/testthat
-  - hadley/devtools
-  - jerome/jsonlite
-  - hadley/httr
-  - hadley/dplyr
-  - klutometis/roxygen
   - jimhester/covr
-  - rstudio/rmarkdown
-  - yihui/knitr
 
 notifications:
   email:
