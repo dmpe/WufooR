@@ -10,11 +10,8 @@ env:
 r_github_packages:
   - hadley/testthat
   - hadley/devtools
-  - hadley/rlang
-  - hadley/dbplyr
-  - tidyverse/glue
+  - jerome/jsonlite
   - hadley/httr
-  - hadley/readr
   - hadley/dplyr
   - klutometis/roxygen
   - jimhester/covr
