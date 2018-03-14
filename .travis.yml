@@ -12,7 +12,7 @@ env:
   - MAKEFLAGS="-j 2"
 
 r_github_packages:
-  - jimhester/covr
+  - r-lib/covr
 
 notifications:
   email:
@@ -20,4 +20,4 @@ notifications:
     on_failure: always
     
 after_success:
-  - Rscript -e 'library(covr);coveralls()'
+  - Rscript -e 'library(covr);covr::coveralls()'
