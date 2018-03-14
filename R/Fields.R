@@ -25,10 +25,10 @@
 #' @import dplyr
 #' 
 #' @examples 
+#' \donttest{
 #' fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 #' fields_info(formIdentifier = "z5kqx7h1gtvg4g", debugConnection = 1L)
-#' 
-#' @source Idea borrowed from http://www.exegetic.biz/blog/2014/06/concatenating-a-list-of-data-frames (defunct)
+#' }
 #' 
 #' @export
 fields_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, showRequestURL = FALSE, 

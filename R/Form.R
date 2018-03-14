@@ -12,7 +12,9 @@
 #' @return \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Forms-API}
 #' 
 #' @examples 
+#' \donttest{
 #' form_info()
+#' }
 #' 
 #' @export
 form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, includeTodayCount = "false", 
@@ -58,8 +60,10 @@ form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, inclu
 #' appear in this element.
 #' 
 #' @examples
+#' \donttest{
 #' form_entries(formIdentifier = "z5kqx7h1gtvg4g")
 #' form_entries(formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = TRUE)
+#' }
 #' 
 #' @import dplyr
 #' 
@@ -107,7 +111,9 @@ form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, sy
 #' @return EntryCount - number of entries
 #' 
 #' @examples
+#' \donttest{
 #' form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
+#' }
 #' 
 #' @export
 form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, showRequestURL = FALSE, 

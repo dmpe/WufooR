@@ -31,6 +31,8 @@ This API can be used to create a list of all forms belonging to a user and
 dynamically generate a form embed snippet to use in your application.
 }
 \examples{
+\donttest{
 form_info()
+}
 
 }

@@ -10,12 +10,13 @@ readr::read_csv(executedEntriesFromCSVGetRst, na = "NA", col_types = list(
 
 
 
+users_url <- paste0("https://johnmalc.wufoo.com/api/v3/users.json")
 
 
 fields_url <- paste0("https://johnmalc.wufoo.com/api/v3/forms/forms.json")
 query = list(formIdentifier = NULL)
 
-getResponse <- GET(fields_url, query, config(userpwd = paste0(apiKey = "F1QH-Q64B-BSBI-JASJ",":fakepassword")))
+getResponse <- GET(users_url, query, config(userpwd = paste0(apiKey = "S6VI-I8UA-BY11-TDHO",":fakepassword")))
 
 rawTextResponse <- content(getResponse, as = "text")
 json_response <- fromJSON(rawTextResponse, flatten = TRUE)

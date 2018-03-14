@@ -27,7 +27,9 @@ EntryCount - number of entries
 Return number of responses to your form
 }
 \examples{
+\donttest{
 form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
+}
 
 }
 \seealso{

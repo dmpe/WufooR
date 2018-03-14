@@ -1,14 +1,15 @@
-For the current development, the user can 
-see: https://github.com/dmpe/WufooR
+For the current development, see: https://github.com/dmpe/WufooR
 
 ###
+March 2018     - update to reflect CRAN messages
+               - updated tutorial page and deleted api key which caused problems
+               - upgraded some packages
 
-September 2017 - attempted to fix user bug
+September 2017 - attempted to fix the user bug
 
 April 2017     - New update to reflect dplyr package release.
                - Libraries have been upgraded and error with names 
                of fields/titles has been fixed (see Hadley's email)
-
 
 March 2016     - Thanks to Maksim, new 'pageStart' and 'pageSize' parameters
                  in 'form_entries' have been added https://github.com/dmpe/WufooR/pull/4

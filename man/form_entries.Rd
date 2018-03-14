@@ -53,8 +53,10 @@ appear in this element.
 If you have 5 submissions to your form, you'll have 5 elements (rows) in the return.
 }
 \examples{
+\donttest{
 form_entries(formIdentifier = "z5kqx7h1gtvg4g")
 form_entries(formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = TRUE)
+}
 
 }
 \seealso{

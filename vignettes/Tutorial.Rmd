@@ -5,8 +5,10 @@ date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## Authentication
@@ -15,7 +17,7 @@ To access data from your surways, you firstly need to store your login name (sub
 
 Initially, this has been written by [Scott Chamberlain](https://github.com/sckott), who wrote it in the NEWS file of his `rnoaa` [package](https://github.com/ropensci/rnoaa/blob/master/NEWS.md). I have addapted the names of my functions accordingly.
 
-PS: Don't use my key, of course.
+PS: Don't use my key, of course. See <https://wufoo.github.io/docs/>
 
 > A new helper function `auth_name()/auth_api()` looks for one of two stored keys, as an
 environment variable under the name `Wufoo_Name`/`Wufoo_API`, or an option variable under the name
@@ -25,15 +27,15 @@ environment variable under the name `Wufoo_Name`/`Wufoo_API`, or an option varia
 or stored long term in your `.Renviron` file. Option variables can be set during session
 like `options(var = "...")`, or stored long term in your `.Rprofile` file.
 
-```{r}
+```{r, eval=FALSE, include=T}
 library(WufooR)
 
-options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")
+options(Wufoo_Name = "johnmalc", Wufoo_API = "put here your api key")
 ```
 
 Print information about my name & api key.
 
-```{r}
+```{r, eval=FALSE, include=T}
 auth_name(NULL)
 auth_key(NULL)
 ```
@@ -42,13 +44,13 @@ auth_key(NULL)
  
 Let's print some information about the user.
 
-```{r}
+```{r, eval=FALSE, include=T}
 t(user_info())
 ```
 
 And now about the forms you have access to.
 
-```{r}
+```{r, eval=FALSE, include=T}
 t(form_info())
 
 # Show responses to the form
@@ -58,20 +60,20 @@ t(fe_1)
 sapply(fe_1, class)
 ```
 
-```{r}
+```{r, eval=FALSE, include=T}
 # How many responses did you get ?
 form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g", domain = "wufoo.eu")
 ```
 
 Show its fields, with the requested URL (for debug purposes).
 
-```{r}
+```{r, eval=FALSE, include=T}
 fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 ```
 
 Do I have some reports ? If yes, then show me information about them.
 
-```{r}
+```{r, eval=FALSE, include=T}
 t(reports_info())
 ```
 

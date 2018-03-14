@@ -9,13 +9,16 @@
 #' @param showRequestURL - use only for DEBUG purposes
 #' @param debugConnection - samilar as above. Either "0L" (false; default) or "1L"
 #' 
-#' @return \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Users-API}
+#' @return \url{https://wufoo.github.io/docs/#users}
 #' 
 #' @examples 
+#' \donttest{
 #' user_info(debugConnection = 1L, domain = "wufoo.eu")
+#' }
 #' 
 #' @export
-user_info <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com", showRequestURL = FALSE, debugConnection = 0L) {
+user_info <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com", 
+                      showRequestURL = FALSE, debugConnection = 0L) {
   
   user_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/users.json")
   

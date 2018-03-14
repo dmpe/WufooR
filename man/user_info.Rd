@@ -18,13 +18,15 @@ default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 }
 \value{
-\url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Users-API}
+\url{https://wufoo.github.io/docs/#users}
 }
 \description{
 Shows information about the user.
 }
 \examples{
+\donttest{
 user_info(debugConnection = 1L, domain = "wufoo.eu")
+}
 
 }
 \references{

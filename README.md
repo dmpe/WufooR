@@ -5,9 +5,14 @@
 R package for Wufoo API
 =======
 
-This package doesn't support creating new forms. It can be only used to retrieve information about your form entries. 
+This package doesn't support creating new forms. 
+It can be only used to retrieve information about your form entries. 
 
-### Installing (not yet on CRAN)
+### Installing
+
+**CRAN:** <https://CRAN.R-project.org/package=WufooR>
+
+**OR**
 
 Use `devtools` to install the latest version from Github:
 
@@ -16,7 +21,7 @@ library(devtools)
 devtools::install_github("dmpe/wufoor")
 ```
 
-Tested on Ubuntu 17.04 and Windows 10 (64 bit using latest R)
+Tested on Ubuntu 18.04 and Windows 10 (64 bit using latest R)
 
 ### Looking for examples and current implementation status ?
 

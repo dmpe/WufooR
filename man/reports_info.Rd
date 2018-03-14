@@ -42,7 +42,9 @@ Hash - An unchanging hashed value unique to this report on this user's account.
 Return details about the reports you have permission to view.
 }
 \examples{
+\donttest{
 reports_info(showRequestURL = TRUE)
 reports_info(reportName = "untitled-report")
+}
 
 }

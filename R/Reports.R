@@ -18,8 +18,10 @@
 #' @return Hash - An unchanging hashed value unique to this report on this user's account.
 #' 
 #' @examples
+#' \donttest{
 #' reports_info(showRequestURL = TRUE)
 #' reports_info(reportName = "untitled-report")
+#' }
 #' 
 #' @export
 reports_info <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com", 

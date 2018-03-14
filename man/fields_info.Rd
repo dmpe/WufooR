@@ -3,9 +3,6 @@
 \name{fields_info}
 \alias{fields_info}
 \title{Return details about form's fields}
-\source{
-Idea borrowed from http://www.exegetic.biz/blog/2014/06/concatenating-a-list-of-data-frames (defunct)
-}
 \usage{
 fields_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
   showRequestURL = FALSE, debugConnection = 0L, domain = "wufoo.com")
@@ -50,7 +47,9 @@ subfields as described \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArt
 "These include name, shortname, checkbox, address, and likert."
 }
 \examples{
+\donttest{
 fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 fields_info(formIdentifier = "z5kqx7h1gtvg4g", debugConnection = 1L)
+}
 
 }

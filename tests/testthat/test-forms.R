@@ -1,7 +1,7 @@
 library(testthat)
 library(WufooR)
 
-options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")
+options(Wufoo_Name = "johnmalc", Wufoo_API = "S6VI-I8UA-BY11-TDHO")
 
 context("Forms")
 
