@@ -14,8 +14,8 @@ auth_key(x)
 }
 \description{
 A method for setting your Wufoo Name and API Key. Your Wufoo name is the subdomain 
-of your Wufoo URL displayed in "Account" tab. For example, for http://johnmalc.wufoo.com ->
-the Wufoo_Name = "johnmalc". This can be actually the company's name too, e.g. \code{http://google.wufoo.com}
+of your Wufoo URL displayed in "Account" tab. For example, for \code{http://johnmalc.wufoo.com}, 
+the \code{Wufoo_Name = "johnmalc"}. This can be actually the company's name too, e.g. \code{http://google.wufoo.com}
 
 Your API key may be found by selecting "Share" for your Form, then 
 "API Information" (or go to \code{https://yourName.wufoo.com/api/code/1/}.

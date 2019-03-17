@@ -4,8 +4,7 @@
 #' @inheritParams user_info
 #' 
 #' @param reportName - the name of your report as displayed in the csv export 
-#' URL (which is in lowercase with hyphens replacing spaces of your report name). Do not use 
-#' the hash value for this argument. The report should be also public.
+#' URL (which is in lowercase with hyphens replacing spaces of your report name). The report should be also public.
 #' 
 #' @return Name - This is the friendly name you chose when creating this form.
 #' @return IsPublic - Indicates whether or not the report is accessible through 
@@ -16,18 +15,46 @@
 #' @return DateCreated - A timestamp of when the report was created.
 #' @return DateUpdated - A timestamp of when the report was lasted edited in the Wufoo Report Builder.
 #' @return Hash - An unchanging hashed value unique to this report on this user's account.
+#' @return \url{https://wufoo.github.io/docs/#all-reports}
 #' 
 #' @examples
 #' \donttest{
 #' reports_info(showRequestURL = TRUE)
-#' reports_info(reportName = "untitled-report")
 #' }
 #' 
 #' @export
 reports_info <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com", 
-                         reportName = NULL, showRequestURL = FALSE, debugConnection = 0L) {
+                         showRequestURL = FALSE, debugConnection = 0L) {
   
   reports_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/reports.json")
+  
+  executedReportsGetRst <- doRequest(reports_url, query, showURL = showRequestURL, debugConnection = debugConnection)
+  
+  return(executedReportsGetRst$Reports)
+}
+
+
+#' Returns a specific report. 
+#' 
+#' To identify the desired report, you can either use the report hash or the report title.
+#' The Report properties are the same as in the All Reporst request. 
+#' The only difference is that this request will only return the identified report.
+#' 
+#' @inheritParams form_info
+#' @inheritParams user_info
+#' @inheritParams reports_info
+#' 
+#' 
+#' @examples
+#' \donttest{
+#' report_info(reportName = "untitled-report")
+#' }
+#' 
+#' @export
+report_info <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com", 
+                         reportName = NULL, showRequestURL = FALSE, debugConnection = 0L) {
+  
+  reports_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/reports/", reportName, ".json")
   
   query <- list(reportName = reportName)
   
@@ -36,9 +63,33 @@ reports_info <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com",
   return(executedReportsGetRst$Reports)
 }
 
-
-
-
+#' Returns the entries that make up a specific report.
+#' 
+#' This is essentially an equivalent of the data that would show up in a 
+#' datagrid widget on the report, or in an exported copy of the report entry data
+#' 
+#' @inheritParams form_info
+#' @inheritParams user_info
+#' @inheritParams reports_info
+#' @inheritParams form_entries
+#' 
+#' @seealso [form_entries()]
+#' 
+#' @examples
+#' \donttest{
+#' report_entries(reportName = "untitled-report")
+#' }
+#' 
+#' @export
+report_entries <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com", systemFields = "true",
+                        reportName = NULL, showRequestURL = FALSE, debugConnection = 0L) {
+  
+  reports_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/reports/", reportName, "/entries.json")
+  
+  executedReportEntriesGetRst <- doRequest(reports_url, showURL = showRequestURL, debugConnection = debugConnection)
+  
+  return(executedReportEntriesGetRst$Entries)
+}
 
 
 

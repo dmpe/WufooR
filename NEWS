@@ -2,8 +2,8 @@ For the current development, see: https://github.com/dmpe/WufooR
 
 ###
 March 2019     - ensure that package works properly again
-               - bump version number and update dependancies
-               - fix spelling mistakes
+               - bump version number and update dependancies, add new methods to cover most of the API
+               - fix spelling mistakes, update documentation
 
 March 2018     - update to reflect CRAN messages
                - updated tutorial page and deleted api key which caused problems

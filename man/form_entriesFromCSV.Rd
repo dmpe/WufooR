@@ -11,8 +11,7 @@ form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
 \item{reportName}{- the name of your report as displayed in the csv export 
-URL (which is in lowercase with hyphens replacing spaces of your report name). Do not use 
-the hash value for this argument. The report should be also public.}
+URL (which is in lowercase with hyphens replacing spaces of your report name). The report should be also public.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 
@@ -23,8 +22,8 @@ default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \description{
 This function imports your report csv file as a data frame from the report csv export url (example url below). 
-The report must be publica and not protected. To verify your report csv export url, 
-browse to your report, select "Export" then hover over the "Commas (.csv)" option. 
+The report must be public and not protected. To verify your CSV url, 
+open the browser, select your report, then "Export" in "Commas (.csv)". 
 Please note that the name of your report will be in lowercase with spaces replaced with hyphens. 
 For example, the report titled "My Example Report" will be "my-example-report" in the URL as shown below.
 E.g. \code{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv}

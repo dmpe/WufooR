@@ -22,4 +22,11 @@ test_that("CSV df is returned", {
   expect_equal(dim(df_csv)[2], 19)
 })
 
+test_that("There are no comments", {
+  expect_warning(form_comments(formIdentifier = "z5kqx7h1gtvg4g"))
+})
+
+test_that("There are no comments", {
+  expect_gte(form_commentsCount(formIdentifier = "z5kqx7h1gtvg4g"), 0)
+})
 

@@ -10,8 +10,8 @@ fields_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
-\item{formIdentifier}{- this will give you information about just one form. The call without 
-the "formIdentifier" will return all forms.}
+\item{formIdentifier}{- this will give you information about just one form. A request without 
+the \code{formIdentifier} will return all forms.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 
@@ -38,7 +38,7 @@ Multiple-Choice fields have the option of an Other field. When a Multiple-Choice
 as HasOtherField, the last choice is the Other field.
 }
 \description{
-The Fields API describes the hierarchy of your data. At the heart of this API is the
+The Fields API describes a hierarchy of your data. At the heart of this API is the
 listing of FieldId values. Each FieldId corresponds to a value in the Entries API.
 }
 \note{

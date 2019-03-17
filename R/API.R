@@ -62,17 +62,16 @@ doRequest <- function(url, queryParameters = NULL, apiKey = auth_key(NULL), show
     # https://stackoverflow.com/questions/28622558/how-to-solve-error-ssl23-get-server-hellosslv3-alert-handshake-failure
 
     if (.Platform$OS.type == "windows") {
-      getResponse <- GET(url = url, query = queryParameters, 
+      getResponse <- GET(url, query = queryParameters, 
                          config(userpwd = paste0(apiKey,":fakepassword"), ssl_cipher_list = "TLSv1", 
                                 ssl_verifypeer=0L, ssl_verifyhost=0L, followlocation=1L, verbose=debugConnection))
     } else {
-      getResponse <- GET(url = url, query = queryParameters, 
+      getResponse <- GET(url, query = queryParameters, 
                          config(userpwd = paste0(apiKey,":fakepassword"), 
                                 ssl_verifypeer=0L, ssl_verifyhost=0L, followlocation=1L, verbose=debugConnection))
       
     }
     stop_for_status(getResponse)
-    
     rawTextResponse <- content(getResponse, as = "text")
     
     if (grepl("application/json", getResponse$headers$`content-type`)) {

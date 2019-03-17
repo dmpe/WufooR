@@ -22,13 +22,12 @@
 form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, includeTodayCount = "false", 
                       showRequestURL = FALSE, debugConnection = 0L, domain = "wufoo.com") {
   
-  form_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/forms.json")
-  
-
-  if(!is.null(formIdentifier)) {
+  if(is.null(formIdentifier)) {
+      form_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/forms.json")
       query <- list(includeTodayCount = includeTodayCount)
   } else {
-      query <- list(formIdentifier = formIdentifier, includeTodayCount = includeTodayCount)
+      form_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/forms/", formIdentifier, ".json")
+      query <- list(includeTodayCount = includeTodayCount)
   }
   
   executedFormGetRst <- doRequest(form_url, query, showURL = showRequestURL, debugConnection = debugConnection)
@@ -47,7 +46,7 @@ form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, inclu
 #' 
 #' @param systemFields - return system fields. Default: true
 #' @param formIdentifier - must be replaced with your form's URL or hash.
-#' @param columnNames - a MUST: How should be column names be called. Either "Field1", "Field2" 
+#' @param columnNames - How should be column names be called. Either "Field1", "Field2" 
 #' etc. or "First Name", "Last Name" (tries to make best guess). Default to the second option. 
 #' @param sortID - sort on a single ID, as retrieved from the \code{\link{fields_info}}.
 #' @param sortDirection - choose to sort your entries ASC (lowest to highest) or DESC (highest to lowest).
@@ -55,16 +54,10 @@ form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, inclu
 #' @param pageSize - the number of entries returned in your page. Defaults to 25; Max = 100.
 #' 
 #' @description If you have 5 submissions to your form, you'll have 5 elements (rows) in the return.
+#' This request returns the entries that have been submitted to a specific form. 
+#' This is the equivalent of viewing your stored entries in the Entry Manager in Wufoo.
 #' 
-#' @return EntryId - This value is the unique identifier for your entry.
-#' @return DateCreated - The date that this entry was submitted.
-#' @return Created By - The person who created the entry. If submitted through a form, the value 
-#' here will be public. If the submission originated in the Entry Manager this value will be the 
-#' user name of the submitting user.
-#' @return DateUpdated - The date that this entry was edited through the Entry Manager. If the 
-#' submission has never been updated, this value will be blank.
-#' @return UpdatedBy - The user name of the person who updated the entry in the Entry Manager will 
-#' appear in this element.
+#' @return \url{https://wufoo.github.io/docs/#form-entries}
 #' 
 #' @examples
 #' \donttest{
@@ -115,7 +108,7 @@ form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, sy
 #' @inheritParams user_info
 #' @inheritParams form_entries
 #'   
-#' @return EntryCount - number of entries
+#' @return \url{https://wufoo.github.io/docs/#form-entries-count}
 #' 
 #' @examples
 #' \donttest{
@@ -130,15 +123,15 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
   
   executedEntriesCountGetRst <- doRequest(entriesCount_url, showURL = showRequestURL, debugConnection = debugConnection)
   
-  return(executedEntriesCountGetRst$EntryCount)
+  return(as.numeric(executedEntriesCountGetRst$EntryCount))
 }
 
 
 #' Return responses of your form, from CSV format
 #' 
 #' @description This function imports your report csv file as a data frame from the report csv export url (example url below). 
-#' The report must be publica and not protected. To verify your report csv export url, 
-#' browse to your report, select "Export" then hover over the "Commas (.csv)" option. 
+#' The report must be public and not protected. To verify your CSV url, 
+#' open the browser, select your report, then "Export" in "Commas (.csv)". 
 #' Please note that the name of your report will be in lowercase with spaces replaced with hyphens. 
 #' For example, the report titled "My Example Report" will be "my-example-report" in the URL as shown below.
 #' E.g. \code{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv} 
@@ -170,6 +163,49 @@ form_entriesFromCSV <- function(wufoo_name = auth_name(NULL), reportName = NULL,
 }
 
 
+#' Returns any comments made on this form's entries in the Entry Manager
+#' 
+#' @seealso \url{https://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/Entry-Manager}
+#' @return \url{https://wufoo.github.io/docs/#form-comments}
+#' 
+#' @param entryId - If set to a number, will only return comments for the specific entry
+#' @param pageStart - The comment that the request will start from
+#' @param pageSize - The number of comments returned in the request (Maximum of 100)
+#' 
+#' @inheritParams form_info
+#' 
+#' @export
+form_comments <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, entryId = NULL,
+                          showRequestURL = FALSE, pageStart = 0, pageSize = 100,
+                          debugConnection = 0L, domain = "wufoo.com") {
+  
+  comments_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/forms/", formIdentifier, "/comments.json")
+  query <- list(entryId = entryId, pageStart = pageStart, pageSize = pageSize)
 
+  executedFormCommentsGetRst <- doRequest(comments_url, query, showURL = showRequestURL, debugConnection = debugConnection)
+  
+  if(length(executedFormCommentsGetRst$Comments) == 0) {
+    warning("For this form, there are no comments")
+  } else {
+    df_forms <- executedFormCommentsGetRst$Comments
+    return(df_forms)
+  }
+}
 
+#' Returns a count of all comments made on this form's entries
+#' 
+#' @seealso \url{https://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/Entry-Manager}
+#' @return \url{https://wufoo.github.io/docs/#comments-count}
+#' 
+#' @inheritParams form_comments
+#' 
+#' @export
+form_commentsCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, 
+                          showRequestURL = FALSE, debugConnection = 0L, domain = "wufoo.com") {
+  
+  comments_count_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/forms/", formIdentifier, "/comments/count.json")
 
+  executedFormCommentsCountGetRst <- doRequest(comments_count_url, showURL = showRequestURL, debugConnection = debugConnection)
+  
+  return(as.numeric(as.character(executedFormCommentsCountGetRst)))
+}

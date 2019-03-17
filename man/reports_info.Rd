@@ -5,7 +5,7 @@
 \title{Return details about the reports you have permission to view.}
 \usage{
 reports_info(wufoo_name = auth_name(NULL), domain = "wufoo.com",
-  reportName = NULL, showRequestURL = FALSE, debugConnection = 0L)
+  showRequestURL = FALSE, debugConnection = 0L)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -13,13 +13,12 @@ reports_info(wufoo_name = auth_name(NULL), domain = "wufoo.com",
 \item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change 
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 
-\item{reportName}{- the name of your report as displayed in the csv export 
-URL (which is in lowercase with hyphens replacing spaces of your report name). Do not use 
-the hash value for this argument. The report should be also public.}
-
 \item{showRequestURL}{- use only for DEBUG purposes}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
+
+\item{reportName}{- the name of your report as displayed in the csv export 
+URL (which is in lowercase with hyphens replacing spaces of your report name). The report should be also public.}
 }
 \value{
 Name - This is the friendly name you chose when creating this form.
@@ -37,6 +36,8 @@ DateCreated - A timestamp of when the report was created.
 DateUpdated - A timestamp of when the report was lasted edited in the Wufoo Report Builder.
 
 Hash - An unchanging hashed value unique to this report on this user's account.
+
+\url{https://wufoo.github.io/docs/#all-reports}
 }
 \description{
 Return details about the reports you have permission to view.
@@ -44,7 +45,6 @@ Return details about the reports you have permission to view.
 \examples{
 \donttest{
 reports_info(showRequestURL = TRUE)
-reports_info(reportName = "untitled-report")
 }
 
 }

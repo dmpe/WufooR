@@ -5,6 +5,7 @@ cache: packages
 r:
   - release
   - devel
+  - oldrel
   
 env:
   global:

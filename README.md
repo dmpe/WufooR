@@ -9,6 +9,15 @@ R package for Wufoo API
 **Note:** This package doesn't support creating new forms. 
 Thus, it can be only used to retrieve information about your existing forms (entries) and reports. This is due to lacking API support for that. 
 
+As of March 2019, it also supports new Wufoo Frondend experience. [BETA](https://help.wufoo.com/articles/en_US/kb/Beta)
+
+
+
+## Not implemented
+
+- <https://wufoo.github.io/docs/#submit-entry>
+
+
 ### Installing
 
 **CRAN:** <https://CRAN.R-project.org/package=WufooR>

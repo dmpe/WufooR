@@ -20,7 +20,7 @@ form_entries(wufoo_name = auth_name(NULL), formIdentifier = NULL,
 
 \item{sortDirection}{- choose to sort your entries ASC (lowest to highest) or DESC (highest to lowest).}
 
-\item{columnNames}{- a MUST: How should be column names be called. Either "Field1", "Field2" 
+\item{columnNames}{- How should be column names be called. Either "Field1", "Field2" 
 etc. or "First Name", "Last Name" (tries to make best guess). Default to the second option.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
@@ -35,22 +35,12 @@ default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 \item{pageSize}{- the number of entries returned in your page. Defaults to 25; Max = 100.}
 }
 \value{
-EntryId - This value is the unique identifier for your entry.
-
-DateCreated - The date that this entry was submitted.
-
-Created By - The person who created the entry. If submitted through a form, the value 
-here will be public. If the submission originated in the Entry Manager this value will be the 
-user name of the submitting user.
-
-DateUpdated - The date that this entry was edited through the Entry Manager. If the 
-submission has never been updated, this value will be blank.
-
-UpdatedBy - The user name of the person who updated the entry in the Entry Manager will 
-appear in this element.
+\url{https://wufoo.github.io/docs/#form-entries}
 }
 \description{
 If you have 5 submissions to your form, you'll have 5 elements (rows) in the return.
+This request returns the entries that have been submitted to a specific form. 
+This is the equivalent of viewing your stored entries in the Entry Manager in Wufoo.
 }
 \examples{
 \donttest{

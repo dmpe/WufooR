@@ -11,10 +11,11 @@ form_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
-\item{formIdentifier}{- this will give you information about just one form. The call without 
-the "formIdentifier" will return all forms.}
+\item{formIdentifier}{- this will give you information about just one form. A request without 
+the \code{formIdentifier} will return all forms.}
 
-\item{includeTodayCount}{- Will give you today's entry count for the form.}
+\item{includeTodayCount}{- if set to true, includes the number of entries received today. 
+If you add the \code{includeTodayCount} parameter, the value will be returned in the form's \code{EntryCountToday} property}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 
@@ -24,10 +25,10 @@ the "formIdentifier" will return all forms.}
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \value{
-\url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Forms-API}
+\url{https://wufoo.github.io/docs/#all-forms}
 }
 \description{
-This API can be used to create a list of all forms belonging to a user and 
+Creates a list of all forms belonging to a user and 
 dynamically generate a form embed snippet to use in your application.
 }
 \examples{
@@ -35,4 +36,7 @@ dynamically generate a form embed snippet to use in your application.
 form_info()
 }
 
+}
+\seealso{
+\url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Forms-API}
 }
