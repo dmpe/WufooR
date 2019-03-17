@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/dmpe/WufooR.svg?branch=master)](https://travis-ci.org/dmpe/WufooR)
-[![Coverage Status](https://coveralls.io/repos/dmpe/WufooR/badge.svg?branch=master&service=github)](https://coveralls.io/github/dmpe/WufooR?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/dmpe/WufooR/badge.svg?branch=master)](https://coveralls.io/github/dmpe/WufooR?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/WufooR)](https://cran.r-project.org/package=WufooR)
 =======
 
@@ -10,8 +10,6 @@ R package for Wufoo API
 Thus, it can be only used to retrieve information about your existing forms (entries) and reports. This is due to lacking API support for that. 
 
 As of March 2019, it also supports new Wufoo Frondend experience. [BETA](https://help.wufoo.com/articles/en_US/kb/Beta)
-
-
 
 ## Not implemented
 
