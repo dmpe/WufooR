@@ -3,9 +3,6 @@
 #' @inheritParams form_info
 #' @inheritParams user_info
 #' 
-#' @param reportName - the name of your report as displayed in the csv export 
-#' URL (which is in lowercase with hyphens replacing spaces of your report name). The report should be also public.
-#' 
 #' @return Name - This is the friendly name you chose when creating this form.
 #' @return IsPublic - Indicates whether or not the report is accessible through 
 #' the Url by the general public. This value is binary (1 = true, 0 = false).
@@ -39,7 +36,10 @@ reports_info <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com",
 #' To identify the desired report, you can either use the report hash or the report title.
 #' The Report properties are the same as in the All Reporst request. 
 #' The only difference is that this request will only return the identified report.
-#' 
+#'
+#' @param reportName - the name of your report as displayed in the csv export 
+#' URL (which is in lowercase with hyphens replacing spaces of your report name). The report should be also public.
+#'
 #' @inheritParams form_info
 #' @inheritParams user_info
 #' @inheritParams reports_info
@@ -141,7 +141,7 @@ report_fields <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com", sy
   query <- list(system = systemFields)
   executedReportFieldsGetRst <- doRequest(reports_url, query, showURL = showRequestURL, debugConnection = debugConnection)
   
-  return(executedReportEntriesGetRst$Fields)
+  return(executedReportFieldsGetRst$Fields)
 }
 
 
