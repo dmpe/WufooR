@@ -15,10 +15,10 @@ env:
 r_github_packages:
   - r-lib/covr
 
+after_success:
+  - Rscript -e 'library(covr);covr::coveralls()'
+
 notifications:
   email:
     on_success: never
     on_failure: always
-    
-after_success:
-  - Rscript -e 'library(covr);covr::coveralls()'
