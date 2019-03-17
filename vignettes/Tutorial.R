@@ -40,4 +40,6 @@ options(Wufoo_Name = "johnmalc", Wufoo_API = "S6VI-I8UA-BY11-TDHO")
 #  t(reports_info())
 #  
 #  t(report_info(reportName = "untitled-report"))
+#  
+#  t(report_entries(reportName = "untitled-report"))
 

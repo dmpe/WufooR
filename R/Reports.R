@@ -119,7 +119,7 @@ report_entriesCount <- function(wufoo_name = auth_name(NULL), domain = "wufoo.co
   return(executedReportEntriesCountGetRst)
 }
 
-#' Returns the field structure for the report’s corresponding form.
+#' Returns the field structure for the report's corresponding form.
 #' 
 #' @inheritParams form_info
 #' @inheritParams user_info
@@ -130,7 +130,7 @@ report_entriesCount <- function(wufoo_name = auth_name(NULL), domain = "wufoo.co
 #' 
 #' @examples
 #' \donttest{
-#' report_entries(reportName = "untitled-report")
+#' report_fields(reportName = "untitled-report")
 #' }
 #' 
 #' @export
