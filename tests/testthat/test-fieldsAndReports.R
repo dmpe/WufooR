@@ -14,5 +14,5 @@ context("Reports")
 
 test_that("Reports have 11 fields", {
   repo <- reports_info()
-  expect_equal(dim(repo)[2], 11)
+  expect_gte(dim(repo)[2], 11)
 })
