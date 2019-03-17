@@ -85,16 +85,63 @@ report_entries <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com", s
                         reportName = NULL, showRequestURL = FALSE, debugConnection = 0L) {
   
   reports_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/reports/", reportName, "/entries.json")
+  query <- list(system = systemFields)
+  executedReportEntriesGetRst <- doRequest(reports_url, query, showURL = showRequestURL, debugConnection = debugConnection)
   
-  executedReportEntriesGetRst <- doRequest(reports_url, showURL = showRequestURL, debugConnection = debugConnection)
-  
-  return(executedReportEntriesGetRst$Entries)
+  return(as.numeric(as.character(executedReportEntriesGetRst$Entries)))
 }
 
 
+#' Returns a count of the entries stored for a specific report.
+#' 
+#' This can help with determining the number of elements you have to display.
+#' 
+#' @inheritParams form_info
+#' @inheritParams user_info
+#' @inheritParams reports_info
+#' @inheritParams form_entries
+#' 
+#' @seealso [report_entries()]
+#' 
+#' @examples
+#' \donttest{
+#' report_entriesCount(reportName = "untitled-report")
+#' }
+#' 
+#' @export
+report_entriesCount <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com",
+                           reportName = NULL, showRequestURL = FALSE, debugConnection = 0L) {
+  
+  reports_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/reports/", reportName, "/entries/count.json")
+  
+  executedReportEntriesCountGetRst <- doRequest(reports_url, showURL = showRequestURL, debugConnection = debugConnection)
+  
+  return(executedReportEntriesCountGetRst)
+}
 
-
-
-
+#' Returns the field structure for the report’s corresponding form.
+#' 
+#' @inheritParams form_info
+#' @inheritParams user_info
+#' @inheritParams reports_info
+#' @inheritParams form_entries
+#' 
+#' @seealso [fields_info()]
+#' 
+#' @examples
+#' \donttest{
+#' report_entries(reportName = "untitled-report")
+#' }
+#' 
+#' @export
+report_fields <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com", systemFields = "true",
+                           reportName = NULL, showRequestURL = FALSE, debugConnection = 0L) {
+  
+  reports_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/reports/", reportName, "/fields.json")
+  query <- list(system = systemFields)
+  executedReportFieldsGetRst <- doRequest(reports_url, query, showURL = showRequestURL, debugConnection = debugConnection)
+  
+  return(executedReportEntriesGetRst$Fields)
+}
 
 
