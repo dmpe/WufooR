@@ -7,5 +7,5 @@ context("Users")
 
 test_that("User request returns 17 rows, always", {
   userDB <- user_info()
-  expect_equal(dim(userDB)[2], 17)
+  expect_gte(dim(userDB)[2], 17)
 })
