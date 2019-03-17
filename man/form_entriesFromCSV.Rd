@@ -18,7 +18,7 @@ the hash value for this argument. The report should be also public.}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 
-\item{domain}{- for thatever reason domain's ccTLD may change. With this param you can change 
+\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change 
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \description{
@@ -31,7 +31,7 @@ E.g. \code{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.cs
 }
 \examples{
 \dontrun{
-options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")
+options(Wufoo_Name = "johnmalc", Wufoo_API = "S6VI-I8UA-BY11-TDHO")
 df_csv <- form_entriesFromCSV(reportName = "untitled-report", showRequestURL = F)
 View(df_csv)
 }

@@ -1,6 +1,6 @@
 #' @title Return details about form's fields
 #' 
-#' @description The Fields API describes the hierarchy of your data. At the heart of this API is the
+#' @description The Fields API describes a hierarchy of your data. At the heart of this API is the
 #' listing of FieldId values. Each FieldId corresponds to a value in the Entries API.
 #'
 #' @return Title - The title is the friendly name you gave the field when creating your form. For 

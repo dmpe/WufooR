@@ -1,10 +1,10 @@
 #' @title Authentication
 #' 
-#' @description Method for setting your Wufoo Name and API Key. Your Wufoo name is the subdomain 
-#' of your Wufoo URL displayed in "Account" tab. For example, for http://johnmalc.wufoo.com ->
-#' the Wufoo_Name = "johnmalc". This can be also actually the company's name, e.g. \code{http://google.wufoo.com}
+#' @description A method for setting your Wufoo Name and API Key. Your Wufoo name is the subdomain 
+#' of your Wufoo URL displayed in "Account" tab. For example, for \code{http://johnmalc.wufoo.com}, 
+#' the \code{Wufoo_Name = "johnmalc"}. This can be actually the company's name too, e.g. \code{http://google.wufoo.com}
 #' 
-#' Your API may be found by selecting "Share" for your Form, then 
+#' Your API key may be found by selecting "Share" for your Form, then 
 #' "API Information" (or go to \code{https://yourName.wufoo.com/api/code/1/}. 
 #'  
 #' @author The code for these methods has been developed by Scott Chamberlain \url{https://github.com/sckott} for his 
@@ -24,7 +24,7 @@ auth_name <- function(x) {
   } else x
   
   if(tmp == "") {
-    getOption("Wufoo_Name", stop("you need to set up your wofoo name"))
+    getOption("Wufoo_Name", stop("you need to set up your Wufoo name"))
   } else tmp
 }
 
@@ -36,11 +36,11 @@ auth_key <- function(x) {
   } else x
   
   if(tmp == "") {
-    getOption("Wufoo_API",  stop("you need to set up your wofoo api key"))
+    getOption("Wufoo_API",  stop("you need to set up your Wufoo API key"))
   } else tmp
 }
 
-#' @title Generalized function for executing GET requests by always appending user's API Key.
+#' @title Generalized function for executing GET requests by appending user's API Key.
 #' 
 #' @param url - which is used for the request
 #' @param apiKey - uses the passed api key of the user
@@ -48,8 +48,7 @@ auth_key <- function(x) {
 #' @param showURL - for debugging purposes only: it shows what URL has been called
 #' @param debugConnection - same as above 
 #' 
-#' @import httr
-#' @import jsonlite
+#' @import httr jsonlite
 #' 
 #' @noRd
 doRequest <- function(url, queryParameters = NULL, apiKey = auth_key(NULL), showURL = NULL, debugConnection = 0L) {

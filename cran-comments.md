@@ -1,12 +1,11 @@
 ## Test environments
-* Ubuntu 15.04 (+ travis-ci)
-* Windows 8 (3.2.2-release)
+* Ubuntu 19.04 (+ travis-ci)
+* Windows 10 (3.5 RHUB)
 
 ## This is a submission
 Dear CRAN Maintainers,
 
-I have updated my package inline with Mr. Ripley (email 28th of Aug. 2015) comments about fedora checks. 
-This package has been tested on fedora, ubuntu and windows 8; always with the latest release of R. 
+This package has been tested on rhub and beta release of 19.04. 
 
 ## R CMD check results
 There were no ERRORs or WARNINGs. 

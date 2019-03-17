@@ -20,7 +20,7 @@ the "formIdentifier" will return all forms.}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 
-\item{domain}{- for thatever reason domain's ccTLD may change. With this param you can change 
+\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change 
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \value{

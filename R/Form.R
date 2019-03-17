@@ -1,15 +1,17 @@
 #' @title Return details about the forms you have permission to access.
 #'
-#' @description This API can be used to create a list of all forms belonging to a user and 
+#' @description Creates a list of all forms belonging to a user and 
 #' dynamically generate a form embed snippet to use in your application.
 #'
-#' @param formIdentifier - this will give you information about just one form. The call without 
-#' the "formIdentifier" will return all forms.
-#' @param includeTodayCount - Will give you today's entry count for the form.
+#' @param formIdentifier - this will give you information about just one form. A request without 
+#' the \code{formIdentifier} will return all forms.
+#' @param includeTodayCount - if set to true, includes the number of entries received today. 
+#' If you add the \code{includeTodayCount} parameter, the value will be returned in the form's \code{EntryCountToday} property
 #' 
 #' @inheritParams user_info
 #'
-#' @return \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Forms-API}
+#' @seealso \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Forms-API}
+#' @return \url{https://wufoo.github.io/docs/#all-forms}
 #' 
 #' @examples 
 #' \donttest{
@@ -22,7 +24,12 @@ form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, inclu
   
   form_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/forms.json")
   
-  query = list(formIdentifier = formIdentifier, includeTodayCount = includeTodayCount)
+
+  if(!is.null(formIdentifier)) {
+      query <- list(includeTodayCount = includeTodayCount)
+  } else {
+      query <- list(formIdentifier = formIdentifier, includeTodayCount = includeTodayCount)
+  }
   
   executedFormGetRst <- doRequest(form_url, query, showURL = showRequestURL, debugConnection = debugConnection)
   df_forms <- executedFormGetRst$Forms
@@ -142,7 +149,7 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 #'  
 #' @examples
 #' \dontrun{
-#' options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")
+#' options(Wufoo_Name = "johnmalc", Wufoo_API = "S6VI-I8UA-BY11-TDHO")
 #' df_csv <- form_entriesFromCSV(reportName = "untitled-report", showRequestURL = F)
 #' View(df_csv)
 #' }

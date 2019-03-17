@@ -10,7 +10,7 @@ user_info(wufoo_name = auth_name(NULL), domain = "wufoo.com",
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
-\item{domain}{- for thatever reason domain's ccTLD may change. With this param you can change 
+\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change 
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 
 \item{showRequestURL}{- use only for DEBUG purposes}

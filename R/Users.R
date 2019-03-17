@@ -4,7 +4,7 @@
 #' 
 #' @references wufoo_api - User's API Key. Default: \code{\link{auth_key}}.
 #' @param wufoo_name - User's Name. Default: \code{\link{auth_name}}
-#' @param domain - for thatever reason domain's ccTLD may change. With this param you can change 
+#' @param domain - for whatever reason domain's ccTLD may change. With this parameter you can change 
 #' default \code{wufoo.com} to another one such as \code{wufoo.eu}
 #' @param showRequestURL - use only for DEBUG purposes
 #' @param debugConnection - samilar as above. Either "0L" (false; default) or "1L"
