@@ -16,9 +16,6 @@ default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 \item{showRequestURL}{- use only for DEBUG purposes}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
-
-\item{reportName}{- the name of your report as displayed in the csv export 
-URL (which is in lowercase with hyphens replacing spaces of your report name). The report should be also public.}
 }
 \value{
 Name - This is the friendly name you chose when creating this form.

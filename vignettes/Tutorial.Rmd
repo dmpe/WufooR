@@ -13,9 +13,9 @@ editor_options:
 
 ## Authentication
 
-To access data from your surveys, you need to store your login information (name of subdomain and API key) in your local R environment. As described below, this can be done in two ways (ideas borrowed from [Scott Chamberlain](https://github.com/sckott) who used them in his `rnoaa` [package](https://github.com/ropensci/rnoaa/) package)
+To access data from your surveys, you need to store your login information (name of `subdomain` and `API key`) in your local R environment. As described below, this can be done in two ways (this has been borrowed from [Scott Chamberlain](https://github.com/sckott)/his `rnoaa` [package](https://github.com/ropensci/rnoaa/) package).
 
-PS: Don't use my key, of course. See <https://wufoo.github.io/docs/>
+PS: Don't use my `API key`, of course. See <https://wufoo.github.io/docs/>
 
 > A helper function `auth_name()/auth_api()` looks for one of two stored keys, as an
 environment variable under the name `Wufoo_Name`/`Wufoo_API`, or an option variable under the name
@@ -33,7 +33,7 @@ options(Wufoo_Name = "johnmalc", Wufoo_API = "S6VI-I8UA-BY11-TDHO")
 
 Print information about myself & API key.
 
-```{r, eval=FALSE, include=T}
+```{r, eval=TRUE, include=T}
 auth_name(NULL)
 auth_key(NULL)
 ```
@@ -42,13 +42,13 @@ auth_key(NULL)
  
 Let's print some information about the user.
 
-```{r, eval=FALSE, include=T}
+```{r, eval=TRUE, include=T}
 t(user_info())
 ```
 
-And now about the forms you have access to.
+And now what about the forms you have access to.
 
-```{r, eval=FALSE, include=T}
+```{r, eval=TRUE, include=T}
 
 t(form_info(formIdentifier = "z5kqx7h1gtvg4g", includeTodayCount="true"))
 
@@ -64,36 +64,44 @@ sapply(fe_1, class)
 
 And how many responses did we get sofar ?
 
-```{r, eval=FALSE, include=T}
+```{r, eval=TRUE, include=T}
 form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g", domain = "wufoo.eu")
 ```
 
 And form comments ?
 
-```{r, eval=FALSE, include=T}
+```{r, eval=TRUE, include=T}
 form_comments(formIdentifier = "z5kqx7h1gtvg4g", domain = "wufoo.eu")
 form_commentsCount(formIdentifier = "z5kqx7h1gtvg4g")
 ```
 
 Form entries in CSV ?
 
-```{r, eval=FALSE, include=T}
+```{r, eval=TRUE, include=T}
 form_entriesFromCSV(reportName = "untitled-report", showRequestURL = F)
 ```
 
 Show form's fields, with the requested URL (for debug purposes).
 
-```{r, eval=FALSE, include=T}
+```{r, eval=TRUE, include=T}
 fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 ```
 
 Do I have some reports ? If yes, then show me information about them.
 
-```{r, eval=FALSE, include=T}
+```{r, eval=TRUE, include=T}
+# all reports
 t(reports_info())
 
+# only some reports
 t(report_info(reportName = "untitled-report"))
+```
 
+Number of entries in the report and `details of the widgets that make up a specific report`.
+
+```{r, eval=TRUE, include=T}
 t(report_entries(reportName = "untitled-report"))
+
+t(report_widgets(formIdentifier = "z5kqx7h1gtvg4g"))
 ```
 

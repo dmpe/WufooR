@@ -25,7 +25,7 @@ reports_info <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com",
   
   reports_url <- paste0("https://", wufoo_name, ".", domain, "/api/v3/reports.json")
   
-  executedReportsGetRst <- doRequest(reports_url, query, showURL = showRequestURL, debugConnection = debugConnection)
+  executedReportsGetRst <- doRequest(reports_url, showURL = showRequestURL, debugConnection = debugConnection)
   
   return(executedReportsGetRst$Reports)
 }
@@ -88,7 +88,7 @@ report_entries <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com", s
   query <- list(system = systemFields)
   executedReportEntriesGetRst <- doRequest(reports_url, query, showURL = showRequestURL, debugConnection = debugConnection)
   
-  return(as.numeric(as.character(executedReportEntriesGetRst$Entries)))
+  return(executedReportEntriesGetRst$Entries)
 }
 
 

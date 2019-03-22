@@ -1,7 +1,6 @@
 library(testthat)
-library(WufooR)
 library(httr)
 library(jsonlite)
-library(dplyr)
+library(WufooR)
 
 test_check("WufooR")

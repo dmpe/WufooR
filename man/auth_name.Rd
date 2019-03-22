@@ -15,13 +15,13 @@ auth_key(x)
 \description{
 A method for setting your Wufoo Name and API Key. Your Wufoo name is the subdomain 
 of your Wufoo URL displayed in "Account" tab. For example, for \code{http://johnmalc.wufoo.com}, 
-the \code{Wufoo_Name = "johnmalc"}. This can be actually the company's name too, e.g. \code{http://google.wufoo.com}
+the \code{Wufoo_Name = "johnmalc"}. This can be the company's name too, e.g. \code{http://google.wufoo.com}
 
-Your API key may be found by selecting "Share" for your Form, then 
+Your API key may be found by selecting "Share" of your form, then 
 "API Information" (or go to \code{https://yourName.wufoo.com/api/code/1/}.
 }
 \note{
-Wufoo currently restricts your API usage to 5000 requests per day.
+Wufoo currently restricts API usage to 5000 requests per day.
 }
 \examples{
 options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")
@@ -29,5 +29,5 @@ options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")
 }
 \author{
 The code for these methods has been developed by Scott Chamberlain \url{https://github.com/sckott} for his 
-\url{https://github.com/ropensci/rnoaa} package. His copyright!
+\url{https://github.com/ropensci/rnoaa} package.
 }

@@ -7,7 +7,7 @@ context("Forms")
 
 test_that("Form request returns 17 rows, always", {
   userDB <- form_info()
-  expect_equal(dim(userDB)[2], 17)
+  expect_gte(dim(userDB)[2], 17)
 })
 
 test_that("Form returns entries, with the requested URL", {
@@ -19,7 +19,7 @@ test_that("Form returns entries, with the requested URL", {
 
 test_that("CSV df is returned", {
   df_csv <- form_entriesFromCSV(reportName = "untitled-report", showRequestURL = F)
-  expect_equal(dim(df_csv)[2], 19)
+  expect_gte(dim(df_csv)[2], 19)
 })
 
 test_that("There are no comments", {

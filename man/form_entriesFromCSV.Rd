@@ -10,9 +10,6 @@ form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
-\item{reportName}{- the name of your report as displayed in the csv export 
-URL (which is in lowercase with hyphens replacing spaces of your report name). The report should be also public.}
-
 \item{showRequestURL}{- use only for DEBUG purposes}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
