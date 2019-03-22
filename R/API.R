@@ -12,7 +12,7 @@
 #' 
 #' @param x - an empty parameter, e.g. NULL
 #' 
-#' @note Wufoo currently restricts API usage to 5000 requests per day.
+#' @note Wufoo currently restricts free API usage to 100 requests per day.
 #'  
 #' @examples 
 #' options(Wufoo_Name = "johnmalc", Wufoo_API = "F1QH-Q64B-BSBI-JASJ")

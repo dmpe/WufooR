@@ -4,7 +4,7 @@ author: "dmpe @ github"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Tutorial for WufooR}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 editor_options: 
@@ -25,7 +25,7 @@ environment variable under the name `Wufoo_Name`/`Wufoo_API`, or an option varia
 or stored long term in your `.Renviron` file. Option variables can be set during session
 like `options(var = "...")`, or stored long term in your `.Rprofile` file.
 
-```{r echo=TRUE}
+```{r echo=FALSE}
 library(WufooR)
 # put here your api key
 options(Wufoo_Name = "johnmalc", Wufoo_API = "S6VI-I8UA-BY11-TDHO")
@@ -33,7 +33,7 @@ options(Wufoo_Name = "johnmalc", Wufoo_API = "S6VI-I8UA-BY11-TDHO")
 
 Print information about myself & API key.
 
-```{r, eval=TRUE, include=T}
+```{r, eval=FALSE, include=T}
 auth_name(NULL)
 auth_key(NULL)
 ```
@@ -42,18 +42,17 @@ auth_key(NULL)
  
 Let's print some information about the user.
 
-```{r, eval=TRUE, include=T}
+```{r, eval=FALSE, include=T}
 t(user_info())
 ```
 
 And now what about the forms you have access to.
 
-```{r, eval=TRUE, include=T}
+```{r, eval=FALSE, include=T}
+t(form_info(formIdentifier = "z5kqx7h1gtvg4g", includeTodayCount="FALSE"))
 
-t(form_info(formIdentifier = "z5kqx7h1gtvg4g", includeTodayCount="true"))
 
-
-t(form_info(includeTodayCount="true"))
+t(form_info(includeTodayCount="FALSE"))
 
 # Show responses to the form
 fe_1 <- form_entries(formIdentifier = "z5kqx7h1gtvg4g")
@@ -64,32 +63,34 @@ sapply(fe_1, class)
 
 And how many responses did we get sofar ?
 
-```{r, eval=TRUE, include=T}
+```{r, eval=FALSE, include=T}
 form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g", domain = "wufoo.eu")
 ```
 
 And form comments ?
 
-```{r, eval=TRUE, include=T}
+```{r, eval=FALSE, include=T}
 form_comments(formIdentifier = "z5kqx7h1gtvg4g", domain = "wufoo.eu")
 form_commentsCount(formIdentifier = "z5kqx7h1gtvg4g")
 ```
 
 Form entries in CSV ?
 
-```{r, eval=TRUE, include=T}
+```{r, eval=FALSE, include=T}
 form_entriesFromCSV(reportName = "untitled-report", showRequestURL = F)
 ```
 
 Show form's fields, with the requested URL (for debug purposes).
 
-```{r, eval=TRUE, include=T}
-fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
+```{r, eval=FALSE, include=T}
+fields_info(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = FALSE)
 ```
+
+## Report Information
 
 Do I have some reports ? If yes, then show me information about them.
 
-```{r, eval=TRUE, include=T}
+```{r, eval=FALSE, include=T}
 # all reports
 t(reports_info())
 
@@ -99,7 +100,7 @@ t(report_info(reportName = "untitled-report"))
 
 Number of entries in the report and `details of the widgets that make up a specific report`.
 
-```{r, eval=TRUE, include=T}
+```{r, eval=FALSE, include=T}
 t(report_entries(reportName = "untitled-report"))
 
 t(report_widgets(formIdentifier = "z5kqx7h1gtvg4g"))
