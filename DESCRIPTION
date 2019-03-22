@@ -6,7 +6,7 @@ Description: Allows form managers to download entries from their respondents
     also acquired programmatically. Note that building new forms within this package
     is not supported.
 Version: 0.9
-Date: 2019-03-17
+Date: 2019-03-22
 Authors@R: c(
     person("John", "Malc", email = "cincenko@outlook.com", role = c("aut", "cre"), comment = "@dmpe"),
     person("Maksim", "Pecherskiy", role = c("ctb"), comment = "@MrMaksimize")
@@ -21,7 +21,8 @@ Imports:
 Suggests:
     roxygen2 (>= 6.1.1),
     knitr (>= 1.22),
-    testthat (>= 2.0.1)
+    testthat (>= 2.0.1), 
+    rmarkdown (>= 1.12)
 VignetteBuilder: knitr
 Encoding: UTF-8
 License: Apache License 2.0

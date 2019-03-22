@@ -136,7 +136,7 @@ form_entriesCount <- function(wufoo_name = auth_name(NULL), formIdentifier = NUL
 #' For example, the report titled "My Example Report" will be "my-example-report" in the URL as shown below.
 #' E.g. \code{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv} 
 #' 
-#' @inheritParams reports_info
+#' @inheritParams report_info
 #' @inheritParams user_info
 #' @inheritParams form_entries
 #'  

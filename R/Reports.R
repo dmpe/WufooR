@@ -70,7 +70,7 @@ report_info <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com",
 #' 
 #' @inheritParams form_info
 #' @inheritParams user_info
-#' @inheritParams reports_info
+#' @inheritParams report_info
 #' @inheritParams form_entries
 #' 
 #' @seealso [form_entries()]
@@ -98,7 +98,7 @@ report_entries <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com", s
 #' 
 #' @inheritParams form_info
 #' @inheritParams user_info
-#' @inheritParams reports_info
+#' @inheritParams report_info
 #' @inheritParams form_entries
 #' 
 #' @seealso [report_entries()]
@@ -123,7 +123,7 @@ report_entriesCount <- function(wufoo_name = auth_name(NULL), domain = "wufoo.co
 #' 
 #' @inheritParams form_info
 #' @inheritParams user_info
-#' @inheritParams reports_info
+#' @inheritParams report_info
 #' @inheritParams form_entries
 #' 
 #' @seealso [fields_info()]

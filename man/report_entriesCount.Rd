@@ -13,6 +13,9 @@ report_entriesCount(wufoo_name = auth_name(NULL), domain = "wufoo.com",
 \item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change 
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 
+\item{reportName}{- the name of your report as displayed in the csv export 
+URL (which is in lowercase with hyphens replacing spaces of your report name). The report should be also public.}
+
 \item{showRequestURL}{- use only for DEBUG purposes}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}

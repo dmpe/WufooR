@@ -69,7 +69,6 @@ doRequest <- function(url, queryParameters = NULL, apiKey = auth_key(NULL), show
       getResponse <- GET(url, query = queryParameters, 
                          config(userpwd = paste0(apiKey,":fakepassword"), 
                                 ssl_verifypeer=0L, ssl_verifyhost=0L, followlocation=1L, verbose=debugConnection))
-      
     }
     stop_for_status(getResponse)
     rawTextResponse <- content(getResponse, as = "text")
@@ -88,3 +87,59 @@ doRequest <- function(url, queryParameters = NULL, apiKey = auth_key(NULL), show
   }
   
 }
+
+
+#' Retrieve API Key on behalf of users
+#' 
+#' This request allows approved partners to access users API Keys. 
+#' This is useful for custom integrations that need to make API requests on 
+#' behalf of Wufoo users. For example, Zapier uses this method to set up new integrations, 
+#' without requiring users to use or even know their own API Key.
+#' 
+#' @param integrationKey - Required. This is your Login integration key. Apply at \url{https://master.wufoo.com/forms/integration-key-application/}
+#' @param email - Required. The user's email, which acts as the identifier for their account.
+#' @param password - Required. The user's password
+#' @param subdomain - Optional. The user's subdomain. Is required if the email belongs to a sub-user or the email address is used on multiple accounts.
+#' 
+#' @note This method has not been tested. Please report bugs in GitHub Issues
+#' 
+#' @note This method will not work unless you are one of Wufoo's exclusive partners.  
+#' 
+#' @return \url{https://wufoo.github.io/docs/#retrieve-api-key}
+#' 
+#' @export
+retrieve_api_key <- function(integrationKey = NULL, email = NULL, password = NULL,
+                             subdomain = NULL, showRequestURL = FALSE, 
+                             debugConnection = 0L,  domain = "wufoo.com") {
+  
+  post_url <- paste0("https://", domain, "/api/v3/login.json")
+  
+  query <- list(integrationKey = integrationKey, email = email, 
+               password = password, subdomain = subdomain)
+  
+  if (.Platform$OS.type == "windows") {
+    getResponse <- POST(post_url, body = query, content_type_json(),
+                       config(userpwd = paste0(apiKey,":fakepassword"), ssl_cipher_list = "TLSv1", 
+                              ssl_verifypeer=0L, ssl_verifyhost=0L, followlocation=1L, verbose=debugConnection))
+  } else {
+    getResponse <- POST(post_url, body = query, content_type_json(),
+                       config(userpwd = paste0(apiKey,":fakepassword"), 
+                              ssl_verifypeer=0L, ssl_verifyhost=0L, followlocation=1L, verbose=debugConnection))
+  }
+  stop_for_status(getResponse)
+  rawTextResponse <- content(getResponse, as = "text")
+  
+  if (grepl("application/json", getResponse$headers$`content-type`)) {
+    response <- fromJSON(rawTextResponse)
+  } else {
+    response <- rawTextResponse
+  }
+  
+  if (identical(showRequestURL, TRUE)) {
+    cat("The requested URL has been this: ", getResponse$url, "\n") 
+  }
+  
+  return(response)
+}
+
+
