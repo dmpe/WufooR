@@ -22,7 +22,8 @@ Suggests:
     roxygen2 (>= 6.1.1),
     knitr (>= 1.22),
     testthat (>= 2.0.1), 
-    rmarkdown (>= 1.12)
+    rmarkdown (>= 1.12), 
+    covr
 VignetteBuilder: knitr
 Encoding: UTF-8
 License: Apache License 2.0
