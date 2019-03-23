@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/dmpe/WufooR.svg?branch=master)](https://travis-ci.org/dmpe/WufooR)
 [![Coverage Status](https://coveralls.io/repos/github/dmpe/WufooR/badge.svg?branch=master)](https://coveralls.io/github/dmpe/WufooR?branch=master)
+[![codecov](https://codecov.io/gh/dmpe/WufooR/branch/master/graph/badge.svg)](https://codecov.io/gh/dmpe/WufooR)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/WufooR)](https://cran.r-project.org/package=WufooR)
 =======
 
