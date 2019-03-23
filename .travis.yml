@@ -22,8 +22,9 @@ after_script:
   - Rscript -e 'lintr::lint_package()'
   
 after_success:
-  - Rscript -e 'library(covr);covr::coveralls();codecov()'
-
+  - Rscript -e 'library(covr);covr::codecov(token = "99e5807c-72f3-445e-830c-79c132f1b5e7")'
+  - Rscript -e 'library(covr);covr::coveralls(repo_token = "OSlPWUZnMzfy0kf5hMV12uBYI8nPaL3Cd")'
+  
 notifications:
   email:
     on_success: never

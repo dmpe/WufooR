@@ -110,7 +110,8 @@ doRequest <- function(url, queryParameters = NULL, apiKey = auth_key(NULL), show
 #' behalf of Wufoo users. For example, Zapier uses this method to set up new integrations,
 #' without requiring users to use or even know their own API Key.
 #'
-#' @inheritParams doRequest
+#' @inheritParams report_fields
+#' @param apiKey - uses the passed api key of the user
 #' @param integrationKey - Required. This is your Login integration key. Apply at \url{https://master.wufoo.com/forms/integration-key-application/}
 #' @param email - Required. The user's email, which acts as the identifier for their account.
 #' @param password - Required. The user's password

@@ -10,7 +10,7 @@ reports_info(wufoo_name = auth_name(NULL), domain = "wufoo.com",
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
-\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change 
+\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
@@ -20,10 +20,10 @@ default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 \value{
 Name - This is the friendly name you chose when creating this form.
 
-IsPublic - Indicates whether or not the report is accessible through 
+IsPublic - Indicates whether or not the report is accessible through
 the Url by the general public. This value is binary (1 = true, 0 = false).
 
-Url - This is the URL for your form. Beware using the URL for API or 
+Url - This is the URL for your form. Beware using the URL for API or
 linking purposes because it changes with the report title.
 
 Description - Your description of the report.

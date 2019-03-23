@@ -11,10 +11,10 @@ report_widgets(wufoo_name = auth_name(NULL), domain = "wufoo.com",
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
-\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change 
+\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 
-\item{formIdentifier}{- this will give you information about just one form. A request without 
+\item{formIdentifier}{- this will give you information about just one form. A request without
 the \code{formIdentifier} will return all forms.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
@@ -25,8 +25,8 @@ the \code{formIdentifier} will return all forms.}
 \url{https://wufoo.github.io/docs/#widgets}
 }
 \description{
-The hash code for a widget can be used to embed the widget using Javascript. Only Chart, Graph, 
-and Number widgets will be included in the request. 
+The hash code for a widget can be used to embed the widget using Javascript. Only Chart, Graph,
+and Number widgets will be included in the request.
 Any Text or Datagrid widgets will not be shown.
 }
 \examples{

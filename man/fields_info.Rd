@@ -10,30 +10,30 @@ fields_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
-\item{formIdentifier}{- this will give you information about just one form. A request without 
+\item{formIdentifier}{- this will give you information about just one form. A request without
 the \code{formIdentifier} will return all forms.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 
-\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change 
+\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \value{
-Title - The title is the friendly name you gave the field when creating your form. For 
+Title - The title is the friendly name you gave the field when creating your form. For
 example, if you were building a table with the API, the Title would be a column header.
 
-Type - The Type represents a Wufoo field type. A listing of the these types can be found 
+Type - The Type represents a Wufoo field type. A listing of the these types can be found
 in the Field Type section of this documentation.
 
-ID - This is the unique reference ID for your field. There will be one corresponding ID 
+ID - This is the unique reference ID for your field. There will be one corresponding ID
 for each Entry in return value of the the Entries API.
 
-IsRequired - This value can be one or zero, representing whether or not the field has 
+IsRequired - This value can be one or zero, representing whether or not the field has
 been marked required in the Form Builder.
 
-OtherField - This value is true or false and is only set if the field has choices. Only 
+OtherField - This value is true or false and is only set if the field has choices. Only
 Multiple-Choice fields have the option of an Other field. When a Multiple-Choice field is marked
 as HasOtherField, the last choice is the Other field.
 }
@@ -42,8 +42,8 @@ The Fields API describes a hierarchy of your data. At the heart of this API is t
 listing of FieldId values. Each FieldId corresponds to a value in the Entries API.
 }
 \note{
-For developers: This function returns 2 data frames. One containing only default fields, another one containing 
-subfields as described \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Fields-API#Fancypants}. 
+For developers: This function returns 2 data frames. One containing only default fields, another one containing
+subfields as described \url{http://help.wufoo.com/articles/en_US/SurveyMonkeyArticleType/The-Fields-API#Fancypants}.
 "These include name, shortname, checkbox, address, and likert."
 }
 \examples{

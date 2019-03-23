@@ -5,8 +5,8 @@
 \title{Retrieve API Key on behalf of users}
 \usage{
 retrieve_api_key(integrationKey = NULL, email = NULL,
-  password = NULL, subdomain = NULL, showRequestURL = FALSE,
-  debugConnection = 0L, domain = "wufoo.com")
+  password = NULL, apiKey = auth_key(NULL), subdomain = NULL,
+  showRequestURL = FALSE, debugConnection = 0L, domain = "wufoo.com")
 }
 \arguments{
 \item{integrationKey}{- Required. This is your Login integration key. Apply at \url{https://master.wufoo.com/forms/integration-key-application/}}
@@ -15,15 +15,24 @@ retrieve_api_key(integrationKey = NULL, email = NULL,
 
 \item{password}{- Required. The user's password}
 
+\item{apiKey}{- uses the passed api key of the user}
+
 \item{subdomain}{- Optional. The user's subdomain. Is required if the email belongs to a sub-user or the email address is used on multiple accounts.}
+
+\item{showRequestURL}{- use only for DEBUG purposes}
+
+\item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
+
+\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change
+default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \value{
 \url{https://wufoo.github.io/docs/#retrieve-api-key}
 }
 \description{
-This request allows approved partners to access users API Keys. 
-This is useful for custom integrations that need to make API requests on 
-behalf of Wufoo users. For example, Zapier uses this method to set up new integrations, 
+This request allows approved partners to access users API Keys.
+This is useful for custom integrations that need to make API requests on
+behalf of Wufoo users. For example, Zapier uses this method to set up new integrations,
 without requiring users to use or even know their own API Key.
 }
 \note{

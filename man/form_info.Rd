@@ -11,24 +11,24 @@ form_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
-\item{formIdentifier}{- this will give you information about just one form. A request without 
+\item{formIdentifier}{- this will give you information about just one form. A request without
 the \code{formIdentifier} will return all forms.}
 
-\item{includeTodayCount}{- if set to true, includes the number of entries received today. 
+\item{includeTodayCount}{- if set to true, includes the number of entries received today.
 If you add the \code{includeTodayCount} parameter, the value will be returned in the form's \code{EntryCountToday} property}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 
-\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change 
+\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \value{
 \url{https://wufoo.github.io/docs/#all-forms}
 }
 \description{
-Creates a list of all forms belonging to a user and 
+Creates a list of all forms belonging to a user and
 dynamically generate a form embed snippet to use in your application.
 }
 \examples{

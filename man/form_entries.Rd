@@ -20,14 +20,14 @@ form_entries(wufoo_name = auth_name(NULL), formIdentifier = NULL,
 
 \item{sortDirection}{- choose to sort your entries ASC (lowest to highest) or DESC (highest to lowest).}
 
-\item{columnNames}{- How should be column names be called. Either "Field1", "Field2" 
+\item{columnNames}{- How should be column names be called. Either "Field1", "Field2"
 etc. or "First Name", "Last Name" (tries to make best guess). Default to the second option.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 
-\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change 
+\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 
 \item{pageStart}{- the page number you'd like to start from.  Defaults to 0.}
@@ -39,7 +39,7 @@ default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \description{
 If you have 5 submissions to your form, you'll have 5 elements (rows) in the return.
-This request returns the entries that have been submitted to a specific form. 
+This request returns the entries that have been submitted to a specific form.
 This is the equivalent of viewing your stored entries in the Entry Manager in Wufoo.
 }
 \examples{

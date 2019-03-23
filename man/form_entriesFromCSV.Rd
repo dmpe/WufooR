@@ -10,21 +10,21 @@ form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
-\item{reportName}{- the name of your report as displayed in the csv export 
+\item{reportName}{- the name of your report as displayed in the csv export
 URL (which is in lowercase with hyphens replacing spaces of your report name). The report should be also public.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 
-\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change 
+\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \description{
-This function imports your report csv file as a data frame from the report csv export url (example url below). 
-The report must be public and not protected. To verify your CSV url, 
-open the browser, select your report, then "Export" in "Commas (.csv)". 
-Please note that the name of your report will be in lowercase with spaces replaced with hyphens. 
+This function imports your report csv file as a data frame from the report csv export url (example url below).
+The report must be public and not protected. To verify your CSV url,
+open the browser, select your report, then "Export" in "Commas (.csv)".
+Please note that the name of your report will be in lowercase with spaces replaced with hyphens.
 For example, the report titled "My Example Report" will be "my-example-report" in the URL as shown below.
 E.g. \code{https://YourName.wufoo.com/export/reports/manager/NameOfYourReport.csv}
 }

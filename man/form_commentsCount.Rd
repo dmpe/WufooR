@@ -10,14 +10,14 @@ form_commentsCount(wufoo_name = auth_name(NULL), formIdentifier = NULL,
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
-\item{formIdentifier}{- this will give you information about just one form. A request without 
+\item{formIdentifier}{- this will give you information about just one form. A request without
 the \code{formIdentifier} will return all forms.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
 
 \item{debugConnection}{- samilar as above. Either "0L" (false; default) or "1L"}
 
-\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change 
+\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 }
 \value{

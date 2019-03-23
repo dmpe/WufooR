@@ -10,10 +10,10 @@ report_info(wufoo_name = auth_name(NULL), domain = "wufoo.com",
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
 
-\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change 
+\item{domain}{- for whatever reason domain's ccTLD may change. With this parameter you can change
 default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 
-\item{reportName}{- the name of your report as displayed in the csv export 
+\item{reportName}{- the name of your report as displayed in the csv export
 URL (which is in lowercase with hyphens replacing spaces of your report name). The report should be also public.}
 
 \item{showRequestURL}{- use only for DEBUG purposes}
@@ -22,7 +22,7 @@ URL (which is in lowercase with hyphens replacing spaces of your report name). T
 }
 \description{
 To identify the desired report, you can either use the report hash or the report title.
-The Report properties are the same as in the All Reporst request. 
+The Report properties are the same as in the All Reporst request.
 The only difference is that this request will only return the identified report.
 }
 \examples{
