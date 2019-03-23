@@ -23,7 +23,6 @@ after_script:
   
 after_success:
   - Rscript -e 'library(covr);covr::codecov(token = "99e5807c-72f3-445e-830c-79c132f1b5e7")'
-  - Rscript -e 'library(covr);covr::coveralls(repo_token = "hQ83rItUwCHjW0FdsL0fQPZ1HZ7RCMbuz")'
   
 notifications:
   email:

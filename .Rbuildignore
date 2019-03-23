@@ -11,3 +11,4 @@ test.r
 ^cran-comments\.md$
 ^.*\.o$
 .lintr
+codecov.yml
