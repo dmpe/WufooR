@@ -4,9 +4,16 @@
 \alias{retrieve_api_key}
 \title{Retrieve API Key on behalf of users}
 \usage{
-retrieve_api_key(integrationKey = NULL, email = NULL,
-  password = NULL, apiKey = auth_key(NULL), subdomain = NULL,
-  showRequestURL = FALSE, debugConnection = 0L, domain = "wufoo.com")
+retrieve_api_key(
+  integrationKey = NULL,
+  email = NULL,
+  password = NULL,
+  apiKey = auth_key(NULL),
+  subdomain = NULL,
+  showRequestURL = FALSE,
+  debugConnection = 0L,
+  domain = "wufoo.com"
+)
 }
 \arguments{
 \item{integrationKey}{- Required. This is your Login integration key. Apply at \url{https://master.wufoo.com/forms/integration-key-application/}}

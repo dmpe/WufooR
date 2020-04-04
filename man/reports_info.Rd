@@ -4,8 +4,12 @@
 \alias{reports_info}
 \title{Return details about the reports you have permission to view.}
 \usage{
-reports_info(wufoo_name = auth_name(NULL), domain = "wufoo.com",
-  showRequestURL = FALSE, debugConnection = 0L)
+reports_info(
+  wufoo_name = auth_name(NULL),
+  domain = "wufoo.com",
+  showRequestURL = FALSE,
+  debugConnection = 0L
+)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -40,7 +44,7 @@ Hash - An unchanging hashed value unique to this report on this user's account.
 Return details about the reports you have permission to view.
 }
 \examples{
-\donttest{
+\dontrun{
 reports_info(showRequestURL = TRUE)
 }
 

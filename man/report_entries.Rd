@@ -4,9 +4,14 @@
 \alias{report_entries}
 \title{Returns the entries that make up a specific report.}
 \usage{
-report_entries(wufoo_name = auth_name(NULL), domain = "wufoo.com",
-  systemFields = "true", reportName = NULL, showRequestURL = FALSE,
-  debugConnection = 0L)
+report_entries(
+  wufoo_name = auth_name(NULL),
+  domain = "wufoo.com",
+  systemFields = "true",
+  reportName = NULL,
+  showRequestURL = FALSE,
+  debugConnection = 0L
+)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -28,7 +33,7 @@ This is essentially an equivalent of the data that would show up in a
 datagrid widget on the report, or in an exported copy of the report entry data
 }
 \examples{
-\donttest{
+\dontrun{
 report_entries(reportName = "untitled-report")
 }
 

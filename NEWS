@@ -1,6 +1,9 @@
 For the current development, see: https://github.com/dmpe/WufooR
 
 ###
+March 2020     - ensure that package works properly again, not executing any tests
+               - bump version number and update dependancies
+
 March 2019     - ensure that package works properly again
                - bump version number and update dependancies
                - add new methods to cover most of the API (other than POST requests, 

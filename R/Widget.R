@@ -12,7 +12,7 @@
 #' @return \url{https://wufoo.github.io/docs/#widgets}
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' report_widgets(formIdentifier = "z5kqx7h1gtvg4g")
 #' }
 #' 

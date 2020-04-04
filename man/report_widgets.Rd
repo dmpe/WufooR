@@ -4,9 +4,13 @@
 \alias{report_widgets}
 \title{Returns details of the widgets that make up a specific report.}
 \usage{
-report_widgets(wufoo_name = auth_name(NULL), domain = "wufoo.com",
-  formIdentifier = NULL, showRequestURL = FALSE,
-  debugConnection = 0L)
+report_widgets(
+  wufoo_name = auth_name(NULL),
+  domain = "wufoo.com",
+  formIdentifier = NULL,
+  showRequestURL = FALSE,
+  debugConnection = 0L
+)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -30,7 +34,7 @@ and Number widgets will be included in the request.
 Any Text or Datagrid widgets will not be shown.
 }
 \examples{
-\donttest{
+\dontrun{
 report_widgets(formIdentifier = "z5kqx7h1gtvg4g")
 }
 

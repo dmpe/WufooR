@@ -4,8 +4,13 @@
 \alias{form_entriesCount}
 \title{Return number of responses to your form}
 \usage{
-form_entriesCount(wufoo_name = auth_name(NULL), formIdentifier = NULL,
-  showRequestURL = FALSE, debugConnection = 0L, domain = "wufoo.com")
+form_entriesCount(
+  wufoo_name = auth_name(NULL),
+  formIdentifier = NULL,
+  showRequestURL = FALSE,
+  debugConnection = 0L,
+  domain = "wufoo.com"
+)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -27,7 +32,7 @@ default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 Return number of responses to your form
 }
 \examples{
-\donttest{
+\dontrun{
 form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 }
 

@@ -4,9 +4,16 @@
 \alias{form_comments}
 \title{Returns any comments made on this form's entries in the Entry Manager}
 \usage{
-form_comments(wufoo_name = auth_name(NULL), formIdentifier = NULL,
-  entryId = NULL, showRequestURL = FALSE, pageStart = 0,
-  pageSize = 100, debugConnection = 0L, domain = "wufoo.com")
+form_comments(
+  wufoo_name = auth_name(NULL),
+  formIdentifier = NULL,
+  entryId = NULL,
+  showRequestURL = FALSE,
+  pageStart = 0,
+  pageSize = 100,
+  debugConnection = 0L,
+  domain = "wufoo.com"
+)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}

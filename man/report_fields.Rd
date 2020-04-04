@@ -4,9 +4,14 @@
 \alias{report_fields}
 \title{Returns the field structure for the report's corresponding form.}
 \usage{
-report_fields(wufoo_name = auth_name(NULL), domain = "wufoo.com",
-  systemFields = "true", reportName = NULL, showRequestURL = FALSE,
-  debugConnection = 0L)
+report_fields(
+  wufoo_name = auth_name(NULL),
+  domain = "wufoo.com",
+  systemFields = "true",
+  reportName = NULL,
+  showRequestURL = FALSE,
+  debugConnection = 0L
+)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -27,7 +32,7 @@ URL (which is in lowercase with hyphens replacing spaces of your report name). T
 Returns the field structure for the report's corresponding form.
 }
 \examples{
-\donttest{
+\dontrun{
 report_fields(reportName = "untitled-report")
 }
 

@@ -4,8 +4,12 @@
 \alias{user_info}
 \title{Return information about the user}
 \usage{
-user_info(wufoo_name = auth_name(NULL), domain = "wufoo.com",
-  showRequestURL = FALSE, debugConnection = 0L)
+user_info(
+  wufoo_name = auth_name(NULL),
+  domain = "wufoo.com",
+  showRequestURL = FALSE,
+  debugConnection = 0L
+)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -24,7 +28,7 @@ default \code{wufoo.com} to another one such as \code{wufoo.eu}}
 Shows information about the user.
 }
 \examples{
-\donttest{
+\dontrun{
 user_info(debugConnection = 1L, domain = "wufoo.eu")
 }
 

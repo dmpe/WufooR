@@ -14,7 +14,7 @@
 #' @return \url{https://wufoo.github.io/docs/#all-forms}
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' form_info()
 #' }
 #' 
@@ -59,7 +59,7 @@ form_info <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, inclu
 #' @return \url{https://wufoo.github.io/docs/#form-entries}
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' form_entries(formIdentifier = "z5kqx7h1gtvg4g")
 #' form_entries(formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = TRUE)
 #' }
@@ -112,7 +112,7 @@ form_entries <- function(wufoo_name = auth_name(NULL), formIdentifier = NULL, sy
 #' @return \url{https://wufoo.github.io/docs/#form-entries-count}
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' form_entriesCount(formIdentifier = "z5kqx7h1gtvg4g", showRequestURL = TRUE)
 #' }
 #' 

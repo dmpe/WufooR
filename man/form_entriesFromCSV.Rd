@@ -4,8 +4,13 @@
 \alias{form_entriesFromCSV}
 \title{Return responses of your form, from CSV format}
 \usage{
-form_entriesFromCSV(wufoo_name = auth_name(NULL), reportName = NULL,
-  showRequestURL = FALSE, debugConnection = 0L, domain = "wufoo.com")
+form_entriesFromCSV(
+  wufoo_name = auth_name(NULL),
+  reportName = NULL,
+  showRequestURL = FALSE,
+  debugConnection = 0L,
+  domain = "wufoo.com"
+)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}

@@ -4,8 +4,13 @@
 \alias{report_info}
 \title{Returns a specific report.}
 \usage{
-report_info(wufoo_name = auth_name(NULL), domain = "wufoo.com",
-  reportName = NULL, showRequestURL = FALSE, debugConnection = 0L)
+report_info(
+  wufoo_name = auth_name(NULL),
+  domain = "wufoo.com",
+  reportName = NULL,
+  showRequestURL = FALSE,
+  debugConnection = 0L
+)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -26,7 +31,7 @@ The Report properties are the same as in the All Reporst request.
 The only difference is that this request will only return the identified report.
 }
 \examples{
-\donttest{
+\dontrun{
 report_info(reportName = "untitled-report")
 }
 

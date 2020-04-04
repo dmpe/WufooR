@@ -4,8 +4,13 @@
 \alias{report_entriesCount}
 \title{Returns a count of the entries stored for a specific report.}
 \usage{
-report_entriesCount(wufoo_name = auth_name(NULL), domain = "wufoo.com",
-  reportName = NULL, showRequestURL = FALSE, debugConnection = 0L)
+report_entriesCount(
+  wufoo_name = auth_name(NULL),
+  domain = "wufoo.com",
+  reportName = NULL,
+  showRequestURL = FALSE,
+  debugConnection = 0L
+)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -24,7 +29,7 @@ URL (which is in lowercase with hyphens replacing spaces of your report name). T
 This can help with determining the number of elements you have to display.
 }
 \examples{
-\donttest{
+\dontrun{
 report_entriesCount(reportName = "untitled-report")
 }
 

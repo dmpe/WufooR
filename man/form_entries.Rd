@@ -4,10 +4,19 @@
 \alias{form_entries}
 \title{Return responses of your form}
 \usage{
-form_entries(wufoo_name = auth_name(NULL), formIdentifier = NULL,
-  systemFields = "true", sortID = NULL, sortDirection = NULL,
-  columnNames = FALSE, showRequestURL = FALSE, debugConnection = 0L,
-  domain = "wufoo.com", pageStart = 0, pageSize = 25)
+form_entries(
+  wufoo_name = auth_name(NULL),
+  formIdentifier = NULL,
+  systemFields = "true",
+  sortID = NULL,
+  sortDirection = NULL,
+  columnNames = FALSE,
+  showRequestURL = FALSE,
+  debugConnection = 0L,
+  domain = "wufoo.com",
+  pageStart = 0,
+  pageSize = 25
+)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -43,7 +52,7 @@ This request returns the entries that have been submitted to a specific form.
 This is the equivalent of viewing your stored entries in the Entry Manager in Wufoo.
 }
 \examples{
-\donttest{
+\dontrun{
 form_entries(formIdentifier = "z5kqx7h1gtvg4g")
 form_entries(formIdentifier = "z5kqx7h1gtvg4g", systemFields = "false", showRequestURL = TRUE)
 }

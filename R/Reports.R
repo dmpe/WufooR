@@ -15,7 +15,7 @@
 #' @return \url{https://wufoo.github.io/docs/#all-reports}
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' reports_info(showRequestURL = TRUE)
 #' }
 #' 
@@ -45,7 +45,7 @@ reports_info <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com",
 #'
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' report_info(reportName = "untitled-report")
 #' }
 #' 
@@ -74,7 +74,7 @@ report_info <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com",
 #' @seealso [form_entries()]
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' report_entries(reportName = "untitled-report")
 #' }
 #' 
@@ -101,7 +101,7 @@ report_entries <- function(wufoo_name = auth_name(NULL), domain = "wufoo.com", s
 #' @seealso [report_entries()]
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' report_entriesCount(reportName = "untitled-report")
 #' }
 #' 
@@ -125,7 +125,7 @@ report_entriesCount <- function(wufoo_name = auth_name(NULL), domain = "wufoo.co
 #' @seealso [fields_info()]
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' report_fields(reportName = "untitled-report")
 #' }
 #' 

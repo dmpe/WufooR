@@ -12,7 +12,7 @@
 #' @return \url{https://wufoo.github.io/docs/#users}
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' user_info(debugConnection = 1L, domain = "wufoo.eu")
 #' }
 #' 

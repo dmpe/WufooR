@@ -4,8 +4,13 @@
 \alias{form_commentsCount}
 \title{Returns a count of all comments made on this form's entries}
 \usage{
-form_commentsCount(wufoo_name = auth_name(NULL), formIdentifier = NULL,
-  showRequestURL = FALSE, debugConnection = 0L, domain = "wufoo.com")
+form_commentsCount(
+  wufoo_name = auth_name(NULL),
+  formIdentifier = NULL,
+  showRequestURL = FALSE,
+  debugConnection = 0L,
+  domain = "wufoo.com"
+)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}

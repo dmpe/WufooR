@@ -4,9 +4,14 @@
 \alias{form_info}
 \title{Return details about the forms you have permission to access.}
 \usage{
-form_info(wufoo_name = auth_name(NULL), formIdentifier = NULL,
-  includeTodayCount = "false", showRequestURL = FALSE,
-  debugConnection = 0L, domain = "wufoo.com")
+form_info(
+  wufoo_name = auth_name(NULL),
+  formIdentifier = NULL,
+  includeTodayCount = "false",
+  showRequestURL = FALSE,
+  debugConnection = 0L,
+  domain = "wufoo.com"
+)
 }
 \arguments{
 \item{wufoo_name}{- User's Name. Default: \code{\link{auth_name}}}
@@ -32,7 +37,7 @@ Creates a list of all forms belonging to a user and
 dynamically generate a form embed snippet to use in your application.
 }
 \examples{
-\donttest{
+\dontrun{
 form_info()
 }
 
