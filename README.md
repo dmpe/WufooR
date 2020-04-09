@@ -45,9 +45,6 @@ Check the vignette in `vignettes` folder.
 
 Want a direct push access? No problem, just let me know and become a :family:.
 
-**Also**:
- - Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
-
 ### Developed by:
 
 - [@dmpe](https://www.github.com/dmpe) :yum:.
